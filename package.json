@@ -1,0 +1,82 @@
+{
+  "name": "baseui-final-form",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "license": "MIT",
+  "author": "KahWee Teng <tengkahwee@gmail.com>",
+  "scripts": {
+    "clean": "rimraf lib dist es coverage",
+    "transpile": "npm run clean && cup build",
+    "prepublishOnly": "npm run build && node -e \"const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json', {encoding: 'utf8'})); delete pkg.engines; fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2)); console.log(pkg)\"",
+    "build": "npm run transpile",
+    "lint": "eslint src/*",
+    "storybook": "start-storybook -p 6006",
+    "build:storybook": "build-storybook -c .storybook -o docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "final-form": "^4.10.0",
+    "final-form-arrays": "^1.1.0",
+    "react-final-form": "^3.6.6",
+    "react-final-form-arrays": "^1.0.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-2": "^7.0.0",
+    "@storybook/addon-actions": "^4.0.0-alpha.22",
+    "@storybook/addon-info": "^4.0.0-alpha.22",
+    "@storybook/addon-links": "^4.0.0-alpha.22",
+    "@storybook/addons": "^4.0.0-alpha.22",
+    "@storybook/react": "^4.0.0-alpha.22",
+    "babel-loader": "^8.0.4",
+    "baseui": "^2.2.0",
+    "create-universal-package": "^3.4.6",
+    "enzyme": "^3.7.0",
+    "eslint": "^5.5.0",
+    "flow-bin": "^0.81.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "rimraf": "^2.6.2",
+    "styletron-react": "^4.3.5",
+    "styletron-react-core": "^1.3.2",
+    "styletron-standard": "^1.0.6",
+    "webpack": "^4.20.2"
+  },
+  "peerDependencies": {
+    "baseui": "^2.2.0",
+    "react": "^16.4.0-0",
+    "react-dom": "^16.4.0-0"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "form"
+  ],
+  "module": "./dist/index.es.js",
+  "browser": {
+    "./dist/index.js": "./dist/browser.es5.js",
+    "./dist/index.es.js": "./dist/browser.es5.es.js"
+  },
+  "es2015": {
+    "./dist/browser.es5.es.js": "./dist/browser.es2015.es.js"
+  },
+  "es2017": {
+    "./dist/browser.es5.es.js": "./dist/browser.es2017.es.js",
+    "./dist/browser.es2015.es.js": "./dist/browser.es2017.es.js"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/kahwee/baseui-final-form.git"
+  }
+}

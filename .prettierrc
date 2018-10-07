@@ -1,0 +1,8 @@
+singleQuote: true
+bracketSpacing: false
+trailingComma: all
+useTabs: false
+tabWidth: 2
+jsxBracketSameLine: false
+semi: true
+parser: babylon
