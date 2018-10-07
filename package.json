@@ -34,6 +34,7 @@
     "@storybook/addon-links": "^4.0.0-alpha.22",
     "@storybook/addons": "^4.0.0-alpha.22",
     "@storybook/react": "^3.4.11",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "baseui": "^2.2.0",
@@ -65,7 +66,11 @@
     "react": "^16.4.0-0",
     "react-dom": "^16.4.0-0"
   },
-  "keywords": ["react", "reactjs", "form"],
+  "keywords": [
+    "react",
+    "reactjs",
+    "form"
+  ],
   "module": "./dist/index.es.js",
   "browser": {
     "./dist/index.js": "./dist/browser.es5.js",
@@ -78,7 +83,10 @@
     "./dist/browser.es5.es.js": "./dist/browser.es2017.es.js",
     "./dist/browser.es2015.es.js": "./dist/browser.es2017.es.js"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
