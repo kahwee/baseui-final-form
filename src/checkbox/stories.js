@@ -6,9 +6,9 @@ import {Form, Field} from 'react-final-form';
 import {storiesOf} from '@storybook/react';
 import withBaseui from '../with-baseui';
 import {Button} from 'baseui/button';
-import Toggle from './index';
+import Checkbox from './index';
 
-storiesOf('Toggle', module)
+storiesOf('Checkbox', module)
   .addDecorator(withBaseui)
   .add('Basic', () => (
     <Form
@@ -17,10 +17,10 @@ storiesOf('Toggle', module)
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field
-            name="enabled"
-            component={Toggle}
-            caption="enabled"
-            label="enabled"
+            name="yesIcan"
+            component={Checkbox}
+            caption="Yes, I can"
+            label="I can"
             type="checkbox"
           />
 
