@@ -6,7 +6,7 @@ import {LightTheme, ThemeProvider} from 'baseui';
 
 const engine = new Styletron();
 
-export default function withBaseui(story) {
+export default function withBaseui(story: Function) {
   return (
     <StyletronProvider value={engine}>
       <ThemeProvider theme={LightTheme}>{story()}</ThemeProvider>
