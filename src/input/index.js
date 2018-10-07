@@ -9,14 +9,10 @@ export type Props = {
   label: string | React.Node,
 } & FieldRenderProps;
 
-export default function renderInput({input, meta, caption}: Props) {
+export default function renderInput({input, meta, caption, label}: Props) {
   // console.log(input, meta, caption);
   return (
-    <FormControl
-      label="Input label"
-      caption={caption}
-      error="String type error"
-    >
+    <FormControl label={label} caption={caption} error="String type error">
       <Input id="test" error {...input} />
     </FormControl>
   );
