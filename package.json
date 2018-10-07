@@ -48,6 +48,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "flow-bin": "^0.82.0",
+    "husky": "^1.1.1",
     "jest": "^23.6.0",
     "prettier": "^1.14.3",
     "react": "^16.5.2",
@@ -64,11 +65,7 @@
     "react": "^16.4.0-0",
     "react-dom": "^16.4.0-0"
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "form"
-  ],
+  "keywords": ["react", "reactjs", "form"],
   "module": "./dist/index.es.js",
   "browser": {
     "./dist/index.js": "./dist/browser.es5.js",
@@ -81,10 +78,12 @@
     "./dist/browser.es5.es.js": "./dist/browser.es2017.es.js",
     "./dist/browser.es2015.es.js": "./dist/browser.es2017.es.js"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kahwee/baseui-final-form.git"
