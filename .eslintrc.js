@@ -1,6 +1,13 @@
 /* eslint-env node */
 module.exports = {
   extends: [require.resolve('eslint-config-fusion')],
+  settings: {
+    react: {
+      pragma: 'React', // Pragma to use, default to "React"
+      version: '16.0',
+      flowVersion: '0.81', // Flow version
+    },
+  },
   env: {
     jest: true,
   },
@@ -10,7 +17,6 @@ module.exports = {
     expect: true,
     it: true,
     window: true,
-    setTimeout: false,
     Map: false,
   },
 };
