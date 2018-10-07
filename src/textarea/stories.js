@@ -6,9 +6,9 @@ import {Form, Field} from 'react-final-form';
 import {storiesOf} from '@storybook/react';
 import withBaseui from '../with-baseui';
 import {Button} from 'baseui/button';
-import Input from './index';
+import Textarea from './index';
 
-storiesOf('Input', module)
+storiesOf('Textarea', module)
   .addDecorator(withBaseui)
   .add('Basic', () => (
     <Form
@@ -17,10 +17,10 @@ storiesOf('Input', module)
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field
-            name="firstName"
-            component={Input}
-            caption="First name"
-            label="First name"
+            name="description"
+            component={Textarea}
+            caption="Description"
+            label="Description"
           />
 
           <Button type="submit" disabled={pristine || invalid}>
