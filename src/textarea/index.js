@@ -10,9 +10,8 @@ export type Props = {
 } & FieldRenderProps;
 
 export default function renderInput({input, meta, caption, label}: Props) {
-  console.log(input, meta, caption);
   return (
-    <FormControl label={label} caption={caption} error="String type error">
+    <FormControl label={label} caption={caption} error={meta.errror}>
       <Textarea id="test" error {...input} />
     </FormControl>
   );
