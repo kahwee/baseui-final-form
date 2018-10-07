@@ -8,7 +8,21 @@ How to use
 yarn add baseui react react-dom
 ```
 
+## Prerequisites
+
+- `node` >= 8.12.0 (for development)
+- `yarn` >= 1.10.1 (for development)
+
 ## Development
+
+Clone from git
+
+```
+git clone git@github.com:kahwee/baseui-final-form.git
+cd baseui-final-form
+```
+
+Setup dev packages with `yarn`.
 
 ```javascript
 yarn
