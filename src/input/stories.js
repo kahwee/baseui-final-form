@@ -1,3 +1,4 @@
+/* eslint-env node */
 // @flow
 
 import * as React from 'react';
@@ -8,7 +9,7 @@ import withBaseui from '../with-baseui';
 import {Button} from 'baseui/button';
 import Input from './index';
 
-storiesOf('Input')
+storiesOf('Input', module)
   .addDecorator(withInfo)
   .addDecorator(withBaseui)
   .add(
