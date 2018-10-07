@@ -7,11 +7,14 @@ import {storiesOf} from '@storybook/react';
 import withBaseui from '../with-baseui';
 import {Button} from 'baseui/button';
 import Input from './index';
+import {minLength} from '../validate';
 
+const minLength3 = minLength(3);
 storiesOf('Input', module)
   .addDecorator(withBaseui)
   .add('Basic', () => (
     <Form
+      validateOnBlur
       onSubmit={() => {}}
       validate={() => {}}
       render={({handleSubmit, pristine, invalid}) => (
@@ -21,6 +24,7 @@ storiesOf('Input', module)
             component={Input}
             caption="First name"
             label="First name"
+            validate={minLength3}
           />
 
           <Button type="submit" disabled={pristine || invalid}>

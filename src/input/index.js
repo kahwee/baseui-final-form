@@ -12,8 +12,8 @@ export type Props = {
 export default function renderInput({input, meta, caption, label}: Props) {
   // console.log(input, meta, caption);
   return (
-    <FormControl label={label} caption={caption} error="String type error">
-      <Input id="test" error {...input} />
+    <FormControl label={label} caption={caption} error={meta.error}>
+      <Input id="test" error={meta.error} {...input} />
     </FormControl>
   );
 }
