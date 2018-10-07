@@ -10,7 +10,7 @@ export type Props = {
 } & FieldRenderProps;
 
 export default function renderInput({input, meta, caption}: Props) {
-  console.log(input, meta, caption);
+  // console.log(input, meta, caption);
   return (
     <FormControl
       label="Input label"
