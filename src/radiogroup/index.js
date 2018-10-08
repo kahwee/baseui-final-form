@@ -1,19 +1,8 @@
 // @flow
 import * as React from 'react';
-import {type FieldRenderProps} from 'react-final-form';
+import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
 import {StyledRadio, RadioGroup} from 'baseui/radio';
-
-export type Option = {
-  label: string,
-  value: string,
-  disabled?: boolean,
-};
-export type Props = {
-  caption: string | React.Node,
-  label: string | React.Node,
-  options: Array<Option>,
-} & FieldRenderProps;
 
 export default function renderInput({
   input,
@@ -21,9 +10,9 @@ export default function renderInput({
   caption,
   label,
   options,
-}: Props) {
+}: MultipleValuesFieldRenderProps) {
   return (
-    <FormControl label={label} caption={caption} error={meta.errror}>
+    <FormControl label={label} caption={caption} error={meta.error}>
       <RadioGroup {...input}>
         {options.map((option, index) => {
           return (
