@@ -1,15 +1,15 @@
 // @flow
 import * as React from 'react';
-import {type FieldRenderProps} from 'react-final-form';
+import {type SingleValueFieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
 import {Input} from 'baseui/input';
 
-export type Props = {
-  caption: string | React.Node,
-  label: string | React.Node,
-} & FieldRenderProps;
-
-export default function renderInput({input, meta, caption, label}: Props) {
+export default function renderInput({
+  input,
+  meta,
+  caption,
+  label,
+}: SingleValueFieldRenderProps) {
   // console.log(input, meta, caption);
   return (
     <FormControl label={label} caption={caption} error={meta.error}>
