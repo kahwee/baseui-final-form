@@ -26,6 +26,7 @@ storiesOf('RadioGroup', module)
               {value: '2', label: 'Peach'},
               {value: '3', label: 'Apple', disabled: true},
             ]}
+            type="select-multiple"
           />
 
           <Button type="submit" disabled={pristine || invalid}>
