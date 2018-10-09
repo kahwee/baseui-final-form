@@ -3,7 +3,7 @@ import {type FieldRenderProps} from 'react-final-form';
 
 export type Option = {
   label: string,
-  value: string,
+  id: string,
   disabled?: boolean,
 };
 

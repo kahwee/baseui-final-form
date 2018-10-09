@@ -22,9 +22,9 @@ storiesOf('RadioGroup', module)
             caption="Please select a fruit"
             label="My fruits"
             options={[
-              {value: '1', label: 'Pineapple'},
-              {value: '2', label: 'Peach'},
-              {value: '3', label: 'Apple', disabled: true},
+              {id: '1', label: 'Pineapple'},
+              {id: '2', label: 'Peach'},
+              {id: '3', label: 'Apple', disabled: true},
             ]}
             type="select-multiple"
           />

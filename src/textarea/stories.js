@@ -12,6 +12,7 @@ storiesOf('Textarea', module)
   .addDecorator(withBaseui)
   .add('Basic', () => (
     <Form
+      validateOnBlur
       onSubmit={() => {}}
       validate={() => {}}
       render={({handleSubmit, pristine, invalid}) => (
