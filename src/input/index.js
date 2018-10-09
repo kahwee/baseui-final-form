@@ -10,10 +10,9 @@ export default function renderInput({
   caption,
   label,
 }: SingleValueFieldRenderProps) {
-  // console.log(input, meta, caption);
   return (
     <FormControl label={label} caption={caption} error={meta.error}>
-      <Input id="test" error={meta.error} {...input} />
+      <Input id="test" {...input} error={meta.error} />
     </FormControl>
   );
 }

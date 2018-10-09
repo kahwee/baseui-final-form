@@ -16,7 +16,7 @@ export default function renderInput({
       <RadioGroup {...input}>
         {options.map((option, index) => {
           return (
-            <StyledRadio id={option.value} {...option} key={index}>
+            <StyledRadio value={option.id} {...option} key={index}>
               {option.label}
             </StyledRadio>
           );

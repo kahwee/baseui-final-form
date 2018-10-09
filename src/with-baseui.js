@@ -9,7 +9,9 @@ const engine = new Styletron();
 export default function withBaseui(story) {
   return (
     <StyletronProvider value={engine}>
-      <ThemeProvider theme={LightTheme}>{story()}</ThemeProvider>
+      <ThemeProvider theme={LightTheme}>
+        {typeof story === 'function' ? story() : story.children}
+      </ThemeProvider>
     </StyletronProvider>
   );
 }
