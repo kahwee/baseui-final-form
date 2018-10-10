@@ -2,12 +2,13 @@
 import * as React from 'react';
 import {render, fireEvent} from 'react-testing-library';
 import {Form, Field} from 'react-final-form';
-import Input from '../index';
+import Textarea from '../index';
 import BaseuiProvider from '../../with-baseui';
 
-describe('input', () => {
-  it('should record a submission in final-form when changed in baseui/input', () => {
+describe('textarea', () => {
+  it('should record a submission in final-form when changed in baseui/textarea', () => {
     const mockSubmit = jest.fn();
+    const DESCRIPTION = 'Hello how are you?';
     const {container} = render(
       <BaseuiProvider>
         <Form onSubmit={mockSubmit}>
@@ -21,35 +22,25 @@ describe('input', () => {
               }}
             >
               <Field
-                name="firstName"
-                component={Input}
-                caption="First name"
-                label="First name"
+                name="description"
+                component={Textarea}
+                caption="Description"
+                label="Description"
               />
             </form>
           )}
         </Form>
       </BaseuiProvider>
     );
-    const inputNode = container.querySelector('input');
+    const textareaNode = container.querySelector('textarea');
     const formNode = container.querySelector('form');
-    const event1 = {target: {name: 'firstName', value: 'changed1'}};
-    const event2 = {target: {name: 'firstName', value: 'changed2'}};
-    fireEvent.change(inputNode, event1);
-    expect(inputNode.value).toBe('changed1');
+    const event = {target: {name: 'description', value: DESCRIPTION}};
+    fireEvent.change(textareaNode, event);
+    expect(textareaNode.value).toBe(DESCRIPTION);
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith(
       expect.objectContaining({
-        firstName: 'changed1',
-      }),
-      expect.anything()
-    );
-    fireEvent.change(inputNode, event2);
-    expect(inputNode.value).toBe('changed2');
-    fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith(
-      expect.objectContaining({
-        firstName: 'changed2',
+        description: DESCRIPTION,
       }),
       expect.anything()
     );
