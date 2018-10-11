@@ -14,7 +14,6 @@ storiesOf('Textarea', module)
     <Form
       validateOnBlur
       onSubmit={() => {}}
-      validate={() => {}}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field
