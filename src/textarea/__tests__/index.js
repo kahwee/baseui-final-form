@@ -13,14 +13,7 @@ describe('textarea', () => {
       <BaseuiProvider>
         <Form onSubmit={mockSubmit}>
           {({handleSubmit}) => (
-            <form
-              onSubmit={() => {
-                handleSubmit({
-                  preventDefault: undefined,
-                  stopPropagation: undefined,
-                });
-              }}
-            >
+            <form onSubmit={handleSubmit}>
               <Field
                 name="description"
                 component={Textarea}
@@ -39,9 +32,9 @@ describe('textarea', () => {
     expect(textareaNode.value).toBe(DESCRIPTION);
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith(
-      expect.objectContaining({
+      {
         description: DESCRIPTION,
-      }),
+      },
       expect.anything()
     );
   });

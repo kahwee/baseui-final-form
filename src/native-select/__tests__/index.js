@@ -12,14 +12,7 @@ describe('native-select', () => {
       <BaseuiProvider>
         <Form onSubmit={mockSubmit} initialValues={{fruit: 'peach'}}>
           {({handleSubmit}) => (
-            <form
-              onSubmit={() => {
-                handleSubmit({
-                  preventDefault: undefined,
-                  stopPropagation: undefined,
-                });
-              }}
-            >
+            <form onSubmit={handleSubmit}>
               <Field
                 name="fruit"
                 component={NativeSelect}
@@ -43,9 +36,9 @@ describe('native-select', () => {
     expect(selectNode.value).toBe('pineapple');
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith(
-      expect.objectContaining({
+      {
         fruit: 'pineapple',
-      }),
+      },
       expect.anything()
     );
   });
