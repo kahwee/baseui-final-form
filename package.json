@@ -69,14 +69,16 @@
     "webpack": "^4.20.2"
   },
   "peerDependencies": {
-    "baseui": "^2.2.0",
+    "baseui": "^2.2.1",
     "react": "^16.4.0-0",
     "react-dom": "^16.4.0-0"
   },
   "keywords": [
     "react",
     "reactjs",
-    "form"
+    "final-form",
+    "react-final-form",
+    "forms"
   ],
   "module": "./dist/index.es.js",
   "browser": {
