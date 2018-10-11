@@ -32,9 +32,7 @@ describe('textarea', () => {
     expect(textareaNode.value).toBe(DESCRIPTION);
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith(
-      {
-        description: DESCRIPTION,
-      },
+      {description: DESCRIPTION},
       expect.anything()
     );
   });

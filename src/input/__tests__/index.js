@@ -32,18 +32,14 @@ describe('input', () => {
     expect(inputNode.value).toBe('changed1');
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith(
-      {
-        firstName: 'changed1',
-      },
+      {firstName: 'changed1'},
       expect.anything()
     );
     fireEvent.change(inputNode, event2);
     expect(inputNode.value).toBe('changed2');
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith(
-      {
-        firstName: 'changed2',
-      },
+      {firstName: 'changed2'},
       expect.anything()
     );
   });
