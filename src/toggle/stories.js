@@ -13,7 +13,6 @@ storiesOf('Toggle', module)
   .add('Basic', () => (
     <Form
       onSubmit={() => {}}
-      validate={() => {}}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field

@@ -3,7 +3,7 @@ import * as React from 'react';
 import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
 
-export default function renderInput({
+export default function render({
   input,
   meta,
   caption,
@@ -15,7 +15,7 @@ export default function renderInput({
       <select {...input}>
         {options.map((option, index) => {
           return (
-            <option id={option.value} {...option} key={index}>
+            <option {...option} value={option.id} key={index}>
               {option.label}
             </option>
           );

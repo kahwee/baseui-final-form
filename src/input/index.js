@@ -4,7 +4,7 @@ import {type SingleValueFieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
 import {Input} from 'baseui/input';
 
-export default function renderInput({
+export default function render({
   input,
   meta,
   caption,

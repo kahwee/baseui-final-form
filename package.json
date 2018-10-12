@@ -13,12 +13,13 @@
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook -c .storybook -o docs",
     "test": "jest",
+    "cover": "jest --coverage",
     "flow": "flow"
   },
   "dependencies": {
     "final-form": "^4.10.0",
     "final-form-arrays": "^1.1.0",
-    "react-final-form": "^3.6.6",
+    "react-final-form": "^3.6.7",
     "react-final-form-arrays": "^1.0.6"
   },
   "resolutions": {
@@ -54,7 +55,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "flow-bin": "^0.82.0",
-    "husky": "^1.1.1",
+    "husky": "^1.1.2",
     "jest": "^23.6.0",
     "prettier": "^1.14.3",
     "react": "^16.5.2",
@@ -68,14 +69,16 @@
     "webpack": "^4.20.2"
   },
   "peerDependencies": {
-    "baseui": "^2.2.0",
+    "baseui": "^2.2.1",
     "react": "^16.4.0-0",
     "react-dom": "^16.4.0-0"
   },
   "keywords": [
     "react",
     "reactjs",
-    "form"
+    "final-form",
+    "react-final-form",
+    "forms"
   ],
   "module": "./dist/index.es.js",
   "browser": {
@@ -99,7 +102,15 @@
     }
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>src/setup-tests.js"
+    "setupTestFrameworkScriptFile": "<rootDir>src/setup-tests.js",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**.js",
+      "!src/setup-tests.js",
+      "!**/stories.js",
+      "!**/node_modules/**",
+      "!**/dist/**"
+    ]
   },
   "repository": {
     "type": "git",

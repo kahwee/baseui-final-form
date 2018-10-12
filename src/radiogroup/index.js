@@ -4,7 +4,7 @@ import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
 import {StyledRadio, RadioGroup} from 'baseui/radio';
 
-export default function renderInput({
+export default function render({
   input,
   meta,
   caption,
