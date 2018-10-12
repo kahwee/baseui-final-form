@@ -13,18 +13,18 @@ storiesOf('Native select', module)
   .add('Basic', () => (
     <Form
       onSubmit={() => {}}
-      initialValues={{fruits: '2'}}
+      initialValues={{fruit: 'peach'}}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field
-            name="fruits"
+            name="fruit"
             component={NativeSelect}
             caption="Please select a fruit"
             label="My fruits"
             options={[
-              {value: '1', label: 'Pineapple'},
-              {value: '2', label: 'Peach'},
-              {value: '3', label: 'Apple', disabled: true},
+              {id: 'pineapple', label: 'Pineapple'},
+              {id: 'peach', label: 'Peach'},
+              {id: 'apple', label: 'Apple', disabled: true},
             ]}
           />
 

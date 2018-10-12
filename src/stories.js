@@ -24,7 +24,6 @@ storiesOf('Playground', module)
     <Form
       initialValues={{target: 'city'}}
       onSubmit={() => {}}
-      validate={() => {}}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field

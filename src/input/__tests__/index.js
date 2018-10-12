@@ -12,14 +12,7 @@ describe('input', () => {
       <BaseuiProvider>
         <Form onSubmit={mockSubmit}>
           {({handleSubmit}) => (
-            <form
-              onSubmit={() => {
-                handleSubmit({
-                  preventDefault: undefined,
-                  stopPropagation: undefined,
-                });
-              }}
-            >
+            <form onSubmit={handleSubmit}>
               <Field
                 name="firstName"
                 component={Input}
@@ -38,10 +31,16 @@ describe('input', () => {
     fireEvent.change(inputNode, event1);
     expect(inputNode.value).toBe('changed1');
     fireEvent.submit(formNode);
+    expect(mockSubmit).toBeCalledWith(
+      {firstName: 'changed1'},
+      expect.anything()
+    );
     fireEvent.change(inputNode, event2);
     expect(inputNode.value).toBe('changed2');
     fireEvent.submit(formNode);
-    expect(mockSubmit.mock.calls[0][0].firstName).toBe('changed1');
-    expect(mockSubmit.mock.calls[1][0].firstName).toBe('changed2');
+    expect(mockSubmit).toBeCalledWith(
+      {firstName: 'changed2'},
+      expect.anything()
+    );
   });
 });
