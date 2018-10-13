@@ -4,6 +4,7 @@ import {render, fireEvent} from 'react-testing-library';
 import {Form, Field} from 'react-final-form';
 import NativeSelect from '../index';
 import BaseuiProvider from '../../with-baseui';
+import options from './__fixtures__/fruit-options.json';
 
 describe('native-select', () => {
   it('should record a submission in final-form when changed in native select', () => {
@@ -18,11 +19,7 @@ describe('native-select', () => {
                 component={NativeSelect}
                 caption="Please select a fruit"
                 label="My fruits"
-                options={[
-                  {id: 'pineapple', label: 'Pineapple'},
-                  {id: 'peach', label: 'Peach'},
-                  {id: 'apple', label: 'Apple', disabled: true},
-                ]}
+                options={options}
               />
             </form>
           )}
