@@ -26,7 +26,7 @@
     "babel-core": "7.0.0-bridge.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.0",
+    "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
@@ -34,15 +34,15 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-2": "^7.0.0",
     "@babel/runtime": "^7.1.2",
-    "@storybook/addon-actions": "^4.0.0-alpha.22",
-    "@storybook/addon-info": "^3.4.11",
-    "@storybook/addon-links": "^4.0.0-alpha.22",
-    "@storybook/addons": "^4.0.0-alpha.22",
-    "@storybook/react": "^3.4.11",
+    "@storybook/addon-actions": "^4.0.0-alpha.25",
+    "@storybook/addon-info": "^4.0.0-alpha.25",
+    "@storybook/addon-links": "^4.0.0-alpha.25",
+    "@storybook/addons": "^4.0.0-alpha.25",
+    "@storybook/react": "^4.0.0-alpha.25",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
-    "baseui": "^2.2.1",
+    "baseui": "^2.2.2",
     "create-universal-package": "^3.4.6",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
@@ -54,7 +54,7 @@
     "eslint-plugin-jest": "^21.24.1",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "flow-bin": "^0.82.0",
+    "flow-bin": "^0.83.0",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
     "prettier": "^1.14.3",
@@ -69,17 +69,11 @@
     "webpack": "^4.20.2"
   },
   "peerDependencies": {
-    "baseui": "^2.2.1",
+    "baseui": "^2.2.2",
     "react": "^16.4.0-0",
     "react-dom": "^16.4.0-0"
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "final-form",
-    "react-final-form",
-    "forms"
-  ],
+  "keywords": ["react", "reactjs", "final-form", "react-final-form", "forms"],
   "module": "./dist/index.es.js",
   "browser": {
     "./dist/index.js": "./dist/browser.es5.js",
@@ -92,10 +86,7 @@
     "./dist/browser.es5.es.js": "./dist/browser.es2017.es.js",
     "./dist/browser.es2015.es.js": "./dist/browser.es2017.es.js"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
