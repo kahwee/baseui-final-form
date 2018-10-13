@@ -12,16 +12,18 @@ export default function renderInput({
 }: SingleValueFieldRenderProps) {
   const {value, onChange, ...restInput} = input;
   return (
-    <FormControl label={label} caption={caption} error={meta.error}>
+    <FormControl caption={caption} error={meta.error}>
       <Checkbox
-        id="test"
-        error
         {...restInput}
-        checked={value}
+        isError={!!meta.error}
+        checked={!!value}
+        type="checkbox"
         onChange={ev => {
           onChange(ev.target.checked);
         }}
-      />
+      >
+        {label}
+      </Checkbox>
     </FormControl>
   );
 }
