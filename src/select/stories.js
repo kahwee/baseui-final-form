@@ -7,6 +7,7 @@ import {storiesOf} from '@storybook/react';
 import withBaseui from '../with-baseui';
 import {Button} from 'baseui/button';
 import Select from './index';
+import options from '../native-select/__tests__/__fixtures__/fruit-options.json';
 
 storiesOf('Select', module)
   .addDecorator(withBaseui)
@@ -24,11 +25,7 @@ storiesOf('Select', module)
             component={Select}
             caption="Please select a fruit"
             label="My fruits"
-            options={[
-              {id: '1', label: 'Pineapple'},
-              {id: '2', label: 'Peach'},
-              {id: '3', label: 'Apple', disabled: true},
-            ]}
+            options={options}
             type="select-multiple"
           />
         </form>

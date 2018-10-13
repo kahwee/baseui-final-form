@@ -7,6 +7,7 @@ import {storiesOf} from '@storybook/react';
 import withBaseui from '../with-baseui';
 import {Button} from 'baseui/button';
 import NativeSelect from './index';
+import options from './__tests__/__fixtures__/fruit-options.json';
 
 storiesOf('Native select', module)
   .addDecorator(withBaseui)
@@ -21,11 +22,7 @@ storiesOf('Native select', module)
             component={NativeSelect}
             caption="Please select a fruit"
             label="My fruits"
-            options={[
-              {id: 'pineapple', label: 'Pineapple'},
-              {id: 'peach', label: 'Peach'},
-              {id: 'apple', label: 'Apple', disabled: true},
-            ]}
+            options={options}
           />
 
           <Button type="submit" disabled={pristine || invalid}>
