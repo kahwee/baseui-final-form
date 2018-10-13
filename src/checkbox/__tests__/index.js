@@ -6,20 +6,21 @@ import Checkbox from '../index';
 import BaseuiProvider from '../../with-baseui';
 
 describe('checkbox', () => {
-  it('should record a submission in final-form checkbox is toggled without initialValues', () => {
+  const defaultProps = {
+    name: 'isGoing',
+    label: "Yes, I'll join",
+    caption: 'RSVP if you are going to our event',
+    component: Checkbox,
+  };
+
+  it('should be submitted correctly when toggled', () => {
     const mockSubmit = jest.fn();
     const {container} = render(
       <BaseuiProvider>
         <Form onSubmit={mockSubmit}>
           {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-              <Field
-                name="yesIcan"
-                component={Checkbox}
-                caption="Yes, I can"
-                label="I can"
-                type="checkbox"
-              />
+              <Field {...defaultProps} />
             </form>
           )}
         </Form>
@@ -31,68 +32,50 @@ describe('checkbox', () => {
     fireEvent.click(labelNode);
     expect(inputNode.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({yesIcan: true}, expect.anything());
+    expect(mockSubmit).toBeCalledWith({isGoing: true}, expect.anything());
     fireEvent.click(labelNode);
     expect(inputNode.checked).toBe(false);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({yesIcan: false}, expect.anything());
+    expect(mockSubmit).toBeCalledWith({isGoing: false}, expect.anything());
   });
 
-  it('should record a submission in final-form checkbox is toggled with initialValues', () => {
-    const mockSubmit = jest.fn();
-    const {container} = render(
-      <BaseuiProvider>
-        <Form onSubmit={mockSubmit} initialValues={{yesIcan: true}}>
-          {({handleSubmit}) => (
-            <form onSubmit={handleSubmit}>
-              <Field
-                name="yesIcan"
-                component={Checkbox}
-                caption="Yes, I can"
-                label="I can"
-                type="checkbox"
-              />
-            </form>
-          )}
-        </Form>
-      </BaseuiProvider>
-    );
-    const inputNode = container.querySelector('input');
-    const labelNode = inputNode.parentNode;
-    const formNode = container.querySelector('form');
-    expect(inputNode.checked).toBe(true);
-    fireEvent.click(labelNode);
-    expect(inputNode.checked).toBe(false);
-    fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({yesIcan: false}, expect.anything());
+  [true, 'blahblah', 1, 2000].forEach(value => {
+    it(`should be initialized as Boolean(true) when ${typeof value} ${String(
+      value
+    )}`, () => {
+      const {container} = render(
+        <BaseuiProvider>
+          <Form onSubmit={() => {}} initialValues={{isGoing: value}}>
+            {({handleSubmit}) => (
+              <form onSubmit={handleSubmit}>
+                <Field {...defaultProps} />
+              </form>
+            )}
+          </Form>
+        </BaseuiProvider>
+      );
+      const inputNode = container.querySelector('input');
+      expect(inputNode.checked).toBe(true);
+    });
   });
 
-  it('should record a submission in final-form checkbox is toggled with incorrect initialValues', () => {
-    const mockSubmit = jest.fn();
-    const {container} = render(
-      <BaseuiProvider>
-        <Form onSubmit={mockSubmit} initialValues={{yesIcan: 'blahblah'}}>
-          {({handleSubmit}) => (
-            <form onSubmit={handleSubmit}>
-              <Field
-                name="yesIcan"
-                component={Checkbox}
-                caption="Yes, I can"
-                label="I can"
-                type="checkbox"
-              />
-            </form>
-          )}
-        </Form>
-      </BaseuiProvider>
-    );
-    const inputNode = container.querySelector('input');
-    const labelNode = inputNode.parentNode;
-    const formNode = container.querySelector('form');
-    expect(inputNode.checked).toBe(true);
-    fireEvent.click(labelNode);
-    expect(inputNode.checked).toBe(false);
-    fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({yesIcan: false}, expect.anything());
+  [false, null, undefined, 0].forEach(value => {
+    it(`should be initialized as Boolean(false) when ${typeof value} ${String(
+      value
+    )}`, () => {
+      const {container} = render(
+        <BaseuiProvider>
+          <Form onSubmit={() => {}} initialValues={{isGoing: value}}>
+            {({handleSubmit}) => (
+              <form onSubmit={handleSubmit}>
+                <Field {...defaultProps} />
+              </form>
+            )}
+          </Form>
+        </BaseuiProvider>
+      );
+      const inputNode = container.querySelector('input');
+      expect(inputNode.checked).toBe(false);
+    });
   });
 });

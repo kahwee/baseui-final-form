@@ -17,11 +17,10 @@ storiesOf('Checkbox', module)
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field
-            name="yesIcan"
+            name="isGoing"
             component={Checkbox}
-            caption="Yes, I can"
-            label="I can"
-            type="checkbox"
+            caption="RSVP if you are going to our event"
+            label="Yes, I'll join"
           />
 
           <Button type="submit" disabled={pristine || invalid}>
