@@ -4,6 +4,7 @@
 import * as React from 'react';
 import {Form, Field} from 'react-final-form';
 import {storiesOf} from '@storybook/react';
+import {action} from '@storybook/addon-actions';
 import withBaseui from '../with-baseui';
 import {styled} from 'baseui';
 import {StatefulTooltip} from 'baseui/tooltip';
@@ -23,7 +24,7 @@ storiesOf('Input', module)
   .add('Basic', () => (
     <Form
       validateOnBlur
-      onSubmit={() => {}}
+      onSubmit={action('submit')}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field
