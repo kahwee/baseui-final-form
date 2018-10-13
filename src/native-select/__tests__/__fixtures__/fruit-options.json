@@ -1,0 +1,7 @@
+[
+  {"id": "apple", "label": "Apple"},
+  {"id": "avocado", "label": "Avocado"},
+  {"id": "kiwi", "label": "Kiwi", "disabled": true},
+  {"id": "peach", "label": "Peach"},
+  {"id": "pineapple", "label": "Pineapple"}
+]
