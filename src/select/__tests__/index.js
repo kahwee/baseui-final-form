@@ -16,7 +16,7 @@ describe('select', () => {
 
   afterEach(cleanup);
 
-  it('should pass sanity checks for single select', async () => {
+  it('should pass sanity checks for single select', () => {
     const {container, getByText} = render(
       <BaseuiProvider>
         <Form onSubmit={() => {}} initialValues={{fruit: 'pineapple'}}>
@@ -35,7 +35,7 @@ describe('select', () => {
     expect(getByText('Pineapple')).toBeDefined();
   });
 
-  it('should pass sanity checks for multiple select', async () => {
+  it('should pass sanity checks for multiple select', () => {
     const {container, getByText} = render(
       <BaseuiProvider>
         <Form
