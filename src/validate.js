@@ -22,11 +22,17 @@ export function maxLength(len: number) {
 }
 
 export function minValue(min: number) {
-  return function(value: ?string) {
+  return function(value: ?string | number) {
     if (value && isNumeric(value) && Number(value) < min) {
-      return `Length is too short, you need at least ${String(
-        min
-      )} characters.`;
+      return `Value needs to be bigger than ${String(min)}.`;
+    }
+  };
+}
+
+export function maxValue(max: number) {
+  return function(value: ?string | number) {
+    if (value && isNumeric(value) && Number(value) > max) {
+      return `Value needs to be smaller than ${String(max)}.`;
     }
   };
 }
@@ -41,6 +47,6 @@ export function email(value: string) {
     : undefined;
 }
 
-export function number(value: string) {
-  return value && isNaN(Number(value)) ? 'Must be a number' : undefined;
+export function numeric(value: ?string | number) {
+  return value && !isNumeric(value) ? 'Must be a number' : undefined;
 }
