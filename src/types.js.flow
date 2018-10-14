@@ -10,10 +10,12 @@ export type Option = {
 export type SingleValueFieldRenderProps = {
   caption: string | React.Node,
   label: string | React.Node,
+  inputProps?: {},
 } & FieldRenderProps;
 
 export type MultipleValuesFieldRenderProps = {
   caption: string | React.Node,
   label: string | React.Node,
   options: Array<Option>,
+  inputProps?: {},
 } & FieldRenderProps;
