@@ -1,5 +1,4 @@
 // @flow
-//import './global-browser.mock';
 import * as React from 'react';
 import {render, cleanup} from 'react-testing-library';
 import {Form, Field} from 'react-final-form';
