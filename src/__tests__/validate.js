@@ -11,7 +11,7 @@ describe('validate', () => {
         expect(results()).toBeUndefined();
       } else if (validateKey === 'required') {
         // Required is a special used case
-        expect(results).toBeDefined();
+        expect(results).toBeString();
       } else {
         expect(results).toBeUndefined();
       }
@@ -20,7 +20,7 @@ describe('validate', () => {
   it('should check "minLength" boundaries', () => {
     const minLen2 = v.minLength(2);
     expect(minLen2('')).toBeUndefined();
-    expect(minLen2('a')).toBeDefined();
+    expect(minLen2('a')).toBeString();
     expect(minLen2('abc')).toBeUndefined();
     expect(minLen2('abcd')).toBeUndefined();
   });
@@ -29,30 +29,30 @@ describe('validate', () => {
     const maxLen3 = v.maxLength(3);
     expect(maxLen3('')).toBeUndefined();
     expect(maxLen3('abc')).toBeUndefined();
-    expect(maxLen3('abcd')).toBeDefined();
+    expect(maxLen3('abcd')).toBeString();
   });
 
   it('should check "minValue" boundaries', () => {
     const minVal2 = v.minValue(2);
-    expect(minVal2(1)).toBeDefined();
+    expect(minVal2(1)).toBeString();
     expect(minVal2(2)).toBeUndefined();
     expect(minVal2(3)).toBeUndefined();
-    expect(minVal2('1')).toBeDefined();
+    expect(minVal2('1')).toBeString();
     expect(minVal2('2')).toBeUndefined();
     expect(minVal2('3')).toBeUndefined();
-    expect(minVal2(-3000)).toBeDefined();
-    expect(minVal2('-3000')).toBeDefined();
-    expect(minVal2('-3000.99')).toBeDefined();
+    expect(minVal2(-3000)).toBeString();
+    expect(minVal2('-3000')).toBeString();
+    expect(minVal2('-3000.99')).toBeString();
   });
 
   it('should check "maxValue" boundaries', () => {
     const maxVal2 = v.maxValue(2);
     expect(maxVal2(1)).toBeUndefined();
     expect(maxVal2(2)).toBeUndefined();
-    expect(maxVal2(3)).toBeDefined();
+    expect(maxVal2(3)).toBeString();
     expect(maxVal2('1')).toBeUndefined();
     expect(maxVal2('2')).toBeUndefined();
-    expect(maxVal2('3')).toBeDefined();
+    expect(maxVal2('3')).toBeString();
     expect(maxVal2(-3000)).toBeUndefined();
     expect(maxVal2('-3000')).toBeUndefined();
     expect(maxVal2('-3000.99')).toBeUndefined();
@@ -64,14 +64,14 @@ describe('validate', () => {
   });
 
   it('should check "email" boundaries', () => {
-    expect(v.email('hello')).toBeDefined();
-    expect(v.email('hello@')).toBeDefined();
+    expect(v.email('hello')).toBeString();
+    expect(v.email('hello@')).toBeString();
     expect(v.email('hello@example.com')).toBeUndefined();
   });
 
   it('should check "numeric" boundaries', () => {
-    expect(v.numeric('hello')).toBeDefined();
-    expect(v.numeric('-')).toBeDefined();
+    expect(v.numeric('hello')).toBeString();
+    expect(v.numeric('-')).toBeString();
     expect(v.numeric('0')).toBeUndefined();
     expect(v.numeric(0)).toBeUndefined();
     expect(v.numeric(-1.09)).toBeUndefined();
