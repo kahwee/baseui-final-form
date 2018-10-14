@@ -57,6 +57,7 @@
     "flow-bin": "^0.83.0",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
+    "jest-extended": "^0.11.0",
     "prettier": "^1.14.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -73,7 +74,13 @@
     "react": "^16.4.0-0",
     "react-dom": "^16.4.0-0"
   },
-  "keywords": ["react", "reactjs", "final-form", "react-final-form", "forms"],
+  "keywords": [
+    "react",
+    "reactjs",
+    "final-form",
+    "react-final-form",
+    "forms"
+  ],
   "module": "./dist/index.es.js",
   "browser": {
     "./dist/index.js": "./dist/browser.es5.js",
@@ -86,7 +93,10 @@
     "./dist/browser.es5.es.js": "./dist/browser.es2017.es.js",
     "./dist/browser.es2015.es.js": "./dist/browser.es2017.es.js"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
