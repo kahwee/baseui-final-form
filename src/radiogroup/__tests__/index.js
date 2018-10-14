@@ -1,0 +1,96 @@
+// @flow
+import * as React from 'react';
+import {render, cleanup, fireEvent} from 'react-testing-library';
+import {Form, Field} from 'react-final-form';
+import RadioGroup from '../index';
+import BaseuiProvider from '../../with-baseui';
+import options from '../../native-select/__tests__/__fixtures__/fruit-options.json';
+
+describe('radiogroup', () => {
+  const defaultProps = {
+    name: 'fruit',
+    label: 'My favorite fruit',
+    options,
+    component: RadioGroup,
+  };
+
+  afterEach(cleanup);
+
+  it('should be initialized as {}, then updated to peach, then be updated to apple', () => {
+    const mockSubmit = jest.fn();
+    const {container, getByLabelText} = render(
+      <BaseuiProvider>
+        <Form onSubmit={mockSubmit}>
+          {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+              <Field {...defaultProps} />
+            </form>
+          )}
+        </Form>
+      </BaseuiProvider>
+    );
+    const formNode = container.querySelector('form');
+    const radioPeach = getByLabelText('Peach');
+    const radioApple = getByLabelText('Apple');
+    expect(radioPeach.checked).toBe(false);
+    expect(radioApple.checked).toBe(false);
+    fireEvent.submit(formNode);
+    expect(mockSubmit).toBeCalledWith({}, expect.anything());
+    fireEvent.click(radioPeach);
+    expect(radioPeach.checked).toBe(true);
+    expect(radioApple.checked).toBe(false);
+    fireEvent.submit(formNode);
+    expect(mockSubmit).toBeCalledWith({fruit: 'peach'}, expect.anything());
+    fireEvent.click(radioApple);
+    expect(radioPeach.checked).toBe(false);
+    expect(radioApple.checked).toBe(true);
+    fireEvent.submit(formNode);
+    expect(mockSubmit).toBeCalledWith({fruit: 'apple'}, expect.anything());
+  });
+
+  it('should be initialized as peach then be updated to apple', () => {
+    const mockSubmit = jest.fn();
+    const {container, getByLabelText} = render(
+      <BaseuiProvider>
+        <Form onSubmit={mockSubmit} initialValues={{fruit: 'peach'}}>
+          {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+              <Field {...defaultProps} />
+            </form>
+          )}
+        </Form>
+      </BaseuiProvider>
+    );
+    const formNode = container.querySelector('form');
+    const radioPeach = getByLabelText('Peach');
+    const radioApple = getByLabelText('Apple');
+    expect(radioPeach.checked).toBe(true);
+    expect(radioApple.checked).toBe(false);
+    fireEvent.click(radioApple);
+    expect(radioPeach.checked).toBe(false);
+    expect(radioApple.checked).toBe(true);
+    fireEvent.submit(formNode);
+    expect(mockSubmit).toBeCalledWith({fruit: 'apple'}, expect.anything());
+  });
+
+  it('should be initialized as disabled kiwi and still be submitted with disabled value', () => {
+    const mockSubmit = jest.fn();
+    const {container, getByLabelText} = render(
+      <BaseuiProvider>
+        <Form onSubmit={mockSubmit} initialValues={{fruit: 'kiwi'}}>
+          {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+              <Field {...defaultProps} />
+            </form>
+          )}
+        </Form>
+      </BaseuiProvider>
+    );
+    const formNode = container.querySelector('form');
+    // This is to check it is not supposed to select the first value or something
+    expect(getByLabelText('Apple').checked).toBe(false);
+    expect(getByLabelText('Kiwi').checked).toBe(true);
+    fireEvent.submit(formNode);
+    expect(mockSubmit).toBeCalledWith({fruit: 'kiwi'}, expect.anything());
+  });
+});

@@ -11,9 +11,16 @@ export default function render({
   label,
   options,
 }: MultipleValuesFieldRenderProps) {
+  const {onChange, value, ...restInput} = input;
   return (
     <FormControl label={label} caption={caption} error={meta.error}>
-      <RadioGroup {...input}>
+      <RadioGroup
+        {...restInput}
+        value={value}
+        onChange={(ev, item) => {
+          onChange(ev.target.value);
+        }}
+      >
         {options.map((option, index) => {
           return (
             <StyledRadio value={option.id} {...option} key={index}>
