@@ -26,6 +26,16 @@ aliases:
     run:
       name: Install Dependencies
       command: yarn install
+  - &yarn_install_jest_junit
+    run:
+      name: Install JUnit coverage reporter
+      command: yarn add --dev jest-junit
+  - &run_jest
+    run:
+      name: Run tests with JUnit as reporter
+      command: yarn test --ci --reporters=default --reporters=jest-junit
+      environment:
+        JEST_JUNIT_OUTPUT: 'reports/junit/js-test-results.xml'
 
 defaults: &defaults
   docker:
@@ -65,8 +75,9 @@ jobs:
       - *set_yarn_global_in_path
       - run: yarn global add codecov
       - *save_restore_node_modules
-      - run: yarn test --coverage
-      - run: codecov
+      - *yarn_install_jest_junit
+      - *run_jest
+      - run: ${yarn global dir}/node_modules/.bin/codecov
 
 workflows:
   version: 2
