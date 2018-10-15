@@ -1,5 +1,8 @@
 # baseui-final-form
 
+[![CircleCI](https://circleci.com/gh/kahwee/baseui-final-form.svg?style=svg)](https://circleci.com/gh/kahwee/baseui-final-form)
+[![codecov](https://codecov.io/gh/kahwee/baseui-final-form/branch/master/graph/badge.svg)](https://codecov.io/gh/kahwee/baseui-final-form)
+
 _(Not ready)_
 
 How to use
