@@ -7,17 +7,21 @@ import {type SingleValueFieldRenderProps} from '../types.js.flow';
 export default function render({
   input,
   meta,
+  inputProps,
   caption,
   label,
 }: SingleValueFieldRenderProps) {
   const {value, onChange, ...restInput} = input;
+  if (inputProps) {
+    inputProps.type = inputProps.type || 'checkbox';
+  }
   return (
     <FormControl caption={caption} error={meta.error}>
       <Checkbox
         {...restInput}
+        {...inputProps}
         isError={!!meta.error}
         checked={!!value}
-        type="checkbox"
         onChange={ev => {
           onChange(ev.target.checked);
         }}
