@@ -6,9 +6,8 @@ export default function render({
   inputProps,
   ...rest
 }: SingleValueFieldRenderProps) {
-  if (inputProps) {
-    inputProps.checkmarkType = 'toggle';
-  }
+  inputProps = inputProps || {};
+  inputProps.checkmarkType = 'toggle';
   return renderCheckbox({
     ...rest,
     inputProps,
