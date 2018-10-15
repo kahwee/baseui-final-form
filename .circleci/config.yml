@@ -33,7 +33,7 @@ aliases:
   - &run_jest
     run:
       name: Run tests with JUnit as reporter
-      command: yarn test --ci --reporters=default --reporters=jest-junit
+      command: yarn test -- --ci --testResultsProcessor="jest-junit"
       environment:
         JEST_JUNIT_OUTPUT: 'reports/junit/js-test-results.xml'
 
@@ -65,7 +65,11 @@ jobs:
       - *cache_restore_node_modules
       - *yarn_install
       - *save_restore_node_modules
-      - run: yarn lint
+      - run: yarn lint -- --format junit -o reports/junit/js-lint-results.xml
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports/junit
   tests:
     <<: *defaults
     steps:
@@ -77,6 +81,10 @@ jobs:
       - *save_restore_node_modules
       - *yarn_install_jest_junit
       - *run_jest
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports/junit
       - run: codecov
 
 workflows:
