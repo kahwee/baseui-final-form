@@ -5,17 +5,27 @@
 version: 2
 
 aliases:
+  - &set_yarn_global_in_path
+    run:
+      name: Setting yarn global to path
+      command: export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
   - &cache_restore_node_modules
     restore_cache:
+      name: Restore Yarn Package Cache
       keys:
-        - v1-dependencies-{{ checksum "yarn.lock" }}
+        - yarn-packages-{{ checksum "yarn.lock" }}
         # fallback to using the latest cache if no exact match is found
-        - v1-dependencies-
+        - yarn-packages-
   - &save_restore_node_modules
     save_cache:
       paths:
         - node_modules
-      key: v1-dependencies-{{ checksum "yarn.lock" }}
+        - ~/.cache/yarn
+      key: yarn-packages-{{ checksum "yarn.lock" }}
+  - &yarn_install
+    run:
+      name: Install Dependencies
+      command: yarn install
 
 defaults: &defaults
   docker:
@@ -35,7 +45,7 @@ jobs:
     steps:
       - checkout
       - *cache_restore_node_modules
-      - run: yarn
+      - *yarn_install
       - *save_restore_node_modules
       - run: yarn build
   lint:
@@ -43,7 +53,7 @@ jobs:
     steps:
       - checkout
       - *cache_restore_node_modules
-      - run: yarn
+      - *yarn_install
       - *save_restore_node_modules
       - run: yarn lint
   tests:
@@ -51,10 +61,12 @@ jobs:
     steps:
       - checkout
       - *cache_restore_node_modules
-      - run: yarn
+      - *yarn_install
+      - *set_yarn_global_in_path
       - run: yarn global add codecov
       - *save_restore_node_modules
-      - run: yarn test --coverage && codecov
+      - run: yarn test --coverage
+      - run: codecov
 
 workflows:
   version: 2
