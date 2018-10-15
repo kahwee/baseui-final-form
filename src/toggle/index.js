@@ -1,18 +1,16 @@
 // @flow
-import * as React from 'react';
-import {Checkbox} from 'baseui/checkbox';
-import {FormControl} from 'baseui/form-control';
 import {type SingleValueFieldRenderProps} from '../types.js.flow';
+import renderCheckbox from '../checkbox/index';
 
-export default function renderInput({
-  input,
-  meta,
-  caption,
-  label,
+export default function render({
+  inputProps,
+  ...rest
 }: SingleValueFieldRenderProps) {
-  return (
-    <FormControl label={label} caption={caption} error={meta.error}>
-      <Checkbox id="test" error {...input} checkmarkType="toggle" />
-    </FormControl>
-  );
+  if (inputProps) {
+    inputProps.checkmarkType = 'toggle';
+  }
+  return renderCheckbox({
+    ...rest,
+    inputProps,
+  });
 }
