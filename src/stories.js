@@ -2,12 +2,12 @@
 // @flow
 
 import * as React from 'react';
-import {Form, Field} from 'react-final-form';
+import {Button} from 'baseui/button';
+import Input from './input/index';
+import RadioGroup from './radiogroup/index';
 import {storiesOf} from '@storybook/react';
 import withBaseui from './with-baseui';
-import {Button} from 'baseui/button';
-import RadioGroup from './radiogroup/index';
-import Input from './input/index';
+import {Field, Form} from 'react-final-form';
 
 const Condition = ({when, is, children}) => (
   <Field name={when} subscription={{value: true}}>

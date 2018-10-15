@@ -1,9 +1,9 @@
 // @flow
 import * as React from 'react';
-import {render, fireEvent} from 'react-testing-library';
-import {Form, Field} from 'react-final-form';
-import Input from '../index';
 import BaseuiProvider from '../../with-baseui';
+import Input from '../index';
+import {Field, Form} from 'react-final-form';
+import {fireEvent, render} from 'react-testing-library';
 
 describe('input', () => {
   it('should record a submission in final-form when changed in baseui/input', () => {

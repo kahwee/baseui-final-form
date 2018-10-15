@@ -2,11 +2,11 @@
 // @flow
 
 import * as React from 'react';
-import {Form, Field} from 'react-final-form';
-import {storiesOf} from '@storybook/react';
-import withBaseui from '../with-baseui';
 import {Button} from 'baseui/button';
 import Toggle from './index';
+import {storiesOf} from '@storybook/react';
+import withBaseui from '../with-baseui';
+import {Field, Form} from 'react-final-form';
 
 storiesOf('Toggle', module)
   .addDecorator(withBaseui)

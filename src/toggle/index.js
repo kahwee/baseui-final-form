@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
-import {type SingleValueFieldRenderProps} from '../types.js.flow';
-import {FormControl} from 'baseui/form-control';
 import {Checkbox} from 'baseui/checkbox';
+import {FormControl} from 'baseui/form-control';
+import {type SingleValueFieldRenderProps} from '../types.js.flow';
 
 export default function renderInput({
   input,

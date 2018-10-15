@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
-import {type SingleValueFieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
 import {Input} from 'baseui/input';
+import {type SingleValueFieldRenderProps} from '../types.js.flow';
 
 export default function render({
   input,

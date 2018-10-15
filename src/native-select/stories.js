@@ -2,12 +2,12 @@
 // @flow
 
 import * as React from 'react';
-import {Form, Field} from 'react-final-form';
-import {storiesOf} from '@storybook/react';
-import withBaseui from '../with-baseui';
 import {Button} from 'baseui/button';
 import NativeSelect from './index';
 import options from './__tests__/__fixtures__/fruit-options.json';
+import {storiesOf} from '@storybook/react';
+import withBaseui from '../with-baseui';
+import {Field, Form} from 'react-final-form';
 
 storiesOf('Native select', module)
   .addDecorator(withBaseui)
