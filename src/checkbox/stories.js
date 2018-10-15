@@ -2,12 +2,12 @@
 // @flow
 
 import * as React from 'react';
-import {Form, Field} from 'react-final-form';
-import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import withBaseui from '../with-baseui';
 import {Button} from 'baseui/button';
 import Checkbox from './index';
+import {action} from '@storybook/addon-actions';
+import {storiesOf} from '@storybook/react';
+import withBaseui from '../with-baseui';
+import {Field, Form} from 'react-final-form';
 
 storiesOf('Checkbox', module)
   .addDecorator(withBaseui)
