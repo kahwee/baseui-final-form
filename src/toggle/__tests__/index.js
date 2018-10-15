@@ -5,7 +5,7 @@ import Toggle from '../index';
 import {Field, Form} from 'react-final-form';
 import {fireEvent, render} from 'react-testing-library';
 
-describe('checkbox', () => {
+describe('toggle', () => {
   const defaultProps = {
     name: 'isGoing',
     label: "Yes, I'll join",
