@@ -39,7 +39,7 @@ jobs:
     <<: *defaults
     steps:
       - run: yarn lint
-  test:
+  tests:
     <<: *defaults
     steps:
       - run: yarn test
