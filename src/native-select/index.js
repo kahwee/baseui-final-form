@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
-import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
+import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 
 export default function render({
   input,

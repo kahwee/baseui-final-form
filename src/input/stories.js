@@ -2,15 +2,15 @@
 // @flow
 
 import * as React from 'react';
-import {Form, Field} from 'react-final-form';
-import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import withBaseui from '../with-baseui';
-import {styled} from 'baseui';
-import {StatefulTooltip} from 'baseui/tooltip';
 import {Button} from 'baseui/button';
 import Input from './index';
+import {StatefulTooltip} from 'baseui/tooltip';
+import {action} from '@storybook/addon-actions';
 import {minLength} from '../validate';
+import {storiesOf} from '@storybook/react';
+import {styled} from 'baseui';
+import withBaseui from '../with-baseui';
+import {Field, Form} from 'react-final-form';
 
 const minLength3 = minLength(3);
 

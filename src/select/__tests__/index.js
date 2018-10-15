@@ -1,10 +1,10 @@
 // @flow
 import * as React from 'react';
-import {render, cleanup} from 'react-testing-library';
-import {Form, Field} from 'react-final-form';
-import Select from '../index';
 import BaseuiProvider from '../../with-baseui';
+import Select from '../index';
 import options from '../../native-select/__tests__/__fixtures__/fruit-options.json';
+import {Field, Form} from 'react-final-form';
+import {cleanup, render} from 'react-testing-library';
 
 describe('select', () => {
   const defaultProps = {

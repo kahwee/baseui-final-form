@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
-import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
-import {StyledRadio, RadioGroup} from 'baseui/radio';
+import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
+import {RadioGroup, StyledRadio} from 'baseui/radio';
 
 export default function render({
   input,

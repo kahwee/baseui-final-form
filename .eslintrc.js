@@ -1,6 +1,16 @@
 /* eslint-env node */
 module.exports = {
   extends: [require.resolve('eslint-config-fusion')],
+  rules: {
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: false,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'],
+      },
+    ],
+  },
   settings: {
     react: {
       pragma: 'React', // Pragma to use, default to "React"
