@@ -52,8 +52,9 @@ jobs:
       - checkout
       - *cache_restore_node_modules
       - run: yarn
+      - run: yarn global add codecov
       - *save_restore_node_modules
-      - run: yarn test
+      - run: yarn test --coverage && codecov
 
 workflows:
   version: 2
