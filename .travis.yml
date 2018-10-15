@@ -6,6 +6,7 @@ cache:
   directories:
     - node_modules
 install:
-  - npm install -g codecov
+  - yarn
+  - yarn install -g codecov
 script:
   - jest && codecov
