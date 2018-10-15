@@ -8,7 +8,7 @@ aliases:
   - &set_yarn_global_in_path
     run:
       name: Setting yarn global to path
-      command: export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+      command: echo 'export PATH="$PATH:${yarn global dir}/node_modules/.bin"' >> $BASH_ENV
   - &cache_restore_node_modules
     restore_cache:
       name: Restore Yarn Package Cache
@@ -66,7 +66,7 @@ jobs:
       - run: yarn global add codecov
       - *save_restore_node_modules
       - run: yarn test --coverage
-      - run: codecov
+      - run: yarn global dircodecov
 
 workflows:
   version: 2
