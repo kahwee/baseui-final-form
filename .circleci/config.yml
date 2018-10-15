@@ -3,6 +3,20 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
+aliases:
+  - &cache_restore_node_modules
+    restore_cache:
+      keys:
+        - v1-dependencies-{{ checksum "yarn.lock" }}
+        # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
+  - &save_restore_node_modules
+    save_cache:
+      paths:
+        - node_modules
+      key: v1-dependencies-{{ checksum "yarn.lock" }}
+
 defaults: &defaults
   docker:
     # specify the version you desire here
@@ -15,33 +29,30 @@ defaults: &defaults
 
   working_directory: ~/repo
 
-  steps:
-    - checkout
-
-    # Download and cache dependencies
-    - restore_cache:
-        keys:
-          - v1-dependencies-{{ checksum "yarn.lock" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-    - run: yarn install
-
-    - save_cache:
-        paths:
-          - node_modules
-        key: v1-dependencies-{{ checksum "yarn.lock" }}
-
 jobs:
   build:
     <<: *defaults
+    steps:
+      - checkout
+      - *cache_restore_node_modules
+      - run: yarn
+      - *save_restore_node_modules
+      - run: yarn build
   lint:
     <<: *defaults
     steps:
+      - checkout
+      - *cache_restore_node_modules
+      - run: yarn
+      - *save_restore_node_modules
       - run: yarn lint
   tests:
     <<: *defaults
     steps:
+      - checkout
+      - *cache_restore_node_modules
+      - run: yarn
+      - *save_restore_node_modules
       - run: yarn test
 
 workflows:
@@ -49,7 +60,6 @@ workflows:
 
   commit:
     jobs:
+      - lint
       - build
-      - tests:
-          requires:
-            - build
+      - tests
