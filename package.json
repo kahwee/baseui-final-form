@@ -11,7 +11,7 @@
     "build": "npm run transpile",
     "lint": "eslint src/*",
     "storybook": "start-storybook -p 6006",
-    "build:storybook": "build-storybook -c .storybook -o docs",
+    "build:storybook": "build-storybook -c .storybook -o storybook-static",
     "test": "jest",
     "cover": "jest --coverage",
     "flow": "flow"
