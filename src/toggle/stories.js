@@ -4,29 +4,28 @@
 import * as React from 'react';
 import {Button} from 'baseui/button';
 import Toggle from './index';
+import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
-import withBaseui from '../with-baseui';
 import {Field, Form} from 'react-final-form';
 
-storiesOf('Toggle', module)
-  .addDecorator(withBaseui)
-  .add('Basic', () => (
-    <Form
-      onSubmit={() => {}}
-      render={({handleSubmit, pristine, invalid}) => (
-        <form onSubmit={handleSubmit}>
+storiesOf('Toggle', module).add('Basic', () => (
+  <Form
+    onSubmit={action('submit')}
+    initialValues={{useSavedCreditCard: false}}
+    render={({handleSubmit, pristine, invalid}) => (
+      <form onSubmit={handleSubmit}>
+        <div style={{width: '300px'}}>
           <Field
-            name="enabled"
+            name="useSavedCreditCard"
             component={Toggle}
-            caption="enabled"
-            label="enabled"
-            type="checkbox"
+            label="Use saved credit card"
           />
 
-          <Button type="submit" disabled={pristine || invalid}>
+          <Button type="submit" disabled={invalid}>
             Submit
           </Button>
-        </form>
-      )}
-    />
-  ));
+        </div>
+      </form>
+    )}
+  />
+));
