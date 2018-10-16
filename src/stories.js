@@ -5,8 +5,8 @@ import * as React from 'react';
 import {Button} from 'baseui/button';
 import Input from './input/index';
 import RadioGroup from './radiogroup/index';
+import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
-import withBaseui from './with-baseui';
 import {Field, Form} from 'react-final-form';
 
 const Condition = ({when, is, children}) => (
@@ -15,48 +15,60 @@ const Condition = ({when, is, children}) => (
   </Field>
 );
 
-storiesOf('Playground', module)
-  .addDecorator(withBaseui)
-  .add('Basic', () => (
-    // Target: City and Zipcode options (radio group)
-    // Input: CityName
-    // Input: ZipCode
-    <Form
-      initialValues={{target: 'city'}}
-      onSubmit={() => {}}
-      render={({handleSubmit, pristine, invalid}) => (
-        <form onSubmit={handleSubmit}>
+storiesOf('Playground', module).add('Basic', () => (
+  // Target: City and Zipcode options (radio group)
+  // Input: CityName
+  // Input: ZipCode
+  <Form
+    initialValues={{target: 'city'}}
+    onSubmit={action('submit')}
+    subscription={{submitting: true, pristine: true}}
+    render={({handleSubmit, pristine, invalid}) => (
+      <form onSubmit={handleSubmit}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gridGap: '8px',
+          }}
+        >
+          <div style={{position: 'relative'}}>
+            <Field name="firstName" label="First name" component={Input} />
+          </div>
+          <div style={{position: 'relative'}}>
+            <Field name="lastName" label="Last name" component={Input} />
+          </div>
+        </div>
+        <Field
+          name="target"
+          component={RadioGroup}
+          caption="Pick a target"
+          label="Target"
+          options={[
+            {label: 'City', value: 'city'},
+            {label: 'Zip Code', value: 'zipCode'},
+          ]}
+        />
+        <Condition when="target" is="zipCode">
           <Field
-            name="target"
-            component={RadioGroup}
-            caption="Pick a target"
-            label="Target"
-            options={[
-              {label: 'City', value: 'city'},
-              {label: 'Zip Code', value: 'zipcode'},
-            ]}
-            type="select-multiple"
+            name="zipCode"
+            component={Input}
+            caption="Enter your zip code"
+            label="Zip code"
           />
-          <Condition when="target" is="zipcode">
-            <Field
-              name="zipcode"
-              component={Input}
-              caption="Enter your zipcode"
-              label="ZipCode"
-            />
-          </Condition>
-          <Condition when="target" is="city">
-            <Field
-              name="city"
-              component={Input}
-              caption="Enter your city"
-              label="City"
-            />
-          </Condition>
-          <Button type="submit" disabled={pristine || invalid}>
-            Submit
-          </Button>
-        </form>
-      )}
-    />
-  ));
+        </Condition>
+        <Condition when="target" is="city">
+          <Field
+            name="city"
+            component={Input}
+            caption="Enter your city"
+            label="City"
+          />
+        </Condition>
+        <Button type="submit" disabled={pristine || invalid}>
+          Submit
+        </Button>
+      </form>
+    )}
+  />
+));

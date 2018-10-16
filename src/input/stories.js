@@ -9,7 +9,6 @@ import {action} from '@storybook/addon-actions';
 import {minLength} from '../validate';
 import {storiesOf} from '@storybook/react';
 import {styled} from 'baseui';
-import withBaseui from '../with-baseui';
 import {Field, Form} from 'react-final-form';
 
 const minLength3 = minLength(3);
@@ -19,8 +18,32 @@ const FakeLink = styled('span', props => ({
   color: props.$theme.colors.primary500,
 }));
 
+type AddressProps = {
+  name: string,
+  label: string,
+};
+export const Address = ({name, label}: AddressProps) => (
+  <React.Fragment>
+    <Field
+      name={`${name}.street1`}
+      component={Input}
+      label={`${label} Street 1`}
+    />
+    <Field
+      name={`${name}.street2`}
+      component={Input}
+      label={`${label} Street 2`}
+    />
+    <Field name={`${name}.city`} component={Input} label={`${label} city`} />
+    <Field
+      name={`${name}.zipCode`}
+      component={Input}
+      label={`${label} zip code`}
+    />
+  </React.Fragment>
+);
+
 storiesOf('Input', module)
-  .addDecorator(withBaseui)
   .add('Basic', () => (
     <Form
       validateOnBlur
@@ -43,6 +66,20 @@ storiesOf('Input', module)
             validate={minLength3}
           />
 
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
+  .add('Address field group', () => (
+    <Form
+      validateOnBlur
+      onSubmit={action('submit')}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Address name="billingAddress" label="Billing" />
           <Button type="submit" disabled={pristine || invalid}>
             Submit
           </Button>
