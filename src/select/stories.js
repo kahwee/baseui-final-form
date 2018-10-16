@@ -7,11 +7,9 @@ import Select from './index';
 import {action} from '@storybook/addon-actions';
 import options from '../native-select/__tests__/__fixtures__/fruit-options.json';
 import {storiesOf} from '@storybook/react';
-import withBaseui from '../with-baseui';
 import {Field, Form} from 'react-final-form';
 
 storiesOf('Select', module)
-  .addDecorator(withBaseui)
   .add('Single', () => (
     <Form
       onSubmit={action('submit')}

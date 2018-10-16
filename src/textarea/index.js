@@ -12,7 +12,7 @@ export default function render({
 }: SingleValueFieldRenderProps) {
   return (
     <FormControl label={label} caption={caption} error={meta.error}>
-      <Textarea id="test" {...input} error={meta.error} />
+      <Textarea {...input} error={meta.error} />
     </FormControl>
   );
 }
