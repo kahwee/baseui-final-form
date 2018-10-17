@@ -42,7 +42,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
-    "baseui": "^2.3.0",
+    "baseui": "^3.0.0",
     "create-universal-package": "^3.4.6",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
@@ -70,7 +70,7 @@
     "webpack": "^4.20.2"
   },
   "peerDependencies": {
-    "baseui": "^2.2.2",
+    "baseui": "^3.0.0",
     "react": "^16.4.0-0",
     "react-dom": "^16.4.0-0"
   },
