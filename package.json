@@ -20,7 +20,7 @@
     "final-form": "^4.10.0",
     "final-form-arrays": "^1.1.0",
     "react-final-form": "^3.6.7",
-    "react-final-form-arrays": "^1.0.6"
+    "react-final-form-arrays": "^1.1.0"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
@@ -42,16 +42,16 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
-    "baseui": "^2.2.2",
+    "baseui": "^2.3.0",
     "create-universal-package": "^3.4.6",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
-    "eslint": "^5.5.0",
+    "eslint": "^5.7.0",
     "eslint-config-fusion": "^4.0.0",
     "eslint-plugin-cup": "^2.0.0",
     "eslint-plugin-flowtype": "^3.0.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^21.24.1",
+    "eslint-plugin-jest": "^21.25.1",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "flow-bin": "^0.83.0",
@@ -74,7 +74,13 @@
     "react": "^16.4.0-0",
     "react-dom": "^16.4.0-0"
   },
-  "keywords": ["react", "reactjs", "final-form", "react-final-form", "forms"],
+  "keywords": [
+    "react",
+    "reactjs",
+    "final-form",
+    "react-final-form",
+    "forms"
+  ],
   "module": "./dist/index.es.js",
   "browser": {
     "./dist/index.js": "./dist/browser.es5.js",
@@ -87,7 +93,10 @@
     "./dist/browser.es5.es.js": "./dist/browser.es2017.es.js",
     "./dist/browser.es2015.es.js": "./dist/browser.es2017.es.js"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
