@@ -30,28 +30,28 @@ describe('CheckboxGroup', () => {
       </BaseuiProvider>
     );
     const formNode = container.querySelector('form');
-    const radioPeach = getByLabelText('Peach');
-    const radioApple = getByLabelText('Apple');
-    expect(radioPeach.checked).toBe(false);
-    expect(radioApple.checked).toBe(false);
+    const cboxPeach = getByLabelText('Peach');
+    const cboxApple = getByLabelText('Apple');
+    expect(cboxPeach.checked).toBe(false);
+    expect(cboxApple.checked).toBe(false);
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith({}, expect.anything());
-    fireEvent.click(radioPeach);
-    expect(radioPeach.checked).toBe(true);
-    expect(radioApple.checked).toBe(false);
+    fireEvent.click(cboxPeach);
+    expect(cboxPeach.checked).toBe(true);
+    expect(cboxApple.checked).toBe(false);
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith({fruits: ['peach']}, expect.anything());
-    fireEvent.click(radioApple);
-    expect(radioPeach.checked).toBe(true);
-    expect(radioApple.checked).toBe(true);
+    fireEvent.click(cboxApple);
+    expect(cboxPeach.checked).toBe(true);
+    expect(cboxApple.checked).toBe(true);
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith(
       {fruits: ['peach', 'apple']},
       expect.anything()
     );
-    fireEvent.click(radioPeach);
-    expect(radioPeach.checked).toBe(false);
-    expect(radioApple.checked).toBe(true);
+    fireEvent.click(cboxPeach);
+    expect(cboxPeach.checked).toBe(false);
+    expect(cboxApple.checked).toBe(true);
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith({fruits: ['apple']}, expect.anything());
   });
@@ -70,13 +70,13 @@ describe('CheckboxGroup', () => {
       </BaseuiProvider>
     );
     const formNode = container.querySelector('form');
-    const radioPeach = getByLabelText('Peach');
-    const radioApple = getByLabelText('Apple');
-    expect(radioPeach.checked).toBe(true);
-    expect(radioApple.checked).toBe(false);
-    fireEvent.click(radioApple);
-    expect(radioPeach.checked).toBe(true);
-    expect(radioApple.checked).toBe(true);
+    const cboxPeach = getByLabelText('Peach');
+    const cboxApple = getByLabelText('Apple');
+    expect(cboxPeach.checked).toBe(true);
+    expect(cboxApple.checked).toBe(false);
+    fireEvent.click(cboxApple);
+    expect(cboxPeach.checked).toBe(true);
+    expect(cboxApple.checked).toBe(true);
     fireEvent.submit(formNode);
     expect(mockSubmit).toBeCalledWith(
       {fruits: ['peach', 'apple']},
