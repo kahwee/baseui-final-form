@@ -8,14 +8,14 @@ Adapter between react-final-form and baseui.
 
 ## Prerequisites
 
-- `baseui` >= 2.2.2
+- `baseui` >= 3.0.0
 - `react-final-form` >= 3.6.7
 - `node` >= 8.12.0 (for development)
 - `yarn` >= 1.10.1 (for development)
 
 ## Usage
 
-Assuming you already have `baseui` and `react-final-form`:
+Assuming you already have [react](https://reactjs.org/), [baseui](https://github.com/uber-web/baseui) and [react-final-form](https://github.com/final-form/react-final-form):
 
 ```sh
 yarn add baseui-final-form
@@ -24,7 +24,8 @@ yarn add baseui-final-form
 If you don't:
 
 ```sh
-yarn add baseui react react-dom
+yarn add react react-dom
+yarn add baseui react-final-form final-form
 ```
 
 Sample componet
@@ -38,7 +39,9 @@ import {Field, Form} from 'react-final-form';
 const MyComponent = () => {
   return (
     <Form
-      onSubmit={action('submit')}
+      onSubmit={() => {
+        // do something
+      }}
       initialValues={{fruit: 'apple'}}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>

@@ -6,13 +6,19 @@ import {type SingleValueFieldRenderProps} from '../types.js.flow';
 
 export default function render({
   input,
+  inputProps,
   meta,
   caption,
   label,
 }: SingleValueFieldRenderProps) {
   return (
-    <FormControl label={label} caption={caption} error={meta.error}>
-      <Input {...input} error={meta.error} />
+    <FormControl
+      label={label}
+      labelFor={input.name}
+      caption={caption}
+      error={meta.error}
+    >
+      <Input {...inputProps} {...input} id={input.name} error={meta.error} />
     </FormControl>
   );
 }
