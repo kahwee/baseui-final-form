@@ -34,11 +34,11 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-2": "^7.0.0",
     "@babel/runtime": "^7.1.2",
-    "@storybook/addon-actions": "^4.0.0-rc.0",
-    "@storybook/addon-info": "^4.0.0-rc.0",
-    "@storybook/addon-links": "^4.0.0-rc.0",
-    "@storybook/addons": "^4.0.0-rc.0",
-    "@storybook/react": "^4.0.0-rc.0",
+    "@storybook/addon-actions": "^4.0.0-rc.1",
+    "@storybook/addon-info": "^4.0.0-rc.1",
+    "@storybook/addon-links": "^4.0.0-rc.1",
+    "@storybook/addons": "^4.0.0-rc.1",
+    "@storybook/react": "^4.0.0-rc.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
@@ -74,13 +74,7 @@
     "react": "^16.4.0-0",
     "react-dom": "^16.4.0-0"
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "final-form",
-    "react-final-form",
-    "forms"
-  ],
+  "keywords": ["react", "reactjs", "final-form", "react-final-form", "forms"],
   "module": "./dist/index.es.js",
   "browser": {
     "./dist/index.js": "./dist/browser.es5.js",
@@ -93,10 +87,7 @@
     "./dist/browser.es5.es.js": "./dist/browser.es2017.es.js",
     "./dist/browser.es2015.es.js": "./dist/browser.es2017.es.js"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
