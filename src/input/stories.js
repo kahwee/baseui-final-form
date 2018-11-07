@@ -73,6 +73,32 @@ storiesOf('Input', module)
       )}
     />
   ))
+  .add('With enhancers', () => (
+    <Form
+      validateOnBlur
+      onSubmit={action('submit')}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="firstName"
+            component={Input}
+            caption="Your given name"
+            label="First name"
+            inputProps={{
+              size: 'compact',
+              endEnhancer: '.00',
+              placeholder: 'Input with an endEnhancer',
+            }}
+            validate={minLength3}
+          />
+
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
   .add('Address field group', () => (
     <Form
       validateOnBlur

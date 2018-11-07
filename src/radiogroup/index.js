@@ -6,6 +6,7 @@ import {RadioGroup, StyledRadio} from 'baseui/radio';
 
 export default function render({
   input,
+  inputProps,
   meta,
   caption,
   label,
@@ -13,9 +14,16 @@ export default function render({
 }: MultipleValuesFieldRenderProps) {
   const {onChange, value, ...restInput} = input;
   return (
-    <FormControl label={label} caption={caption} error={meta.error}>
+    <FormControl
+      label={label}
+      labelFor={input.name}
+      caption={caption}
+      error={meta.error}
+    >
       <RadioGroup
+        {...inputProps}
         {...restInput}
+        id={input.name}
         value={value}
         onChange={(ev, item) => {
           onChange(ev.target.value);
