@@ -6,13 +6,19 @@ import {Textarea} from 'baseui/textarea';
 
 export default function render({
   input,
+  inputProps,
   meta,
   caption,
   label,
 }: SingleValueFieldRenderProps) {
   return (
-    <FormControl label={label} caption={caption} error={meta.error}>
-      <Textarea {...input} error={meta.error} />
+    <FormControl
+      label={label}
+      labelFor={input.name}
+      caption={caption}
+      error={meta.error}
+    >
+      <Textarea {...inputProps} {...input} id={input.name} error={meta.error} />
     </FormControl>
   );
 }

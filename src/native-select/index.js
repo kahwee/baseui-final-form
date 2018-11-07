@@ -5,14 +5,20 @@ import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 
 export default function render({
   input,
+  inputProps,
   meta,
   caption,
   label,
   options,
 }: MultipleValuesFieldRenderProps) {
   return (
-    <FormControl label={label} caption={caption} error={meta.error}>
-      <select {...input}>
+    <FormControl
+      label={label}
+      labelFor={input.name}
+      caption={caption}
+      error={meta.error}
+    >
+      <select {...inputProps} {...input} id={input.name}>
         {options.map((option, index) => {
           return (
             <option {...option} value={option.id} key={index}>
