@@ -35,17 +35,23 @@ describe('radiogroup', () => {
     expect(radioPeach.checked).toBe(false);
     expect(radioApple.checked).toBe(false);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({}, expect.anything());
+    expect(mockSubmit).toHaveBeenCalledWith({}, expect.anything());
     fireEvent.click(radioPeach);
     expect(radioPeach.checked).toBe(true);
     expect(radioApple.checked).toBe(false);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({fruit: 'peach'}, expect.anything());
+    expect(mockSubmit).toHaveBeenCalledWith(
+      {fruit: 'peach'},
+      expect.anything()
+    );
     fireEvent.click(radioApple);
     expect(radioPeach.checked).toBe(false);
     expect(radioApple.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({fruit: 'apple'}, expect.anything());
+    expect(mockSubmit).toHaveBeenCalledWith(
+      {fruit: 'apple'},
+      expect.anything()
+    );
   });
 
   it('should be initialized as peach then be updated to apple', () => {
@@ -70,7 +76,10 @@ describe('radiogroup', () => {
     expect(radioPeach.checked).toBe(false);
     expect(radioApple.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({fruit: 'apple'}, expect.anything());
+    expect(mockSubmit).toHaveBeenCalledWith(
+      {fruit: 'apple'},
+      expect.anything()
+    );
   });
 
   it('should be initialized as disabled kiwi and still be submitted with disabled value', () => {
@@ -91,6 +100,6 @@ describe('radiogroup', () => {
     expect(getByLabelText('Apple').checked).toBe(false);
     expect(getByLabelText('Kiwi').checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({fruit: 'kiwi'}, expect.anything());
+    expect(mockSubmit).toHaveBeenCalledWith({fruit: 'kiwi'}, expect.anything());
   });
 });
