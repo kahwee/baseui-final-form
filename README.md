@@ -8,7 +8,8 @@ Adapter between react-final-form and baseui.
 
 ## Prerequisites
 
-- `baseui` >= 3.0.0
+- `baseui` >= 4.1.1
+- `react` >= 16.6.0
 - `react-final-form` >= 3.6.7
 - `node` >= 8.12.0 (for development)
 - `yarn` >= 1.10.1 (for development)
