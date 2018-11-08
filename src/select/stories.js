@@ -16,9 +16,6 @@ storiesOf('Select', module)
       initialValues={{fruit: 'pineapple'}}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
-          <Button type="submit" disabled={pristine || invalid}>
-            Submit
-          </Button>
           <Field
             name="fruit"
             component={Select}
@@ -26,6 +23,9 @@ storiesOf('Select', module)
             label="My fruits"
             options={options}
           />
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
         </form>
       )}
     />
@@ -36,9 +36,6 @@ storiesOf('Select', module)
       initialValues={{fruits: ['pineapple', 'apple']}}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
-          <Button type="submit" disabled={pristine || invalid}>
-            Submit
-          </Button>
           <Field
             name="fruits"
             component={Select}
@@ -47,6 +44,9 @@ storiesOf('Select', module)
             options={options}
             multiple
           />
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
         </form>
       )}
     />

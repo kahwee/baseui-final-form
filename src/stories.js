@@ -4,7 +4,7 @@
 import * as React from 'react';
 import {Button} from 'baseui/button';
 import Input from './input/index';
-import RadioGroup from './radiogroup/index';
+import RadioGroup from './radio-group/index';
 import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
 import {Field, Form} from 'react-final-form';
