@@ -30,17 +30,17 @@ export default function render({
         {...inputProps}
         multiple={multiple}
         selectedOptions={selectedOptions}
-        onChange={(ev, params) => {
+        onChange={({selectedOptions}) => {
           if (multiple) {
             onChange(
-              Array.isArray(params.selectedOptions)
-                ? params.selectedOptions.map(option => option.id)
+              Array.isArray(selectedOptions)
+                ? selectedOptions.map(option => option.id)
                 : undefined
             );
           } else {
             onChange(
-              Array.isArray(params.selectedOptions) && params.selectedOptions[0]
-                ? params.selectedOptions[0].id
+              Array.isArray(selectedOptions) && selectedOptions[0]
+                ? selectedOptions[0].id
                 : undefined
             );
           }
