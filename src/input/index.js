@@ -4,13 +4,17 @@ import {FormControl} from 'baseui/form-control';
 import {Input} from 'baseui/input';
 import {type SingleValueFieldRenderProps} from '../types.js.flow';
 
+type Props = {
+  type: string,
+} & SingleValueFieldRenderProps;
 export default function render({
   input,
   inputProps,
+  type,
   meta,
   caption,
   label,
-}: SingleValueFieldRenderProps) {
+}: Props) {
   return (
     <FormControl
       label={label}
@@ -18,7 +22,13 @@ export default function render({
       caption={caption}
       error={meta.error}
     >
-      <Input {...inputProps} {...input} id={input.name} error={meta.error} />
+      <Input
+        {...inputProps}
+        {...input}
+        type={type}
+        id={input.name}
+        error={meta.error}
+      />
     </FormControl>
   );
 }

@@ -15,4 +15,5 @@ env*
 *.pyc
 *.pickle
 
+.cache
 docs
