@@ -28,7 +28,7 @@ yarn add react react-dom
 yarn add baseui react-final-form final-form
 ```
 
-Sample componet
+Sample component:
 
 ```javascript
 import * as React from 'react';
