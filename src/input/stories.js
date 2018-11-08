@@ -80,16 +80,72 @@ storiesOf('Input', module)
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field
-            name="firstName"
+            name="cost"
             component={Input}
-            caption="Your given name"
-            label="First name"
+            caption="Price, please round this to nearest dollar"
+            label="Cost of goods"
             inputProps={{
               size: 'compact',
               endEnhancer: '.00',
-              placeholder: 'Input with an endEnhancer',
+              startEnhancer: '$',
+            }}
+          />
+
+          <Field
+            name="url"
+            component={Input}
+            caption="Enter without http://"
+            label="Your favorite website"
+            inputProps={{
+              size: 'compact',
+              startEnhancer: 'https://',
+              placeholder: 'www.google.com',
             }}
             validate={minLength3}
+          />
+
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
+  .add('Types of inputs', () => (
+    <Form
+      validateOnBlur
+      initialValues={{birthday: '2017-06-01T08:30'}}
+      onSubmit={action('submit')}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="cost"
+            type="range"
+            component={Input}
+            label="Cost of goods"
+            inputProps={{
+              size: 'compact',
+              min: 0,
+              max: 1000,
+              step: 1,
+            }}
+            caption="Using type=range"
+          />
+
+          <Field
+            name="file"
+            type="file"
+            component={Input}
+            label="File upload"
+            caption="Using type=file"
+          />
+
+          <Field
+            name="birthday"
+            type="datetime-local"
+            component={Input}
+            label="Birthday"
+            caption="Using type=datetime-local"
           />
 
           <Button type="submit" disabled={pristine || invalid}>
