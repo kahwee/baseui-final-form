@@ -35,17 +35,20 @@ describe('CheckboxGroup', () => {
     expect(cboxPeach.checked).toBe(false);
     expect(cboxApple.checked).toBe(false);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({}, expect.anything());
+    expect(mockSubmit).toHaveBeenCalledWith({}, expect.anything());
     fireEvent.click(cboxPeach);
     expect(cboxPeach.checked).toBe(true);
     expect(cboxApple.checked).toBe(false);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({fruits: ['peach']}, expect.anything());
+    expect(mockSubmit).toHaveBeenCalledWith(
+      {fruits: ['peach']},
+      expect.anything()
+    );
     fireEvent.click(cboxApple);
     expect(cboxPeach.checked).toBe(true);
     expect(cboxApple.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith(
+    expect(mockSubmit).toHaveBeenCalledWith(
       {fruits: ['peach', 'apple']},
       expect.anything()
     );
@@ -53,7 +56,10 @@ describe('CheckboxGroup', () => {
     expect(cboxPeach.checked).toBe(false);
     expect(cboxApple.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({fruits: ['apple']}, expect.anything());
+    expect(mockSubmit).toHaveBeenCalledWith(
+      {fruits: ['apple']},
+      expect.anything()
+    );
   });
 
   it('should be initialized as peach then include apple', () => {
@@ -78,7 +84,7 @@ describe('CheckboxGroup', () => {
     expect(cboxPeach.checked).toBe(true);
     expect(cboxApple.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith(
+    expect(mockSubmit).toHaveBeenCalledWith(
       {fruits: ['peach', 'apple']},
       expect.anything()
     );
@@ -102,6 +108,9 @@ describe('CheckboxGroup', () => {
     expect(getByLabelText('Apple').checked).toBe(false);
     expect(getByLabelText('Kiwi').checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toBeCalledWith({fruits: ['kiwi']}, expect.anything());
+    expect(mockSubmit).toHaveBeenCalledWith(
+      {fruits: ['kiwi']},
+      expect.anything()
+    );
   });
 });
