@@ -8439,10 +8439,12 @@ react-final-form-arrays@^1.1.0:
   dependencies:
     react-lifecycles-compat "^3.0.4"
 
-react-final-form@^3.6.7:
-  version "3.6.7"
-  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-3.6.7.tgz#c4d2e01e04674201b850cdd05ed5b67ff5ea06c5"
-  integrity sha512-/m7JBwA5FaGlSo2ZSFhzQYfPKfT18uirIbJrojWgb9GLoYU2wEOq9yM+vlugqTPD4Ozq+TFJDxWr1jzgASN0fA==
+react-final-form@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-4.0.0.tgz#259dad4144c8302ba832fde99071d4deb5e23210"
+  integrity sha512-iRcdtQWM0SzKNlatI4f+s2y+7j7EZiRyUS9lrGNYYktq36UcS57CNoTJwE3377Y8Z2LM9ioTe3lwS8qQodUntQ==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
 
 react-fuzzy@^0.5.2:
   version "0.5.2"
