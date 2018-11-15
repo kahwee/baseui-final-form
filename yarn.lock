@@ -8432,10 +8432,10 @@ react-error-overlay@^5.1.0:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.0.tgz#c516995a5652e7bfbed8b497910d5280df74a7e8"
   integrity sha512-akMy/BQT5m1J3iJIHkSb4qycq2wzllWsmmolaaFVnb+LPV9cIJ/nTud40ZsiiT0H3P+/wXIdbjx2fzF61OaeOQ==
 
-react-final-form-arrays@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-final-form-arrays/-/react-final-form-arrays-1.1.0.tgz#ac1232d26483b996a5f57395aab4886a1b01d9a0"
-  integrity sha512-DcNUoWxY7Ty7QeO/F/WVmX3BCssGUF6P+UCRjiVbX4halM1h/24BHxcWIEI7zr+pIfCY9YNsXWmcKgo0XrMerQ==
+react-final-form-arrays@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-final-form-arrays/-/react-final-form-arrays-2.0.0.tgz#130e6d53e347dccb6e87b4e0fd233cb4abd23738"
+  integrity sha512-wpl5DH8cQYGjzer1p0YzSqBYGStp9jXHqYaMaiOESBUaRTjMVOeQdmmch4ZCnk3HQ1/DChxkGb+vGoD0+hQ9YQ==
   dependencies:
     react-lifecycles-compat "^3.0.4"
 
