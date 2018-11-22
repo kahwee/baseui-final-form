@@ -31,9 +31,10 @@ describe('textarea', () => {
     fireEvent.change(textareaNode, event);
     expect(textareaNode.value).toBe(DESCRIPTION);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {description: DESCRIPTION},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
   });
 });

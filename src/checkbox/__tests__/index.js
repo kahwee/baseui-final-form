@@ -32,12 +32,17 @@ describe('checkbox', () => {
     fireEvent.click(labelNode);
     expect(inputNode.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith({isGoing: true}, expect.anything());
+    expect(mockSubmit).toHaveBeenLastCalledWith(
+      {isGoing: true},
+      expect.anything(),
+      expect.anything()
+    );
     fireEvent.click(labelNode);
     expect(inputNode.checked).toBe(false);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {isGoing: false},
+      expect.anything(),
       expect.anything()
     );
   });

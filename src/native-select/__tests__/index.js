@@ -32,9 +32,10 @@ describe('native-select', () => {
     fireEvent.change(selectNode, event1);
     expect(selectNode.value).toBe('pineapple');
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {fruit: 'pineapple'},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
   });
 });
