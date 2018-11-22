@@ -35,30 +35,37 @@ describe('CheckboxGroup', () => {
     expect(cboxPeach.checked).toBe(false);
     expect(cboxApple.checked).toBe(false);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith({}, expect.anything());
+    expect(mockSubmit).toHaveBeenLastCalledWith(
+      {},
+      expect.anything(),
+      expect.any(Function)
+    );
     fireEvent.click(cboxPeach);
     expect(cboxPeach.checked).toBe(true);
     expect(cboxApple.checked).toBe(false);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {fruits: ['peach']},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
     fireEvent.click(cboxApple);
     expect(cboxPeach.checked).toBe(true);
     expect(cboxApple.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {fruits: ['peach', 'apple']},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
     fireEvent.click(cboxPeach);
     expect(cboxPeach.checked).toBe(false);
     expect(cboxApple.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {fruits: ['apple']},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
   });
 
@@ -84,9 +91,10 @@ describe('CheckboxGroup', () => {
     expect(cboxPeach.checked).toBe(true);
     expect(cboxApple.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {fruits: ['peach', 'apple']},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
   });
 
@@ -108,9 +116,10 @@ describe('CheckboxGroup', () => {
     expect(getByLabelText('Apple').checked).toBe(false);
     expect(getByLabelText('Kiwi').checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {fruits: ['kiwi']},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
   });
 });

@@ -35,22 +35,28 @@ describe('radiogroup', () => {
     expect(radioPeach.checked).toBe(false);
     expect(radioApple.checked).toBe(false);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith({}, expect.anything());
+    expect(mockSubmit).toHaveBeenLastCalledWith(
+      {},
+      expect.anything(),
+      expect.any(Function)
+    );
     fireEvent.click(radioPeach);
     expect(radioPeach.checked).toBe(true);
     expect(radioApple.checked).toBe(false);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {fruit: 'peach'},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
     fireEvent.click(radioApple);
     expect(radioPeach.checked).toBe(false);
     expect(radioApple.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {fruit: 'apple'},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
   });
 
@@ -76,9 +82,10 @@ describe('radiogroup', () => {
     expect(radioPeach.checked).toBe(false);
     expect(radioApple.checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {fruit: 'apple'},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
   });
 
@@ -100,6 +107,10 @@ describe('radiogroup', () => {
     expect(getByLabelText('Apple').checked).toBe(false);
     expect(getByLabelText('Kiwi').checked).toBe(true);
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith({fruit: 'kiwi'}, expect.anything());
+    expect(mockSubmit).toHaveBeenLastCalledWith(
+      {fruit: 'kiwi'},
+      expect.anything(),
+      expect.any(Function)
+    );
   });
 });

@@ -31,16 +31,18 @@ describe('input', () => {
     fireEvent.change(inputNode, event1);
     expect(inputNode.value).toBe('changed1');
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {firstName: 'changed1'},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
     fireEvent.change(inputNode, event2);
     expect(inputNode.value).toBe('changed2');
     fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenCalledWith(
+    expect(mockSubmit).toHaveBeenLastCalledWith(
       {firstName: 'changed2'},
-      expect.anything()
+      expect.anything(),
+      expect.any(Function)
     );
   });
 });
