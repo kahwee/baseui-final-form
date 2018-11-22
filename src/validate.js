@@ -37,8 +37,11 @@ export function maxValue(max: number) {
   };
 }
 
-export function required(value: string) {
-  return value ? undefined : 'Required';
+export function required(value: ?string | ?number | ?boolean) {
+  if (value === undefined || value === null || value === '') {
+    return 'Required';
+  }
+  return;
 }
 
 export function email(value: string) {

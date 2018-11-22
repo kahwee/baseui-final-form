@@ -59,6 +59,13 @@ describe('validate', () => {
   });
 
   it('should check "required" boundaries', () => {
+    expect(v.required('')).toBeString();
+    expect(v.required()).toBeString();
+    expect(v.required(null)).toBeString();
+    expect(v.required('0')).toBeUndefined();
+    expect(v.required(0)).toBeUndefined();
+    expect(v.required(false)).toBeUndefined();
+    expect(v.required(true)).toBeUndefined();
     expect(v.required('hello')).toBeUndefined();
     expect(v.required('-')).toBeUndefined();
   });
