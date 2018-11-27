@@ -1,6 +1,6 @@
 # baseui-final-form
 
-Adapter between react-final-form and baseui.
+Adapter between `react-final-form` and `baseui`.
 
 [![npm](https://img.shields.io/npm/v/baseui-final-form.svg)](https://www.npmjs.com/package/baseui-final-form)
 [![CircleCI](https://circleci.com/gh/kahwee/baseui-final-form.svg?style=svg)](https://circleci.com/gh/kahwee/baseui-final-form)
@@ -8,9 +8,8 @@ Adapter between react-final-form and baseui.
 
 ## Prerequisites
 
-- `baseui` >= 4.1.1
-- `react` >= 16.6.0
-- `react-final-form` >= 3.6.7
+- `baseui` >= 4.4.1 (peer dependency)
+- `react` and `react-dom` >= 16.6.0 (peer dependency)
 - `node` >= 8.12.0 (for development)
 - `yarn` >= 1.10.1 (for development)
 
@@ -25,8 +24,8 @@ yarn add baseui-final-form
 If you don't:
 
 ```sh
-yarn add react react-dom
-yarn add baseui react-final-form final-form
+yarn add react react-dom baseui
+yarn add react-final-form final-form
 ```
 
 Sample component:
