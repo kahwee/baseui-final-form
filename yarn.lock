@@ -2747,10 +2747,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseui@^4.4.1:
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/baseui/-/baseui-4.4.1.tgz#bed047b6cbee5273efe92751597b9ab49b47b63b"
-  integrity sha512-Ww8CUcNiT3G5+wZFWpQY7hbS6wZsUGokTAepAg5FCYl3puJnjj3B4yWjt/9AmKMik9z7/W9NqCzv6z3wpvwdTw==
+baseui@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/baseui/-/baseui-5.0.0.tgz#8daf0c31e16cf8407f6dfc51bdfe360dfcbe80ab"
+  integrity sha512-uR4/xFAORf232iiMUjaGtc/XfzVMlzWHc7brGua2jFMyJmyKVcjLNn8DhjGPq7ZCuVx/LW/6h8PkFAJ8eAQkVw==
   dependencies:
     memoize-one "^4.0.2"
     popper.js "^1.14.3"
