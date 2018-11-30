@@ -16,16 +16,35 @@ describe('select', () => {
 
   afterEach(cleanup);
 
+  it('should fail on missing options', () => {
+    /* eslint-disable no-console */
+    // $FlowFixMe
+    console.error = jest.fn();
+    const t = () => {
+      render(
+        <BaseuiProvider>
+          <Form onSubmit={() => {}}>
+            {({handleSubmit}) => (
+              <form onSubmit={handleSubmit}>
+                <Field name="hello" component={Select} />
+              </form>
+            )}
+          </Form>
+        </BaseuiProvider>
+      );
+    };
+    expect(t).toThrow(Error);
+    expect(console.error).toHaveBeenCalled();
+    /* eslint-enable no-console */
+  });
+
   it('should pass sanity checks for single select', () => {
     const {container, getByText} = render(
       <BaseuiProvider>
         <Form onSubmit={() => {}} initialValues={{fruit: 'pineapple'}}>
           {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-              <Field
-                {...defaultProps}
-                inputProps={{className: 'select-test-for-jest-1'}}
-              />
+              <Field {...defaultProps} className="select-test-for-jest-1" />
             </form>
           )}
         </Form>
@@ -47,7 +66,7 @@ describe('select', () => {
               <Field
                 {...defaultProps}
                 multi
-                inputProps={{className: 'select-test-for-jest-2'}}
+                className="select-test-for-jest-2"
               />
             </form>
           )}

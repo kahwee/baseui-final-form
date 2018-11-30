@@ -16,6 +16,28 @@ describe('radiogroup', () => {
 
   afterEach(cleanup);
 
+  it('should fail on missing options', () => {
+    /* eslint-disable no-console */
+    // $FlowFixMe
+    console.error = jest.fn();
+    const t = () => {
+      render(
+        <BaseuiProvider>
+          <Form onSubmit={() => {}}>
+            {({handleSubmit}) => (
+              <form onSubmit={handleSubmit}>
+                <Field name="hello" component={RadioGroup} />
+              </form>
+            )}
+          </Form>
+        </BaseuiProvider>
+      );
+    };
+    expect(t).toThrow(Error);
+    expect(console.error).toHaveBeenCalled();
+    /* eslint-enable no-console */
+  });
+
   it('should be initialized as {}, then updated to peach, then be updated to apple', () => {
     const mockSubmit = jest.fn();
     const {container, getByLabelText} = render(

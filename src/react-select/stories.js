@@ -11,7 +11,7 @@ import options from '../native-select/__tests__/__fixtures__/fruit-options.json'
 import {storiesOf} from '@storybook/react';
 import {Field, Form} from 'react-final-form';
 
-storiesOf('react-select')
+storiesOf('react-select', module)
   .add('Single', () => (
     <Form
       onSubmit={action('submit')}
@@ -66,7 +66,7 @@ storiesOf('react-select')
             label="My fruits"
             options={options}
             isMulti
-            inputProps={{components: makeAnimated()}}
+            components={makeAnimated()}
           />
           <Button type="submit" disabled={pristine || invalid}>
             Submit
@@ -89,7 +89,7 @@ storiesOf('react-select')
             label="My fruits"
             options={options}
             isMulti
-            inputProps={{components: makeAnimated()}}
+            components={makeAnimated()}
           />
           <Button type="submit" disabled={pristine || invalid}>
             Submit

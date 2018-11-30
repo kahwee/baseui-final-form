@@ -1,22 +1,25 @@
 // @flow
 import * as React from 'react';
+import {type FieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
-import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 import {Select} from 'baseui/select';
+import assignProps from '../util/assign-props';
 
 type Props = {
   multi?: boolean,
-} & MultipleValuesFieldRenderProps;
-export default function render({
-  input,
-  inputProps,
-  meta,
-  caption,
-  multi,
-  label,
-  options,
-}: Props) {
-  const {value, onChange, ...inputRest} = input;
+} & FieldRenderProps;
+export default function render({multi, ...props}: Props) {
+  const {
+    formControlProps,
+    inputProps,
+    options,
+    value,
+    onChange,
+    label,
+  } = assignProps(props);
+  if (!Array.isArray(options)) {
+    throw new Error('Missing options');
+  }
   let selectedOptions;
   if (multi) {
     selectedOptions = options.filter(option => value.includes(option.id));
@@ -24,9 +27,8 @@ export default function render({
     selectedOptions = options.filter(option => option.id === value);
   }
   return (
-    <FormControl label={label} caption={caption} error={meta.error}>
+    <FormControl {...formControlProps} label={label}>
       <Select
-        {...inputRest}
         {...inputProps}
         multi={multi}
         value={selectedOptions}

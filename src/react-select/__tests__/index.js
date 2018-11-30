@@ -20,16 +20,35 @@ describe('react-select', () => {
   afterEach(cleanup);
 
   describe('single select', () => {
+    it('should fail on missing options', () => {
+      /* eslint-disable no-console */
+      // $FlowFixMe
+      console.error = jest.fn();
+      const t = () => {
+        render(
+          <BaseuiProvider>
+            <Form onSubmit={() => {}}>
+              {({handleSubmit}) => (
+                <form onSubmit={handleSubmit}>
+                  <Field name="hello" component={ReactSelect} />
+                </form>
+              )}
+            </Form>
+          </BaseuiProvider>
+        );
+      };
+      expect(t).toThrow(Error);
+      expect(console.error).toHaveBeenCalled();
+      /* eslint-enable no-console */
+    });
+
     it('should pass sanity checks', () => {
       const {container, getByText} = render(
         <BaseuiProvider>
           <Form onSubmit={() => {}} initialValues={{fruit: 'pineapple'}}>
             {({handleSubmit}) => (
               <form onSubmit={handleSubmit}>
-                <Field
-                  {...defaultProps}
-                  inputProps={{className: `${TEST_CLASSNAME}-1`}}
-                />
+                <Field {...defaultProps} className={`${TEST_CLASSNAME}-1`} />
               </form>
             )}
           </Form>
@@ -48,10 +67,8 @@ describe('react-select', () => {
               <form onSubmit={handleSubmit}>
                 <Field
                   {...defaultProps}
-                  inputProps={{
-                    className: `${TEST_CLASSNAME}-3`,
-                    menuIsOpen: true,
-                  }}
+                  className={`${TEST_CLASSNAME}-3`}
+                  menuIsOpen
                 />
               </form>
             )}
@@ -84,7 +101,7 @@ describe('react-select', () => {
                 <Field
                   {...defaultProps}
                   isMulti
-                  inputProps={{className: `${TEST_CLASSNAME}-2`}}
+                  className={`${TEST_CLASSNAME}-2`}
                 />
               </form>
             )}
@@ -110,10 +127,8 @@ describe('react-select', () => {
                   {...defaultProps}
                   RootSelect={CreatableSelect}
                   isMulti
-                  inputProps={{
-                    className: `${TEST_CLASSNAME}-3`,
-                    menuIsOpen: true,
-                  }}
+                  className={`${TEST_CLASSNAME}-3`}
+                  menuIsOpen
                 />
               </form>
             )}

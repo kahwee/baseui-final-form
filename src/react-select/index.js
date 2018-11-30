@@ -1,26 +1,32 @@
 // @flow
 import * as React from 'react';
 import {FormControl} from 'baseui/form-control';
-import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 import Select from 'react-select';
+import assignProps from '../util/assign-props';
+import type {FieldRenderProps, ReactSelectOption} from '../types.js.flow';
 
 type Props = {
   isMulti?: boolean,
-  RootSelect: React.Node | null,
-} & MultipleValuesFieldRenderProps;
+  RootSelect?: React.StatelessFunctionalComponent<any>,
+} & FieldRenderProps;
 export default function render({
   RootSelect = Select,
-  input,
-  inputProps,
-  meta,
-  caption,
   isMulti,
-  label,
-  options,
+  ...props
 }: Props) {
-  const {value, onChange, ...inputRest} = input;
+  const {
+    formControlProps,
+    inputProps,
+    options,
+    value,
+    onChange,
+    label,
+  } = assignProps(props);
+  if (!Array.isArray(options)) {
+    throw new Error('Missing options');
+  }
   // We are adapting to react-select's value/label pair
-  const adaptedOptions = options.map(({id, ...rest}) => ({
+  const adaptedOptions: ReactSelectOption[] = options.map(({id, ...rest}) => ({
     ...rest,
     value: id,
   }));
@@ -44,9 +50,8 @@ export default function render({
   }
   return (
     <FormControl
+      {...formControlProps}
       label={label}
-      caption={caption}
-      error={meta.error}
       overrides={{
         ControlContainer: {
           style: ({$theme}) => ({
@@ -56,7 +61,6 @@ export default function render({
       }}
     >
       <RootSelect
-        {...inputRest}
         {...inputProps}
         isMulti={isMulti}
         value={selectedOptions}

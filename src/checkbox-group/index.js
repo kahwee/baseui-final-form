@@ -1,20 +1,22 @@
 // @flow
 import * as React from 'react';
 import {Checkbox} from 'baseui/checkbox';
+import {type FieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
-import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
+import assignProps from '../util/assign-props';
 
-export default function render({
-  input,
-  meta,
-  caption,
-  label,
-  options,
-}: MultipleValuesFieldRenderProps) {
-  const {onChange, name} = input;
-  const value = ((input.value: any): Array<string>);
+export default function render(props: FieldRenderProps) {
+  const {
+    formControlProps,
+    inputProps,
+    options,
+    onChange,
+    name,
+    label,
+  } = assignProps(props);
+  const value = ((inputProps.value: any): Array<string>);
   return (
-    <FormControl label={label} caption={caption} error={meta.error}>
+    <FormControl {...formControlProps} label={label}>
       <div>
         {options.map((option, index) => {
           return (

@@ -1,24 +1,14 @@
 // @flow
 import * as React from 'react';
+import {type FieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
-import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
+import assignProps from '../util/assign-props';
 
-export default function render({
-  input,
-  inputProps,
-  meta,
-  caption,
-  label,
-  options,
-}: MultipleValuesFieldRenderProps) {
+export default function render(props: FieldRenderProps) {
+  const {formControlProps, inputProps, options, label} = assignProps(props);
   return (
-    <FormControl
-      label={label}
-      labelFor={input.name}
-      caption={caption}
-      error={meta.error}
-    >
-      <select {...inputProps} {...input} id={input.name}>
+    <FormControl {...formControlProps} label={label}>
+      <select {...inputProps}>
         {options.map((option, index) => {
           return (
             <option {...option} value={option.id} key={index}>

@@ -22,6 +22,7 @@ module.exports = {
     jest: true,
   },
   globals: {
+    module: true,
     document: true,
     describe: true,
     expect: true,

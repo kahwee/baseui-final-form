@@ -1,5 +1,5 @@
 // @flow
-import {type FieldRenderProps} from 'react-final-form';
+import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
 
 export type Option = {
   label: string,
@@ -7,19 +7,16 @@ export type Option = {
   disabled?: boolean,
 };
 
-export type SingleValueFieldRenderProps = {
-  caption: string | React.Node,
-  label: string | React.Node,
-  inputProps?: {
-    [string]: any,
-  },
-} & FieldRenderProps;
+export type ReactSelectOption = {
+  label: string,
+  value: string,
+  disabled?: boolean,
+};
 
-export type MultipleValuesFieldRenderProps = {
+export type FieldRenderProps = {
   caption: string | React.Node,
   label: string | React.Node,
-  options: Array<Option>,
-  inputProps?: {
-    [string]: any,
-  },
-} & FieldRenderProps;
+  disabled?: boolean,
+  options?: Option[],
+  validate: any,
+} & ReactFinalFormFieldRenderProps;

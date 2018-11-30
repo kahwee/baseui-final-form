@@ -15,7 +15,7 @@ const Condition = ({when, is, children}) => (
   </Field>
 );
 
-storiesOf('Playground').add('Basic', () => (
+storiesOf('Playground', module).add('Basic', () => (
   // Target: City and Zipcode options (radio group)
   // Input: CityName
   // Input: ZipCode

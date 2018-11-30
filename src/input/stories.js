@@ -43,7 +43,7 @@ export const Address = ({name, label}: AddressProps) => (
   </React.Fragment>
 );
 
-storiesOf('Input')
+storiesOf('Input', module)
   .add('Basic', () => (
     <Form
       validateOnBlur
@@ -66,6 +66,14 @@ storiesOf('Input')
             validate={minLength3}
           />
 
+          <Field
+            name="ssn"
+            component={Input}
+            caption="Example of disabled field"
+            disabled
+            label="Social security number"
+          />
+
           <Button type="submit" disabled={pristine || invalid}>
             Submit
           </Button>
@@ -84,11 +92,9 @@ storiesOf('Input')
             component={Input}
             caption="Price, please round this to nearest dollar"
             label="Cost of goods"
-            inputProps={{
-              size: 'compact',
-              endEnhancer: '.00',
-              startEnhancer: '$',
-            }}
+            size="compact"
+            endEnhancer=".00"
+            startEnhancer="$"
           />
 
           <Field
@@ -96,11 +102,9 @@ storiesOf('Input')
             component={Input}
             caption="Enter without http://"
             label="Your favorite website"
-            inputProps={{
-              size: 'compact',
-              startEnhancer: 'https://',
-              placeholder: 'www.google.com',
-            }}
+            size="compact"
+            startEnhancer="https://"
+            placeholder="www.google.com"
             validate={minLength3}
           />
 
@@ -123,12 +127,10 @@ storiesOf('Input')
             type="range"
             component={Input}
             label="Cost of goods"
-            inputProps={{
-              size: 'compact',
-              min: 0,
-              max: 1000,
-              step: 1,
-            }}
+            size="compact"
+            min={0}
+            max={1000}
+            step={1}
             caption="Using type=range"
           />
 
