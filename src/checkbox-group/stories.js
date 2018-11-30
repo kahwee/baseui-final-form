@@ -9,7 +9,7 @@ import options from '../native-select/__tests__/__fixtures__/fruit-options.json'
 import {storiesOf} from '@storybook/react';
 import {Field, Form} from 'react-final-form';
 
-storiesOf('CheckboxGroup', module).add('Basic', () => (
+storiesOf('CheckboxGroup').add('Basic', () => (
   <Form
     onSubmit={action('submit')}
     initialValues={{fruits: ['apple', 'pineapple']}}

@@ -43,7 +43,7 @@ export const Address = ({name, label}: AddressProps) => (
   </React.Fragment>
 );
 
-storiesOf('Input', module)
+storiesOf('Input')
   .add('Basic', () => (
     <Form
       validateOnBlur

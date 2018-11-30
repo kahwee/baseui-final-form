@@ -46,7 +46,7 @@ describe('select', () => {
             <form onSubmit={handleSubmit}>
               <Field
                 {...defaultProps}
-                multiple
+                multi
                 inputProps={{className: 'select-test-for-jest-2'}}
               />
             </form>
