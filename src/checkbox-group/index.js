@@ -6,17 +6,12 @@ import {FormControl} from 'baseui/form-control';
 import assignProps from '../util/assign-props';
 
 export default function render(props: FieldRenderProps) {
-  const {
-    formControlProps,
-    inputProps,
-    options,
-    onChange,
-    name,
-    label,
-  } = assignProps(props);
+  const {formControlProps, inputProps, options, onChange, name} = assignProps(
+    props
+  );
   const value = ((inputProps.value: any): Array<string>);
   return (
-    <FormControl {...formControlProps} label={label}>
+    <FormControl {...formControlProps}>
       <div>
         {options.map((option, index) => {
           return (

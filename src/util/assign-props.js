@@ -1,10 +1,12 @@
 //@flow
 import type {FieldRenderProps} from '../types.js.flow';
+import FormControlLabel from '../support/form-control-label';
 
 export default function assignProps({
   meta,
   validate,
   label,
+  help,
   caption,
   options,
   input,
@@ -14,7 +16,12 @@ export default function assignProps({
     formControlProps: {
       labelFor: input.name,
       caption,
+      help,
       error: meta.error,
+      label,
+      overrides: {
+        Label: {component: FormControlLabel, props: {help}},
+      },
     },
     inputProps: {
       ...inputProps,

@@ -18,6 +18,7 @@ describe('input', () => {
                 component={Input}
                 caption="First name"
                 label="First name"
+                help="Basic help"
               />
             </form>
           )}

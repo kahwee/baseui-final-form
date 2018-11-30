@@ -33,10 +33,20 @@ storiesOf('Playground', module).add('Basic', () => (
           }}
         >
           <div style={{position: 'relative'}}>
-            <Field name="firstName" label="First name" component={Input} />
+            <Field
+              name="firstName"
+              label="First name"
+              component={Input}
+              help="Your given name"
+            />
           </div>
           <div style={{position: 'relative'}}>
-            <Field name="lastName" label="Last name" component={Input} />
+            <Field
+              name="lastName"
+              label="Last name"
+              component={Input}
+              help="Your family name"
+            />
           </div>
         </div>
         <Field
@@ -44,6 +54,7 @@ storiesOf('Playground', module).add('Basic', () => (
           component={RadioGroup}
           caption="Pick a target"
           label="Target"
+          help="Choose between a city and a zip code"
           options={[
             {label: 'City', value: 'city'},
             {label: 'Zip Code', value: 'zipCode'},

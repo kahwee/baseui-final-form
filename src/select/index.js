@@ -9,14 +9,9 @@ type Props = {
   multi?: boolean,
 } & FieldRenderProps;
 export default function render({multi, ...props}: Props) {
-  const {
-    formControlProps,
-    inputProps,
-    options,
-    value,
-    onChange,
-    label,
-  } = assignProps(props);
+  const {formControlProps, inputProps, options, value, onChange} = assignProps(
+    props
+  );
   if (!Array.isArray(options)) {
     throw new Error('Missing options');
   }
@@ -27,7 +22,7 @@ export default function render({multi, ...props}: Props) {
     selectedOptions = options.filter(option => option.id === value);
   }
   return (
-    <FormControl {...formControlProps} label={label}>
+    <FormControl {...formControlProps}>
       <Select
         {...inputProps}
         multi={multi}

@@ -9,9 +9,9 @@ type Props = {
   type: string,
 } & FieldRenderProps;
 export default function render(props: Props) {
-  const {formControlProps, inputProps, label} = assignProps(props);
+  const {formControlProps, inputProps} = assignProps(props);
   return (
-    <FormControl {...formControlProps} label={label}>
+    <FormControl {...formControlProps}>
       <Input {...inputProps} />
     </FormControl>
   );

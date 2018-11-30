@@ -19,6 +19,7 @@ storiesOf('Textarea', module).add('Basic', () => (
           component={Textarea}
           caption="Give a brief description"
           label="Description"
+          help="If you are not sure, you can fill this in later"
         />
 
         <Button type="submit" disabled={pristine || invalid}>

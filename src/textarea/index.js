@@ -6,9 +6,9 @@ import {Textarea} from 'baseui/textarea';
 import assignProps from '../util/assign-props';
 
 export default function render(props: FieldRenderProps) {
-  const {formControlProps, inputProps, label} = assignProps(props);
+  const {formControlProps, inputProps} = assignProps(props);
   return (
-    <FormControl {...formControlProps} label={label}>
+    <FormControl {...formControlProps}>
       <Textarea {...inputProps} />
     </FormControl>
   );

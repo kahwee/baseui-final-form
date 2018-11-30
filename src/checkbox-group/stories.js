@@ -21,6 +21,7 @@ storiesOf('CheckboxGroup', module).add('Basic', () => (
           caption="Please select some fruits"
           label="My favorite fruit"
           options={options}
+          help="You can choose one or more favorite fruits"
         />
 
         <Button type="submit" disabled={pristine || invalid}>

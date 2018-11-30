@@ -16,7 +16,7 @@ export default function render(props: FieldRenderProps) {
   } = assignProps(props);
   inputProps.type = 'checkbox';
   return (
-    <FormControl {...formControlProps}>
+    <FormControl {...formControlProps} label={false}>
       <Checkbox
         {...inputProps}
         isError={!!meta.error}
