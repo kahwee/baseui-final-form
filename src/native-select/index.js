@@ -6,6 +6,9 @@ import assignProps from '../util/assign-props';
 
 export default function render(props: FieldRenderProps) {
   const {formControlProps, inputProps, options} = assignProps(props);
+  if (!Array.isArray(options)) {
+    throw new Error('Missing options');
+  }
   return (
     <FormControl {...formControlProps}>
       <select {...inputProps}>
