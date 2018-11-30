@@ -24,6 +24,7 @@ storiesOf('react-select', module)
             caption="Please select a fruit"
             label="My fruits"
             options={options}
+            help="Telling us your favorite fruit helps us understand you better"
           />
           <Button type="submit" disabled={pristine || invalid}>
             Submit
@@ -44,6 +45,7 @@ storiesOf('react-select', module)
             caption="Please select multiple fruits"
             label="My fruits"
             options={options}
+            help="hello"
             isMulti
           />
           <Button type="submit" disabled={pristine || invalid}>

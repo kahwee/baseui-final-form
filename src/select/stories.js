@@ -21,6 +21,7 @@ storiesOf('Select', module)
             caption="Please select a fruit"
             label="My fruits"
             options={options}
+            help="Telling us your favorite fruit helps us understand you better"
           />
           <Button type="submit" disabled={pristine || invalid}>
             Submit

@@ -6,14 +6,12 @@ import assignProps from '../util/assign-props';
 import {RadioGroup, StyledRadio} from 'baseui/radio';
 
 export default function render(props: FieldRenderProps) {
-  const {formControlProps, inputProps, options, onChange, label} = assignProps(
-    props
-  );
+  const {formControlProps, inputProps, options, onChange} = assignProps(props);
   if (!Array.isArray(options)) {
     throw new Error('Missing options');
   }
   return (
-    <FormControl {...formControlProps} label={label}>
+    <FormControl {...formControlProps}>
       <RadioGroup
         {...inputProps}
         onChange={(ev, item) => {

@@ -14,14 +14,9 @@ export default function render({
   isMulti,
   ...props
 }: Props) {
-  const {
-    formControlProps,
-    inputProps,
-    options,
-    value,
-    onChange,
-    label,
-  } = assignProps(props);
+  const {formControlProps, inputProps, options, value, onChange} = assignProps(
+    props
+  );
   if (!Array.isArray(options)) {
     throw new Error('Missing options');
   }
@@ -51,8 +46,8 @@ export default function render({
   return (
     <FormControl
       {...formControlProps}
-      label={label}
       overrides={{
+        ...formControlProps.overrides,
         ControlContainer: {
           style: ({$theme}) => ({
             fontFamily: $theme.typography.font400.fontFamily,

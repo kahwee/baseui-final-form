@@ -5,9 +5,9 @@ import {FormControl} from 'baseui/form-control';
 import assignProps from '../util/assign-props';
 
 export default function render(props: FieldRenderProps) {
-  const {formControlProps, inputProps, options, label} = assignProps(props);
+  const {formControlProps, inputProps, options} = assignProps(props);
   return (
-    <FormControl {...formControlProps} label={label}>
+    <FormControl {...formControlProps}>
       <select {...inputProps}>
         {options.map((option, index) => {
           return (

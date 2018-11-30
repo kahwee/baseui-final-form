@@ -39,6 +39,7 @@ export const Address = ({name, label}: AddressProps) => (
       name={`${name}.zipCode`}
       component={Input}
       label={`${label} zip code`}
+      help="Giving us your zip code helps us customize content for your better"
     />
   </React.Fragment>
 );
@@ -53,6 +54,7 @@ storiesOf('Input', module)
           <Field
             name="firstName"
             component={Input}
+            help="How can I help?"
             caption={
               <React.Fragment>
                 You can use tooltips in many places, including inline text{' '}
