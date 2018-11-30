@@ -16,6 +16,28 @@ describe('CheckboxGroup', () => {
 
   afterEach(cleanup);
 
+  it('should fail on missing options', () => {
+    /* eslint-disable no-console */
+    // $FlowFixMe
+    console.error = jest.fn();
+    const t = () => {
+      render(
+        <BaseuiProvider>
+          <Form onSubmit={() => {}}>
+            {({handleSubmit}) => (
+              <form onSubmit={handleSubmit}>
+                <Field name="hello" component={CheckboxGroup} />
+              </form>
+            )}
+          </Form>
+        </BaseuiProvider>
+      );
+    };
+    expect(t).toThrow(Error);
+    expect(console.error).toHaveBeenCalled();
+    /* eslint-enable no-console */
+  });
+
   it('should be initialized as {}, then do sanity click arounds', () => {
     const mockSubmit = jest.fn();
     const {container, getByLabelText} = render(

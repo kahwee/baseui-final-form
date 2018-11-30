@@ -1,4 +1,4 @@
-// @flow
+// @noflow
 import * as React from 'react';
 import BaseuiProvider from '../../with-baseui';
 import CreatableSelect from 'react-select/lib/Creatable';

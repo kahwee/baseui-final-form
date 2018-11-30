@@ -1,4 +1,5 @@
 // @flow
+import type {FieldValidator} from 'final-form';
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
 
 export type Option = {
@@ -14,9 +15,10 @@ export type ReactSelectOption = {
 };
 
 export type FieldRenderProps = {
-  caption: string | React.Node,
-  label: string | React.Node,
+  caption: ?(React.Node | ((props: {}) => React.Node)),
+  label: ?(React.Node | ((props: {}) => React.Node)),
   disabled?: boolean,
+  help?: string,
   options?: Option[],
-  validate: any,
+  validate?: FieldValidator,
 } & ReactFinalFormFieldRenderProps;

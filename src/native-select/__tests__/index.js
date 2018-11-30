@@ -7,6 +7,28 @@ import {Field, Form} from 'react-final-form';
 import {fireEvent, render} from 'react-testing-library';
 
 describe('native-select', () => {
+  it('should fail on missing options', () => {
+    /* eslint-disable no-console */
+    // $FlowFixMe
+    console.error = jest.fn();
+    const t = () => {
+      render(
+        <BaseuiProvider>
+          <Form onSubmit={() => {}}>
+            {({handleSubmit}) => (
+              <form onSubmit={handleSubmit}>
+                <Field name="hello" component={NativeSelect} />
+              </form>
+            )}
+          </Form>
+        </BaseuiProvider>
+      );
+    };
+    expect(t).toThrow(Error);
+    expect(console.error).toHaveBeenCalled();
+    /* eslint-enable no-console */
+  });
+
   it('should record a submission in final-form when changed in native select', () => {
     const mockSubmit = jest.fn();
     const {container} = render(

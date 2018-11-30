@@ -9,6 +9,9 @@ export default function render(props: FieldRenderProps) {
   const {formControlProps, inputProps, options, onChange, name} = assignProps(
     props
   );
+  if (!Array.isArray(options)) {
+    throw new Error('Missing options');
+  }
   const value = ((inputProps.value: any): Array<string>);
   return (
     <FormControl {...formControlProps}>
