@@ -8,7 +8,7 @@ import options from '../native-select/__tests__/__fixtures__/fruit-options.json'
 import {storiesOf} from '@storybook/react';
 import {Field, Form} from 'react-final-form';
 
-storiesOf('Select')
+storiesOf('Select', module)
   .add('Single', () => (
     <Form
       onSubmit={action('submit')}

@@ -1,30 +1,21 @@
 // @flow
 import * as React from 'react';
+import {type FieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
-import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
+import assignProps from '../util/assign-props';
 import {RadioGroup, StyledRadio} from 'baseui/radio';
 
-export default function render({
-  input,
-  inputProps,
-  meta,
-  caption,
-  label,
-  options,
-}: MultipleValuesFieldRenderProps) {
-  const {onChange, value, ...restInput} = input;
+export default function render(props: FieldRenderProps) {
+  const {formControlProps, inputProps, options, onChange, label} = assignProps(
+    props
+  );
+  if (!Array.isArray(options)) {
+    throw new Error('Missing options');
+  }
   return (
-    <FormControl
-      label={label}
-      labelFor={input.name}
-      caption={caption}
-      error={meta.error}
-    >
+    <FormControl {...formControlProps} label={label}>
       <RadioGroup
         {...inputProps}
-        {...restInput}
-        id={input.name}
-        value={value}
         onChange={(ev, item) => {
           onChange(ev.target.value);
         }}

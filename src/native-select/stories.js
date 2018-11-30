@@ -9,7 +9,7 @@ import options from './__tests__/__fixtures__/fruit-options.json';
 import {storiesOf} from '@storybook/react';
 import {Field, Form} from 'react-final-form';
 
-storiesOf('Native select').add('Basic', () => (
+storiesOf('Native select', module).add('Basic', () => (
   <Form
     onSubmit={action('submit')}
     initialValues={{fruit: 'peach'}}

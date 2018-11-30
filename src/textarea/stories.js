@@ -8,7 +8,7 @@ import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
 import {Field, Form} from 'react-final-form';
 
-storiesOf('Textarea').add('Basic', () => (
+storiesOf('Textarea', module).add('Basic', () => (
   <Form
     validateOnBlur
     onSubmit={action('submit')}

@@ -1,15 +1,10 @@
 // @flow
-import {type SingleValueFieldRenderProps} from '../types.js.flow';
+import {type FieldRenderProps} from '../types.js.flow';
 import renderCheckbox from '../checkbox/index';
 
-export default function render({
-  inputProps,
-  ...rest
-}: SingleValueFieldRenderProps) {
-  inputProps = inputProps || {};
-  inputProps.checkmarkType = 'toggle';
+export default function render({checkmarkType, ...rest}: FieldRenderProps) {
   return renderCheckbox({
+    checkmarkType: 'toggle',
     ...rest,
-    inputProps,
   });
 }

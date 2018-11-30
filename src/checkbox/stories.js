@@ -8,7 +8,7 @@ import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
 import {Field, Form} from 'react-final-form';
 
-storiesOf('Checkbox').add('Basic', () => (
+storiesOf('Checkbox', module).add('Basic', () => (
   <Form
     onSubmit={action('submit')}
     render={({handleSubmit, pristine, invalid}) => (

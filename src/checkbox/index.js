@@ -1,24 +1,23 @@
 // @flow
 import * as React from 'react';
 import {Checkbox} from 'baseui/checkbox';
+import {type FieldRenderProps} from '../types.js.flow';
 import {FormControl} from 'baseui/form-control';
-import {type SingleValueFieldRenderProps} from '../types.js.flow';
+import assignProps from '../util/assign-props';
 
-export default function render({
-  input,
-  meta,
-  inputProps,
-  caption,
-  label,
-}: SingleValueFieldRenderProps) {
-  const {value, onChange, ...restInput} = input;
-  if (inputProps) {
-    inputProps.type = inputProps.type || 'checkbox';
-  }
+export default function render(props: FieldRenderProps) {
+  const {
+    formControlProps,
+    inputProps,
+    meta,
+    label,
+    onChange,
+    value,
+  } = assignProps(props);
+  inputProps.type = 'checkbox';
   return (
-    <FormControl caption={caption} error={meta.error}>
+    <FormControl {...formControlProps}>
       <Checkbox
-        {...restInput}
         {...inputProps}
         isError={!!meta.error}
         checked={!!value}
