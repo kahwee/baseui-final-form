@@ -8,7 +8,7 @@ import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
 import {Field, Form} from 'react-final-form';
 
-storiesOf('Toggle', module).add('Basic', () => (
+storiesOf('Toggle').add('Basic', () => (
   <Form
     onSubmit={action('submit')}
     initialValues={{useSavedCreditCard: false}}

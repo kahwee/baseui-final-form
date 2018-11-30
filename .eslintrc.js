@@ -14,8 +14,8 @@ module.exports = {
   settings: {
     react: {
       pragma: 'React', // Pragma to use, default to "React"
-      version: '16.0',
-      flowVersion: '0.81', // Flow version
+      version: '16.6.1',
+      flowVersion: '0.86', // Flow version
     },
   },
   env: {

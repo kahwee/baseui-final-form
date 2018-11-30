@@ -1,4 +1,3 @@
-/* eslint-env node */
 // @flow
 
 import * as React from 'react';
@@ -9,7 +8,7 @@ import options from '../native-select/__tests__/__fixtures__/fruit-options.json'
 import {storiesOf} from '@storybook/react';
 import {Field, Form} from 'react-final-form';
 
-storiesOf('Select', module)
+storiesOf('Select')
   .add('Single', () => (
     <Form
       onSubmit={action('submit')}
@@ -42,7 +41,7 @@ storiesOf('Select', module)
             caption="Please select multiple fruits"
             label="My fruits"
             options={options}
-            multiple
+            multi
           />
           <Button type="submit" disabled={pristine || invalid}>
             Submit

@@ -9,4 +9,5 @@ function loadStories() {
 }
 addDecorator(withInfo);
 addDecorator(withBaseui);
+// global -- module
 configure(loadStories, module);

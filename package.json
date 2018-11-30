@@ -1,6 +1,6 @@
 {
   "name": "baseui-final-form",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./dist/index.js",
   "license": "MIT",
   "author": "KahWee Teng <tengkahwee@gmail.com>",
@@ -14,7 +14,7 @@
     "build:storybook": "build-storybook -c .storybook -o storybook-static",
     "test": "jest",
     "cover": "jest --coverage",
-    "flow": "flow"
+    "flow": "flow check"
   },
   "dependencies": {
     "final-form": "^4.11.0",
@@ -43,7 +43,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
-    "baseui": "^4.4.1",
+    "baseui": "^5.1.0",
     "create-universal-package": "^3.4.6",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
@@ -62,7 +62,7 @@
     "prettier": "^1.15.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-testing-library": "^5.3.0",
+    "react-testing-library": "^5.3.1",
     "rimraf": "^2.6.2",
     "styletron-engine-atomic": "^1.0.9",
     "styletron-react": "^4.3.7-canary.1",
@@ -71,7 +71,7 @@
     "webpack": "^4.26.1"
   },
   "peerDependencies": {
-    "baseui": "^4.4.1",
+    "baseui": "^5.1.0",
     "react": "^16.6.0-0",
     "react-dom": "^16.6.0-0"
   },
