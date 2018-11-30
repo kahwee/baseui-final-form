@@ -1,12 +1,13 @@
 // @flow
 import * as React from 'react';
 import {FormControl} from 'baseui/form-control';
+import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 import Select from 'react-select';
-import {type isMultiValuesFieldRenderProps} from '../types.js.flow';
 
 type Props = {
   isMulti?: boolean,
-} & isMultiValuesFieldRenderProps;
+  RootSelect: React.Node | null,
+} & MultipleValuesFieldRenderProps;
 export default function render({
   RootSelect = Select,
   input,

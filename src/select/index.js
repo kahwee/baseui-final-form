@@ -5,20 +5,20 @@ import {type MultipleValuesFieldRenderProps} from '../types.js.flow';
 import {Select} from 'baseui/select';
 
 type Props = {
-  multiple?: boolean,
+  multi?: boolean,
 } & MultipleValuesFieldRenderProps;
 export default function render({
   input,
   inputProps,
   meta,
   caption,
-  multiple,
+  multi,
   label,
   options,
 }: Props) {
   const {value, onChange, ...inputRest} = input;
   let selectedOptions;
-  if (multiple) {
+  if (multi) {
     selectedOptions = options.filter(option => value.includes(option.id));
   } else {
     selectedOptions = options.filter(option => option.id === value);
@@ -28,20 +28,16 @@ export default function render({
       <Select
         {...inputRest}
         {...inputProps}
-        multiple={multiple}
-        selectedOptions={selectedOptions}
-        onChange={({selectedOptions}) => {
-          if (multiple) {
+        multi={multi}
+        value={selectedOptions}
+        onChange={({value}) => {
+          if (multi) {
             onChange(
-              Array.isArray(selectedOptions)
-                ? selectedOptions.map(option => option.id)
-                : undefined
+              Array.isArray(value) ? value.map(option => option.id) : undefined
             );
           } else {
             onChange(
-              Array.isArray(selectedOptions) && selectedOptions[0]
-                ? selectedOptions[0].id
-                : undefined
+              Array.isArray(value) && value[0] ? value[0].id : undefined
             );
           }
         }}
