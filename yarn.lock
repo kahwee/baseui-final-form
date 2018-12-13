@@ -3792,7 +3792,7 @@ cssstyle@^1.0.0:
   dependencies:
     cssom "0.3.x"
 
-csstype@^2.5.2:
+csstype@^2.5.2, csstype@^2.5.7:
   version "2.5.8"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.8.tgz#4ce5aa16ea0d562ef9105fa3ae2676f199586a35"
   integrity sha512-r4DbsyNJ7slwBSKoGesxDubRWJ71ghG8W2+1HcsDlAo12KGca9dDLv0u98tfdFw7ldBdoA7XmCnI6Q8LpAJXaQ==
@@ -10174,6 +10174,14 @@ styletron-standard@^1.0.7:
   resolved "https://registry.yarnpkg.com/styletron-standard/-/styletron-standard-1.0.7.tgz#f960c91a5ef127d7601222658892925e8dd5fa5d"
   integrity sha512-clCCuIhTGS6iU2VmxiPdsaApirH1DCvymy6s1o14Az0A+FUckziralQDuP8ylWEBSDpOWqoXkG16uDt5mWux9A==
   dependencies:
+    inline-style-prefixer "^4.0.0"
+
+styletron-standard@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/styletron-standard/-/styletron-standard-2.0.0.tgz#b9b1ad32188cacdb72f5b170880e5fb8fa3e33f9"
+  integrity sha512-Z+4f8fgAj4DUWL7t+EKo9NOmtNqzPpJSGeI7xJdD1L17ToDR+kHGQtPwQq7BpNld2ORpOM9Mig4NgkF/JHfAzg==
+  dependencies:
+    csstype "^2.5.7"
     inline-style-prefixer "^4.0.0"
 
 stylis-rule-sheet@^0.0.10:
