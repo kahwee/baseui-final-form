@@ -1,9 +1,9 @@
 [
-  {"id": "apple", "label": "Apple"},
-  {"id": "avocado", "label": "Avocado"},
-  {"id": "banana", "label": "Banana"},
-  {"id": "kiwi", "label": "Kiwi", "disabled": true},
-  {"id": "peach", "label": "Peach"},
-  {"id": "pineapple", "label": "Pineapple"},
-  {"id": "watermelon", "label": "Watermelon"}
+  {"id": "apple", "label": "Apple", "emoji": "🍎"},
+  {"id": "avocado", "label": "Avocado", "emoji": "🥑"},
+  {"id": "banana", "label": "Banana", "emoji": "🍌"},
+  {"id": "kiwi", "label": "Kiwi", "disabled": true, "emoji": "🥝"},
+  {"id": "peach", "label": "Peach", "emoji": "🍑"},
+  {"id": "pineapple", "label": "Pineapple", "emoji": "🍍"},
+  {"id": "watermelon", "label": "Watermelon", "emoji": "🍉"}
 ]
