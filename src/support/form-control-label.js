@@ -14,7 +14,17 @@ const FormControlLabel = ({children, help, ...rest}: Props) => {
       {children}
       {help && (
         <StatefulTooltip content={help}>
-          <HelpIcon $position="left" {...rest} />
+          <span
+            style={{
+              display: 'inline-block',
+              paddingLeft: '4px',
+              verticalAlign: 'middle',
+              overflow: 'hidden',
+              height: '16px',
+            }}
+          >
+            <HelpIcon />
+          </span>
         </StatefulTooltip>
       )}
     </StyledLabel>
