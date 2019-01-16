@@ -8,12 +8,10 @@ describe('help-icon', () => {
   it('should pass sanity test', () => {
     const {container} = render(
       <BaseuiProvider>
-        <HelpIcon $position="left" />
-        <HelpIcon $position="right" $isFocused={true} />
         <HelpIcon />
       </BaseuiProvider>
     );
-    const spanNode = container.querySelectorAll('span');
-    expect(spanNode).toHaveLength(3);
+    const svgNode = container.querySelectorAll('svg');
+    expect(svgNode).toHaveLength(1);
   });
 });

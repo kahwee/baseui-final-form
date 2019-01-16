@@ -1,42 +1,36 @@
 // @flow
-import {styled} from 'baseui';
+import * as React from 'react';
 
-const HelpIcon = styled('span', props => {
-  return {
-    width: '16px',
-    alignItems: 'center',
-    padding:
-      props.$position === 'left'
-        ? '0 0 0 8px'
-        : props.$position === 'right'
-        ? '0 8px 0 0'
-        : '0',
-    ':before': {
-      content: '""',
-      display: 'inline-block',
-      boxSizing: 'border-box',
-      verticalAlign: 'middle',
-      width: '16px',
-      height: '16px',
-      borderRadius: '50%',
-      borderWidth: '2px',
-      borderStyle: 'solid',
-      borderColor: props.$isFocused ? props.$theme.colors.primary : '#999999',
-    },
-    ':after': {
-      content: '"?"',
-      color: '#999999',
-      display: 'inline-block',
-      boxSizing: 'border-box',
-      verticalAlign: 'middle',
-      width: '16px',
-      height: '16px',
-      position: 'relative',
-      left: '-11.5px',
-      top: '-3.5px',
-      fontSize: '12px',
-    },
-  };
-});
+type Props = {
+  size: number,
+};
+const HelpIcon = ({size = 16}: Props) => {
+  return (
+    <svg width={size} height={size}>
+      <g>
+        <title>HelpIcon</title>
+        <circle
+          cx="8"
+          cy="8"
+          id="svg_1"
+          r="7"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+        />
+        <text
+          fill="currentColor"
+          fontSize="22"
+          textAnchor="middle"
+          transform="matrix(0.624082 0 0 0.624082 55.956 37.4038)"
+          x="-77.24766"
+          y="-38.33472"
+        >
+          ?
+        </text>
+      </g>
+    </svg>
+  );
+};
 
 export default HelpIcon;
