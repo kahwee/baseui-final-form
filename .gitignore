@@ -2,7 +2,7 @@ node_modules/
 *.log
 coverage*/
 src/static/styles.css
-dist
+dist*
 lib
 es
 *.tmp.*

@@ -1,7 +1,7 @@
 {
   "name": "baseui-final-form",
   "version": "1.1.1",
-  "main": "./dist/index.js",
+  "main": "./dist-node-cjs/index.js",
   "license": "MIT",
   "author": "KahWee Teng <tengkahwee@gmail.com>",
   "scripts": {
@@ -42,7 +42,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
-    "baseui": "^5.7.0",
+    "baseui": "^5.8.0",
     "create-universal-package": "^4.0.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
@@ -70,32 +70,23 @@
     "webpack": "^4.28.4"
   },
   "peerDependencies": {
-    "baseui": "^5.7.0",
+    "baseui": "^5.8.0",
     "react": "^16.6.0-0",
     "react-dom": "^16.6.0-0"
   },
   "keywords": ["react", "reactjs", "final-form", "react-final-form", "forms"],
-  "module": "./dist/index.es.js",
-  "browser": {
-    "./dist/index.js": "./dist/browser.es5.js",
-    "./dist/index.es.js": "./dist/browser.es5.es.js"
-  },
-  "es2015": {
-    "./dist/browser.es5.es.js": "./dist/browser.es2015.es.js"
-  },
-  "es2017": {
-    "./dist/browser.es5.es.js": "./dist/browser.es2017.es.js",
-    "./dist/browser.es2015.es.js": "./dist/browser.es2017.es.js"
-  },
-  "files": ["dist", "src"],
+  "module": "./dist-node-esm/index.js",
+  "browser": "./dist-browser-esm/index.js",
+  "files": ["dist-browser-esm", "dist-node-cjs", "dist-node-esm", "src"],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
     }
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>src/setup-tests.js",
+    "setupFilesAfterEnv": ["<rootDir>src/setup-tests.js"],
     "collectCoverage": true,
+    "testPathIgnorePatterns": ["/node_modules/", "/dist*"],
     "collectCoverageFrom": [
       "src/**.js",
       "!src/setup-tests.js",
