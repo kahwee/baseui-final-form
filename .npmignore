@@ -1,6 +1,7 @@
 .storybook
 stories
 storybook-static
-.uber
-.uber.json
+.cache
+.circleci
+__tests__
 ios
