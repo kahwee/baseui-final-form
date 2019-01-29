@@ -44,7 +44,7 @@
     "babel-loader": "^8.0.5",
     "baseui": "^5.9.0",
     "create-universal-package": "^4.0.0",
-    "eslint": "^5.12.0",
+    "eslint": "^5.12.1",
     "eslint-config-fusion": "^4.0.0",
     "eslint-plugin-cup": "^2.0.0",
     "eslint-plugin-flowtype": "^3.2.1",
@@ -63,8 +63,7 @@
     "rimraf": "^2.6.3",
     "storybook-readme": "^4.0.5",
     "styletron-engine-atomic": "^1.0.13",
-    "styletron-react": "^4.4.4",
-    "webpack": "^4.28.4"
+    "styletron-react": "^4.4.4"
   },
   "peerDependencies": {
     "baseui": "^5.9.0",
