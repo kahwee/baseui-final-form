@@ -2,6 +2,7 @@
 // @flow
 
 import * as React from 'react';
+import {Block} from 'baseui/block';
 import {Button} from 'baseui/button';
 import Input from './input/index';
 import RadioGroup from './radio-group/index';
@@ -25,30 +26,24 @@ storiesOf('Playground', module).add('Basic', () => (
     subscription={{submitting: true, pristine: true}}
     render={({handleSubmit, pristine, invalid}) => (
       <form onSubmit={handleSubmit}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gridGap: '8px',
-          }}
-        >
-          <div style={{position: 'relative'}}>
+        <Block display="grid" gridTemplateColumns="1fr 1fr" gridGap="scale300">
+          <Block position="relative">
             <Field
               name="firstName"
               label="First name"
               component={Input}
               help="Your given name"
             />
-          </div>
-          <div style={{position: 'relative'}}>
+          </Block>
+          <Block position="relative">
             <Field
               name="lastName"
               label="Last name"
               component={Input}
               help="Your family name"
             />
-          </div>
-        </div>
+          </Block>
+        </Block>
         <Field
           name="target"
           component={RadioGroup}
