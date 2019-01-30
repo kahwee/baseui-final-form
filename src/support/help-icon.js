@@ -3,12 +3,13 @@ import * as React from 'react';
 
 type Props = {
   size: number,
+  title: string,
 };
-const HelpIcon = ({size = 16}: Props) => {
+const HelpIcon = ({size = 16, title = 'HelpIcon'}: Props) => {
   return (
     <svg width={size} height={size}>
       <g>
-        <title>HelpIcon</title>
+        <title>{title}</title>
         <circle
           cx="8"
           cy="8"

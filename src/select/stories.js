@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {Button} from 'baseui/button';
+import {H6} from 'baseui/typography';
 import Select from './index';
 import SelectReadme from './README.md';
 import {action} from '@storybook/addon-actions';
@@ -80,7 +81,9 @@ storiesOf('Select', module)
       initialValues={{fruits: ['pineapple', 'apple']}}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
-          Notice that the dropdown list items now have a green hover effect:
+          <H6>
+            Notice that the dropdown list items now have a green hover effect:
+          </H6>
           <Field
             name="fruits"
             component={Select}
