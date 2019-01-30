@@ -8,10 +8,10 @@ Adapter between `react-final-form` and `baseui`.
 
 ## Prerequisites
 
-- `baseui` >= 5.9.0 (peer dependency)
+- `baseui` >= 5.11.0 (peer dependency)
 - `react` and `react-dom` >= 16.6.0 (peer dependency)
 - `node` >= 10.15.0 (for development)
-- `yarn` >= 1.12.3 (for development)
+- `yarn` >= 1.13.0 (for development)
 
 ## Usage
 
@@ -33,7 +33,7 @@ Sample component:
 ```javascript
 import * as React from 'react';
 import {Button} from 'baseui/button';
-import RadioGroup from './index';
+import {RadioGroup} from 'baseui-final-form';
 import {Field, Form} from 'react-final-form';
 
 const MyComponent = () => {
