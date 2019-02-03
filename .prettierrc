@@ -1,8 +1,0 @@
-singleQuote: true
-bracketSpacing: false
-trailingComma: es5
-useTabs: false
-tabWidth: 2
-jsxBracketSameLine: false
-semi: true
-parser: babel
