@@ -1,4 +1,4 @@
-// @noflow
+// @flow
 import isNumeric from '../is-numeric';
 
 describe('is-numeric', () => {
