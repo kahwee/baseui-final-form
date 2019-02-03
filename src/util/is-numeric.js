@@ -1,5 +1,5 @@
 // @flow
-export default function isNumeric(n: string | number) {
+export default function isNumeric(n: mixed) {
   if (Array.isArray(n)) {
     return false;
   }
