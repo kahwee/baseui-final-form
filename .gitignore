@@ -17,3 +17,5 @@ env*
 
 .cache
 docs
+
+storybook-static
