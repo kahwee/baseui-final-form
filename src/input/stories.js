@@ -4,11 +4,13 @@
 import * as React from 'react';
 import {Button} from 'baseui/button';
 import Input from './index';
+import Readme from './README.md';
 import {StatefulTooltip} from 'baseui/tooltip';
 import {action} from '@storybook/addon-actions';
 import {minLength} from '../validate';
 import {storiesOf} from '@storybook/react';
 import {styled} from 'baseui';
+import {withReadme} from 'storybook-readme';
 import {Field, Form} from 'react-final-form';
 
 const minLength3 = minLength(3);
@@ -45,6 +47,7 @@ export const Address = ({name, label}: AddressProps) => (
 );
 
 storiesOf('Input', module)
+  .addDecorator(withReadme(Readme))
   .add('Basic', () => (
     <Form
       validateOnBlur
@@ -76,6 +79,26 @@ storiesOf('Input', module)
             label="Social security number"
           />
 
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
+  .add('Passing props into the input', () => (
+    <Form
+      validateOnBlur
+      onSubmit={action('submit')}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="firstName"
+            component={Input}
+            overrides={{Input: {props: {autoComplete: 'off'}}}}
+            label="First name"
+            validate={minLength3}
+          />
           <Button type="submit" disabled={pristine || invalid}>
             Submit
           </Button>

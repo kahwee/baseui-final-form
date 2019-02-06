@@ -57,6 +57,11 @@ const MyComponent = () => {
               {id: 'peach', label: 'Peach'},
               {id: 'pineapple', label: 'Pineapple'},
             ]}
+            overrides={{
+              RadioMark: {
+                style: ({$theme}) => ({borderColor: $theme.colors.positive}),
+              },
+            }}
           />
 
           <Button type="submit" disabled={pristine || invalid}>
@@ -68,6 +73,81 @@ const MyComponent = () => {
   );
 };
 export default MyComponent;
+```
+
+### How this works?
+
+This library wraps the corresponding `baseui`'s components under the hood:
+
+| When you import from `baseui-final-form`         | How `baseui-final-form` imports from `baseui`?        |
+| ------------------------------------------------ | ----------------------------------------------------- |
+| import {Input} from 'baseui-final-form';         | import {Input} from 'baseui/input';                   |
+| import {Checkbox} from 'baseui-final-form';      | import {Checkbox} from 'baseui/checkbox';             |
+| import {CheckboxGroup} from 'baseui-final-form'; | import {Checkbox} from 'baseui/checkbox';             |
+| import {NavtiveSelect} from 'baseui-final-form'; |                                                       |
+| import {RadioGroup} from 'baseui-final-form';    | import {RadioGroup, StyledRadio} from 'baseui/radio'; |
+| import {Select} from 'baseui-final-form';        | import {Select} from 'baseui/select';                 |
+| import {Slider} from 'baseui-final-form';        | import {Slider} from 'baseui/slider';                 |
+| import {Textarea} from 'baseui-final-form';      | import {Textarea} from 'baseui/textarea';             |
+| import {Toggle} from 'baseui-final-form';        | import {Checkbox} from 'baseui/checkbox';             |
+
+If you want to pass in additional props, such as `disabled`, to the underlying `baseui` component, can you do it this way:
+
+```js
+const form = () => {
+  return (
+    <Form
+      onSubmit={}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="ssn"
+            component={Input}
+            disabled
+          />
+        </form>
+      )}
+    />
+  );
+};
+```
+
+This includes the `overrides` prop.
+
+### Overriding components of baseui
+
+You can override the component wrapped by `baseui-final-form` using the `overrides` prop.
+
+```javascript
+const MyComponent = () => {
+  return (
+    <Form
+      onSubmit={() => {}}
+      initialValues={{fruit: 'apple'}}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="fruit"
+            component={RadioGroup}
+            label="My favorite fruit"
+            options={[
+              {id: 'apple', label: 'Apple'},
+              {id: 'avocado', label: 'Avocado'},
+              {id: 'kiwi', label: 'Kiwi', disabled: true},
+              {id: 'peach', label: 'Peach'},
+              {id: 'pineapple', label: 'Pineapple'},
+            ]}
+            overrides={{
+              RadioMark: {
+                style: ({$theme}) => ({borderColor: $theme.colors.positive}),
+              },
+            }}
+          />
+        </form>
+      )}
+    />
+  );
+};
 ```
 
 ## Development
