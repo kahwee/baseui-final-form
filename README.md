@@ -84,7 +84,7 @@ This library wraps the corresponding `baseui`'s components under the hood:
 | `import {Input} from 'baseui-final-form';`         | `import {Input} from 'baseui/input';`                   |
 | `import {Checkbox} from 'baseui-final-form';`      | `import {Checkbox} from 'baseui/checkbox';`             |
 | `import {CheckboxGroup} from 'baseui-final-form';` | `import {Checkbox} from 'baseui/checkbox';`             |
-| `import {NavtiveSelect} from 'baseui-final-form';` |                                                         |
+| `import {NativeSelect} from 'baseui-final-form';`  |                                                         |
 | `import {RadioGroup} from 'baseui-final-form';`    | `import {RadioGroup, StyledRadio} from 'baseui/radio';` |
 | `import {Select} from 'baseui-final-form';`        | `import {Select} from 'baseui/select';`                 |
 | `import {Slider} from 'baseui-final-form';`        | `import {Slider} from 'baseui/slider';`                 |
