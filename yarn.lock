@@ -2455,17 +2455,18 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseui@^5.13.1:
-  version "5.13.1"
-  resolved "https://registry.yarnpkg.com/baseui/-/baseui-5.13.1.tgz#4117391d27bd9318b1c7959500b77fdde25bdddc"
-  integrity sha512-L4SBX6i0Zq5u6rtokaZiMyJaZBxyVEF6BsFO5nfHl5iERH1cW6M1Q+5mW5VAdEQLCvd32h2swcZib8HZINjY5A==
+baseui@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/baseui/-/baseui-6.0.0.tgz#3dcae45cc41deced6e6ac971a1eac53820d8e630"
+  integrity sha512-As/iRtXSZ39cccUv2ZG6PrpM1EL91KS+Jm73UrdNEF9LHJ1YR3LC+/8Rg1HKgx5lvP5vNxYcja5Eauh9zt1ccw==
   dependencies:
     date-fns "2.0.0-alpha.27"
     memoize-one "^5.0.0"
     popper.js "^1.14.3"
     react-dropzone "^8.0.0"
     react-input-mask "^2.0.4"
-    react-movable "^1.0.1"
+    react-movable "^2.0.1"
+    react-range "^1.0.4"
     smoothscroll-polyfill "^0.4.3"
 
 bcrypt-pbkdf@^1.0.0:
@@ -8155,10 +8156,15 @@ react-modal@^3.6.1:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
-react-movable@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-movable/-/react-movable-1.0.1.tgz#b9a967a90e9f51d3bbe9e83047e5e336dbd94735"
-  integrity sha512-rebw6Q4uagXSG53o03+39pHQEfgGgJvVtsAj1DoXAHkBObswGhJELITaRGRuz00Myvj2AiP1YPgVePLM66LdNA==
+react-movable@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-movable/-/react-movable-2.0.1.tgz#0293bef67854cc22e288d245d813963451476663"
+  integrity sha512-zOW/K7iXcJyKF0+D54R6fJCHyDfXPRWwk2H9W/N9YCGBrK/Nw/QWxQBn8AynupBikY0J+HMSlqs8cqIwjiZWzQ==
+
+react-range@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.0.4.tgz#7894ed455df99b247a66f21ecf9a1e795ace69a4"
+  integrity sha512-x/5ccksgn9nCu1Vaax3qKjmTxVr2NxMjvIwO6AkK792miwoWTDawo8Ny1M6tHbwB7BM3+bLoURMGZwTRYf/D7g==
 
 react-select@^2.2.0:
   version "2.3.0"
