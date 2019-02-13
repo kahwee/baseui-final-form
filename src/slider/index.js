@@ -14,7 +14,7 @@ export default function render(props: FieldRenderProps) {
     onChange,
     value,
   } = assignProps(props);
-  const transformedValue = value || inputProps.range || [];
+  const transformedValue = value || [inputProps.min, inputProps.max] || [];
   return (
     <FormControl {...formControlProps}>
       <Slider

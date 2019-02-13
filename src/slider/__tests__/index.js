@@ -14,7 +14,7 @@ describe('slider', () => {
     component: Slider,
   };
 
-  it('should be submitted with default values when initialized', () => {
+  it('should be submitted with default values of 1 when initialized', () => {
     const mockSubmit = jest.fn();
     const {container} = render(
       <BaseuiProvider>
@@ -31,6 +31,28 @@ describe('slider', () => {
     fireEvent.submit(formNode);
     expect(mockSubmit).toHaveBeenLastCalledWith(
       {age: [19]},
+      expect.anything(),
+      expect.anything()
+    );
+  });
+
+  it('should be submitted with default values of 2 when initialized', () => {
+    const mockSubmit = jest.fn();
+    const {container} = render(
+      <BaseuiProvider>
+        <Form onSubmit={mockSubmit} initialValues={{age: [19, 40]}}>
+          {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+              <Field {...defaultProps} />
+            </form>
+          )}
+        </Form>
+      </BaseuiProvider>
+    );
+    const formNode = container.querySelector('form');
+    fireEvent.submit(formNode);
+    expect(mockSubmit).toHaveBeenLastCalledWith(
+      {age: [19, 40]},
       expect.anything(),
       expect.anything()
     );
