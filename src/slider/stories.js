@@ -18,7 +18,7 @@ storiesOf('Slider', module)
       initialValues={{age: [38]}}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
-          <Field name="age" component={Slider} range={[18, 120]} label="Age" />
+          <Field name="age" component={Slider} min={18} max={120} label="Age" />
 
           <Button type="submit" disabled={pristine || invalid}>
             Submit
@@ -36,7 +36,8 @@ storiesOf('Slider', module)
           <Field
             name="sqft"
             component={Slider}
-            range={[0, 1000]}
+            min={0}
+            max={1000}
             caption="Choose the area of your apartment in sq ft"
             label="Apartment size"
           />

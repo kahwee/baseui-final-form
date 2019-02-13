@@ -8,7 +8,7 @@ To use a single field:
 import {Slider} from 'baseui-final-form';
 
 const singleField = (
-  <Field name="age" component={Slider} range={[18, 120]} label="Age" />
+  <Field name="age" component={Slider} min={18} max={120} label="Age" />
 );
 ```
 

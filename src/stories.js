@@ -3,11 +3,15 @@
 
 import * as React from 'react';
 import {Block} from 'baseui/block';
-import {Button} from 'baseui/button';
+import Delete from 'baseui/icon/delete';
+import {FieldArray} from 'react-final-form-arrays'; // This is for Field arrays
 import Input from './input/index';
+import Plus from 'baseui/icon/plus';
 import RadioGroup from './radio-group/index';
 import {action} from '@storybook/addon-actions';
+import arrayMutators from 'final-form-arrays'; // This is for Field arrays
 import {storiesOf} from '@storybook/react';
+import {Button, SHAPE, SIZE} from 'baseui/button';
 import {Field, Form} from 'react-final-form';
 import {
   Modal,
@@ -214,4 +218,78 @@ storiesOf('Playground', module)
         </React.Fragment>
       )}
     </ModalStateContainer>
-  ));
+  ))
+  .add('Field arrays', () => {
+    return (
+      <Form
+        onSubmit={action('submit')}
+        mutators={{
+          ...arrayMutators,
+        }}
+        subscription={{submitting: true, pristine: true}}
+        render={props => {
+          const {handleSubmit, pristine, invalid, form} = props;
+          return (
+            <form onSubmit={handleSubmit}>
+              <FieldArray name="customers">
+                {({fields}) => (
+                  <div>
+                    {fields.map((name, index) => (
+                      <div key={name}>
+                        <Block
+                          key={name}
+                          display="grid"
+                          gridTemplateColumns="1fr 1fr fit-content(36px)"
+                          alignItems="end"
+                          gridGap="scale300"
+                        >
+                          <Block>
+                            <Field
+                              name={`${name}.firstName`}
+                              label="First name"
+                              component={Input}
+                              help="Your given name"
+                            />
+                          </Block>
+                          <Block>
+                            <Field
+                              name={`${name}.lastName`}
+                              label="Last name"
+                              component={Input}
+                              help="Your family name"
+                            />
+                          </Block>
+                          <Block>
+                            <Button
+                              shape={SHAPE.square}
+                              type="button"
+                              size={SIZE.compact}
+                              onClick={() => fields.remove(index)}
+                            >
+                              <Delete size={16} />
+                            </Button>
+                          </Block>
+                        </Block>
+                      </div>
+                    ))}
+
+                    <Button
+                      startEnhancer={() => <Plus size={16} />}
+                      type="button"
+                      size={SIZE.compact}
+                      onClick={() => fields.push({firstName: '', lastName: ''})}
+                    >
+                      Add
+                    </Button>
+                  </div>
+                )}
+              </FieldArray>
+              <Button type="submit" disabled={pristine || invalid}>
+                Submit
+              </Button>
+            </form>
+          );
+        }}
+      />
+    );
+  });
