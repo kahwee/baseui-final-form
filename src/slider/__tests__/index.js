@@ -9,7 +9,8 @@ describe('slider', () => {
   const defaultProps = {
     name: 'age',
     label: 'Age',
-    range: [18, 120],
+    min: 18,
+    max: 120,
     component: Slider,
   };
 
