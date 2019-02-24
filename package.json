@@ -59,7 +59,7 @@
     "prettier": "^1.16.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-testing-library": "^5.9.0",
+    "react-testing-library": "^6.0.0",
     "rimraf": "^2.6.3",
     "storybook-readme": "^4.0.5",
     "styletron-engine-atomic": "^1.0.13",
