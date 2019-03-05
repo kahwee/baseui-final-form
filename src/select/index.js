@@ -10,7 +10,7 @@ type Props = {
 } & FieldRenderProps;
 export default function render({multi, ...props}: Props) {
   const {formControlProps, inputProps, options, value, onChange} = assignProps(
-    props
+    ((props: any): FieldRenderProps)
   );
   if (!Array.isArray(options)) {
     throw new Error('Missing options');
