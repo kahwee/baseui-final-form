@@ -10,12 +10,13 @@ type Props = {
   RootSelect?: React.StatelessFunctionalComponent<any>,
 } & FieldRenderProps;
 export default function render({
+  // $FlowFixMe
   RootSelect = Select,
   isMulti,
   ...props
 }: Props) {
   const {formControlProps, inputProps, options, value, onChange} = assignProps(
-    props
+    ((props: any): FieldRenderProps)
   );
   if (!Array.isArray(options)) {
     throw new Error('Missing options');

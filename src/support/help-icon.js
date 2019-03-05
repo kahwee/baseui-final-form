@@ -2,8 +2,8 @@
 import * as React from 'react';
 
 type Props = {
-  size: number,
-  title: string,
+  size?: number,
+  title?: string,
 };
 const HelpIcon = ({size = 16, title = 'HelpIcon'}: Props) => {
   return (
