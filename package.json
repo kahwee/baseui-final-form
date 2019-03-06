@@ -1,6 +1,6 @@
 {
   "name": "baseui-final-form",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "main": "./dist-node-cjs/index.js",
   "license": "MIT",
   "author": "KahWee Teng <tengkahwee@gmail.com>",
