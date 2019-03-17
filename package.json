@@ -1,8 +1,14 @@
 {
   "name": "baseui-final-form",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "main": "./dist-node-cjs/index.js",
-  "license": "MIT",
+  "module": "./dist-node-esm/index.js",
+  "browser": "./dist-browser-esm/index.js",
+  "files": [
+    "dist-browser-esm",
+    "dist-node-cjs",
+    "dist-node-esm"
+  ],
   "author": "KahWee Teng <tengkahwee@gmail.com>",
   "scripts": {
     "clean": "rimraf lib dist es coverage",
@@ -77,14 +83,6 @@
     "react-final-form",
     "forms"
   ],
-  "module": "./dist-node-esm/index.js",
-  "browser": "./dist-browser-esm/index.js",
-  "files": [
-    "dist-browser-esm",
-    "dist-node-cjs",
-    "dist-node-esm",
-    "src"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
@@ -110,5 +108,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/kahwee/baseui-final-form.git"
-  }
+  },
+  "license": "MIT"
 }
