@@ -1,6 +1,6 @@
 {
   "name": "baseui-final-form",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "main": "./dist-node-cjs/index.js",
   "module": "./dist-node-esm/index.js",
   "browser": "./dist-browser-esm/index.js",
@@ -8,7 +8,9 @@
     "dist-browser-esm",
     "dist-node-cjs",
     "dist-node-esm",
-    "!**__tests__**"
+    "src",
+    "!**__tests__**",
+    "!stories.js"
   ],
   "author": "KahWee Teng <tengkahwee@gmail.com>",
   "scripts": {
