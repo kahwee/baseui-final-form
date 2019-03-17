@@ -3,5 +3,5 @@ stories
 storybook-static
 .cache
 .circleci
-__tests__
+**/__tests__/**
 ios
