@@ -1,5 +1,10 @@
 [
-  {"id": "apple", "label": "Apple", "emoji": "🍎"},
+  {
+    "id": "apple",
+    "label": "Apple",
+    "emoji": "🍎",
+    "description": "Popular company and fruit"
+  },
   {"id": "avocado", "label": "Avocado", "emoji": "🥑"},
   {"id": "banana", "label": "Banana", "emoji": "🍌"},
   {"id": "kiwi", "label": "Kiwi", "disabled": true, "emoji": "🥝"},
