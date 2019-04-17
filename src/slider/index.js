@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import {type FieldRenderProps} from '../types.js.flow';
+import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
 import {Slider} from 'baseui/slider';
 import assignProps from '../util/assign-props';
