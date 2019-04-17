@@ -30,6 +30,7 @@ export const Address = ({name, label}: AddressProps) => (
       name={`${name}.street1`}
       component={Input}
       label={`${label} Street 1`}
+      onChange={action('street1 changed')}
     />
     <Field
       name={`${name}.street2`}

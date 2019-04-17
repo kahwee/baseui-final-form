@@ -27,12 +27,14 @@ export default function render({multi, ...props}: Props) {
         {...inputProps}
         multi={multi}
         value={selectedOptions}
-        onChange={({value}) => {
+        onChange={({value, option}) => {
           if (multi) {
+            inputProps.onChange({value, option});
             onChange(
               Array.isArray(value) ? value.map(option => option.id) : undefined
             );
           } else {
+            inputProps.onChange({value, option});
             onChange(
               Array.isArray(value) && value[0] ? value[0].id : undefined
             );
