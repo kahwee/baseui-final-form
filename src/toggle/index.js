@@ -1,5 +1,5 @@
 // @flow
-import {type FieldRenderProps} from '../types.js.flow';
+import {type FieldRenderProps} from '../types.js';
 import renderCheckbox from '../checkbox/index';
 
 export default function render(props: FieldRenderProps) {

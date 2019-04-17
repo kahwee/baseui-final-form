@@ -3,7 +3,7 @@ import * as React from 'react';
 import {Button} from 'baseui/button';
 import {ButtonGroup} from 'baseui/button-group';
 import type {ButtonGroupProps} from './types';
-import {type FieldRenderProps} from '../types.js.flow';
+import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
 import assignProps from '../util/assign-props';
 

@@ -3,7 +3,7 @@ import * as React from 'react';
 import type {FieldValidator} from 'final-form';
 import FormControlLabel from '../support/form-control-label';
 import type {OverrideT} from 'baseui/helpers/overrides';
-import type {FieldRenderProps, Option} from '../types.js.flow';
+import type {FieldRenderProps, Option} from '../types.js';
 
 type FormControlProps = {
   overrides: {

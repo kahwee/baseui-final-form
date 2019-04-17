@@ -3,7 +3,7 @@ import * as React from 'react';
 import {FormControl} from 'baseui/form-control';
 import Select from 'react-select';
 import assignProps from '../util/assign-props';
-import type {FieldRenderProps, ReactSelectOption} from '../types.js.flow';
+import type {FieldRenderProps, ReactSelectOption} from '../types.js';
 
 type Props = {
   isMulti?: boolean,
