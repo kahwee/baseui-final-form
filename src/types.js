@@ -17,6 +17,7 @@ export type ReactSelectOption = {
 
 export type FieldRenderProps = {
   caption: ?(React.Node | ((props: {}) => React.Node)),
+  onChange: (SyntheticInputEvent<*> | any) => void,
   label: ?(React.Node | ((props: {}) => React.Node)),
   disabled?: boolean,
   help?: string,

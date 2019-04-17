@@ -46,6 +46,7 @@ storiesOf('Select', module)
             label="My fruits"
             options={options}
             help="Telling us your favorite fruit helps us understand you better"
+            onChange={action('fruit changed')}
           />
           <Button type="submit" disabled={pristine || invalid}>
             Submit

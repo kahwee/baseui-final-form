@@ -44,6 +44,7 @@ export default function assignProps({
   caption,
   options,
   input,
+  onChange,
   ...inputProps
 }: FieldRenderProps): AssignedProps {
   return {
@@ -60,11 +61,20 @@ export default function assignProps({
     inputProps: {
       ...inputProps,
       ...input,
+      onChange: (...args) => {
+        if (onChange) {
+          onChange(...args);
+        }
+        if (input.onChange) {
+          input.onChange(...args);
+        }
+      },
       id: input.name,
       error: meta.error,
     },
     meta,
     validate,
+    onChange,
     label,
     caption,
     options,
