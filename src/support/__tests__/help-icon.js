@@ -1,8 +1,8 @@
 // @noflow
 import * as React from 'react';
+import {render} from 'react-testing-library';
 import BaseuiProvider from '../../with-baseui';
 import HelpIcon from '../help-icon';
-import {render} from 'react-testing-library';
 
 describe('help-icon', () => {
   it('should pass sanity test', () => {

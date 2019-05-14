@@ -3,10 +3,10 @@
 
 import * as React from 'react';
 import {Button} from 'baseui/button';
-import Checkbox from './index';
+import {Field, Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
-import {Field, Form} from 'react-final-form';
+import Checkbox from './index';
 
 storiesOf('Checkbox', module).add('Basic', () => (
   <Form

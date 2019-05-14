@@ -2,15 +2,15 @@
 
 import * as React from 'react';
 import {Button} from 'baseui/button';
+import {Field, Form} from 'react-final-form';
 import {H6} from 'baseui/typography';
-import Select from './index';
-import SelectReadme from './README.md';
 import {action} from '@storybook/addon-actions';
-import options from '../native-select/__tests__/__fixtures__/fruit-options.json';
 import {storiesOf} from '@storybook/react';
 import {styled} from 'baseui';
 import {withReadme} from 'storybook-readme';
-import {Field, Form} from 'react-final-form';
+import Select from './index';
+import SelectReadme from './README.md';
+import options from '../native-select/__tests__/__fixtures__/fruit-options.json';
 
 const CustomValueWrapper = styled('span', {
   display: 'inline-flex',

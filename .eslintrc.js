@@ -1,13 +1,14 @@
 /* eslint-env node */
 module.exports = {
   extends: [require.resolve('eslint-config-fusion')],
+  plugins: ['sort-imports-es6-autofix'],
   rules: {
-    'sort-imports': [
+    'sort-imports-es6-autofix/sort-imports-es6': [
       'error',
       {
         ignoreCase: false,
         ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'],
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
       },
     ],
   },

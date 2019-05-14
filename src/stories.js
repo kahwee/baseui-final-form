@@ -3,16 +3,9 @@
 
 import * as React from 'react';
 import {Block} from 'baseui/block';
-import Delete from 'baseui/icon/delete';
-import {FieldArray} from 'react-final-form-arrays'; // This is for Field arrays
-import Input from './input/index';
-import Plus from 'baseui/icon/plus';
-import RadioGroup from './radio-group/index';
-import {action} from '@storybook/addon-actions';
-import arrayMutators from 'final-form-arrays'; // This is for Field arrays
-import {storiesOf} from '@storybook/react';
 import {Button, SHAPE, SIZE} from 'baseui/button';
-import {Field, Form} from 'react-final-form';
+import {Field, Form} from 'react-final-form'; // This is for Field arrays
+import {FieldArray} from 'react-final-form-arrays';
 import {
   Modal,
   ModalBody,
@@ -20,6 +13,13 @@ import {
   ModalFooter,
   ModalHeader,
 } from 'baseui/modal';
+import {action} from '@storybook/addon-actions';
+import {storiesOf} from '@storybook/react';
+import Delete from 'baseui/icon/delete'; // This is for Field arrays
+import Input from './input/index';
+import Plus from 'baseui/icon/plus';
+import RadioGroup from './radio-group/index';
+import arrayMutators from 'final-form-arrays';
 
 const Condition = ({when, is, children}) => (
   <Field name={when} subscription={{value: true}}>
