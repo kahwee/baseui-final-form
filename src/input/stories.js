@@ -3,15 +3,15 @@
 
 import * as React from 'react';
 import {Button} from 'baseui/button';
-import Input from './index';
-import Readme from './README.md';
+import {Field, Form} from 'react-final-form';
 import {StatefulTooltip} from 'baseui/tooltip';
 import {action} from '@storybook/addon-actions';
-import {minLength} from '../validate';
+import {minLength, required} from '../validate';
 import {storiesOf} from '@storybook/react';
 import {styled} from 'baseui';
 import {withReadme} from 'storybook-readme';
-import {Field, Form} from 'react-final-form';
+import Input from './index';
+import Readme from './README.md';
 
 const minLength3 = minLength(3);
 
@@ -183,13 +183,18 @@ storiesOf('Input', module)
       )}
     />
   ))
-  .add('Address field group', () => (
+  .add('With validation of required', () => (
     <Form
       validateOnBlur
       onSubmit={action('submit')}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
-          <Address name="billingAddress" label="Billing" />
+          <Field
+            name="firstName"
+            component={Input}
+            label="First name"
+            validate={required}
+          />
           <Button type="submit" disabled={pristine || invalid}>
             Submit
           </Button>

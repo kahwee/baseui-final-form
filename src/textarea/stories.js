@@ -3,10 +3,10 @@
 
 import * as React from 'react';
 import {Button} from 'baseui/button';
-import Textarea from './index';
+import {Field, Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
-import {Field, Form} from 'react-final-form';
+import Textarea from './index';
 
 storiesOf('Textarea', module).add('Basic', () => (
   <Form

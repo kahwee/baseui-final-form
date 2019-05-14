@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
+import {LightTheme, ThemeProvider} from 'baseui';
 import {Client as Styletron} from 'styletron-engine-atomic';
 import {Provider as StyletronProvider} from 'styletron-react';
-import {LightTheme, ThemeProvider} from 'baseui';
 
 const engine = new Styletron();
 

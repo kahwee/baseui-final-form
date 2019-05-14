@@ -4,11 +4,11 @@
 import * as React from 'react';
 import {Block} from 'baseui/block';
 import {Button} from 'baseui/button';
-import RadioGroup from './index';
-import {action} from '@storybook/addon-actions';
-import options from '../native-select/__tests__/__fixtures__/fruit-options.json';
-import {storiesOf} from '@storybook/react';
 import {Field, Form} from 'react-final-form';
+import {action} from '@storybook/addon-actions';
+import {storiesOf} from '@storybook/react';
+import RadioGroup from './index';
+import options from '../native-select/__tests__/__fixtures__/fruit-options.json';
 
 storiesOf('RadioGroup', module)
   .add('Basic', () => (

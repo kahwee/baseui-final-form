@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
-import type {FieldValidator} from 'final-form';
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
+import type {FieldValidator} from 'final-form';
 
 export type Option = {
   label: string,

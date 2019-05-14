@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
-import HelpIcon from './help-icon';
 import {StatefulTooltip} from 'baseui/tooltip';
 import {StyledLabel} from 'baseui/form-control';
+import HelpIcon from './help-icon';
 
 type Props = {
   children: React.Node,
