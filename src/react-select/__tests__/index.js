@@ -1,11 +1,11 @@
 // @noflow
 import * as React from 'react';
+import {Field, Form} from 'react-final-form';
+import {cleanup, fireEvent, render} from 'react-testing-library';
 import BaseuiProvider from '../../with-baseui';
 import CreatableSelect from 'react-select/lib/Creatable';
 import ReactSelect from '../index';
 import options from '../../native-select/__tests__/__fixtures__/fruit-options.json';
-import {Field, Form} from 'react-final-form';
-import {cleanup, fireEvent, render} from 'react-testing-library';
 
 const TEST_CLASSNAME = 'react-select-test-for-jest';
 

@@ -1,9 +1,9 @@
 // @noflow
 import * as React from 'react';
-import BaseuiProvider from '../../with-baseui';
-import Textarea from '../index';
 import {Field, Form} from 'react-final-form';
 import {fireEvent, render} from 'react-testing-library';
+import BaseuiProvider from '../../with-baseui';
+import Textarea from '../index';
 
 describe('textarea', () => {
   it('should record a submission in final-form when changed in baseui/textarea', () => {

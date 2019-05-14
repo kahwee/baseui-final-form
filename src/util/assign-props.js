@@ -1,9 +1,9 @@
 //@flow
 import * as React from 'react';
-import type {FieldValidator} from 'final-form';
 import FormControlLabel from '../support/form-control-label';
-import type {OverrideT} from 'baseui/helpers/overrides';
 import type {FieldRenderProps, Option} from '../types.js';
+import type {FieldValidator} from 'final-form';
+import type {OverrideT} from 'baseui/helpers/overrides';
 
 type FormControlProps = {
   overrides: {
@@ -52,7 +52,7 @@ export default function assignProps({
       labelFor: input.name,
       caption,
       help,
-      error: meta && meta.error ? meta.error : false,
+      error: meta && meta.error && meta.touched ? meta.error : false,
       label,
       overrides: {
         Label: {component: FormControlLabel, props: {help}},
@@ -70,7 +70,7 @@ export default function assignProps({
         }
       },
       id: input.name,
-      error: meta.error,
+      error: meta.error && meta.touched,
     },
     meta,
     validate,

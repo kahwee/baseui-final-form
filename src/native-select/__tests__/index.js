@@ -1,10 +1,10 @@
 // @noflow
 import * as React from 'react';
+import {Field, Form} from 'react-final-form';
+import {fireEvent, render} from 'react-testing-library';
 import BaseuiProvider from '../../with-baseui';
 import NativeSelect from '../index';
 import options from './__fixtures__/fruit-options.json';
-import {Field, Form} from 'react-final-form';
-import {fireEvent, render} from 'react-testing-library';
 
 describe('native-select', () => {
   it('should fail on missing options', () => {

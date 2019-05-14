@@ -74,7 +74,8 @@
     "rimraf": "^2.6.3",
     "storybook-readme": "^5.0.2",
     "styletron-engine-atomic": "^1.1.0",
-    "styletron-react": "^4.4.6"
+    "styletron-react": "^4.4.6",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.4.0"
   },
   "peerDependencies": {
     "baseui": "^6.11.0",
