@@ -1,6 +1,6 @@
 {
   "name": "baseui-final-form",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "main": "./dist-node-cjs/index.js",
   "module": "./dist-node-esm/index.js",
   "browser": {
@@ -29,7 +29,7 @@
     "flow": "flow check"
   },
   "dependencies": {
-    "final-form": "^4.12.0",
+    "final-form": "^4.13.0",
     "final-form-arrays": "^1.1.2",
     "react-final-form": "^4.1.0",
     "react-final-form-arrays": "2.0.1",
@@ -55,17 +55,19 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
-    "baseui": "^6.14.0",
+    "baseui": "^6.19.0",
     "create-universal-package": "^4.0.0",
     "emotion-theming": "^10.0.10",
     "eslint": "^5.16.0",
-    "eslint-config-fusion": "^4.0.0",
+    "eslint-config-fusion": "^5.0.0",
     "eslint-plugin-cup": "^2.0.0",
-    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-flowtype": "^3.9.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jest": "^22.4.1",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.12.3",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.4.0",
     "flow-bin": "^0.95.1",
     "husky": "^2.0.0",
     "jest": "^24.7.1",
@@ -73,12 +75,11 @@
     "prettier": "^1.17.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-testing-library": "^6.1.2",
+    "react-testing-library": "^7.0.0",
     "rimraf": "^2.6.3",
     "storybook-readme": "^5.0.2",
     "styletron-engine-atomic": "^1.1.0",
-    "styletron-react": "^4.4.6",
-    "eslint-plugin-sort-imports-es6-autofix": "^0.4.0"
+    "styletron-react": "^4.4.6"
   },
   "peerDependencies": {
     "baseui": "^6.11.0",

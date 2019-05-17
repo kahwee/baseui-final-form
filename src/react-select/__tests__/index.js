@@ -43,7 +43,7 @@ describe('react-select', () => {
     });
 
     it('should pass sanity checks', () => {
-      const {container, getByText} = render(
+      const {container, getAllByText} = render(
         <BaseuiProvider>
           <Form onSubmit={() => {}} initialValues={{fruit: 'pineapple'}}>
             {({handleSubmit}) => (
@@ -55,12 +55,12 @@ describe('react-select', () => {
         </BaseuiProvider>
       );
       expect(container.querySelector(`.${TEST_CLASSNAME}-1`)).toBeDefined();
-      expect(getByText('Pineapple')).toBeDefined();
+      expect(getAllByText('Pineapple')).toBeDefined();
     });
 
     it('should update value on click', () => {
       const mockSubmit = jest.fn();
-      const {container, getByText} = render(
+      const {container, getByText, getAllByText} = render(
         <BaseuiProvider>
           <Form onSubmit={mockSubmit} initialValues={{fruit: 'pineapple'}}>
             {({handleSubmit}) => (
@@ -77,7 +77,7 @@ describe('react-select', () => {
       );
       const formNode = container.querySelector('form');
       const optionWatermelon = getByText('Watermelon');
-      expect(getByText('Pineapple')).toBeDefined();
+      expect(getAllByText('Pineapple')).toBeDefined();
       fireEvent.click(optionWatermelon);
       fireEvent.submit(formNode);
       expect(mockSubmit).toHaveBeenLastCalledWith(
