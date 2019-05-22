@@ -3,13 +3,13 @@
 
 import * as React from 'react';
 import {Button} from 'baseui/button';
+import {Field, Form} from 'react-final-form';
+import {action} from '@storybook/addon-actions';
+import {storiesOf} from '@storybook/react';
 import CreatableSelect from 'react-select/lib/Creatable';
 import Select from './index';
-import {action} from '@storybook/addon-actions';
 import makeAnimated from 'react-select/lib/animated';
 import options from '../native-select/__tests__/__fixtures__/fruit-options.json';
-import {storiesOf} from '@storybook/react';
-import {Field, Form} from 'react-final-form';
 
 storiesOf('react-select', module)
   .add('Single', () => (

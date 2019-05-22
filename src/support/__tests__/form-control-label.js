@@ -1,8 +1,8 @@
 // @noflow
 import * as React from 'react';
+import {render} from 'react-testing-library';
 import BaseuiProvider from '../../with-baseui';
 import FormControlLabel from '../form-control-label';
-import {render} from 'react-testing-library';
 
 describe('help-icon', () => {
   it('should pass sanity test', () => {

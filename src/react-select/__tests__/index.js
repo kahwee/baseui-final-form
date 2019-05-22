@@ -1,11 +1,11 @@
 // @noflow
 import * as React from 'react';
+import {Field, Form} from 'react-final-form';
+import {cleanup, fireEvent, render} from 'react-testing-library';
 import BaseuiProvider from '../../with-baseui';
 import CreatableSelect from 'react-select/lib/Creatable';
 import ReactSelect from '../index';
 import options from '../../native-select/__tests__/__fixtures__/fruit-options.json';
-import {Field, Form} from 'react-final-form';
-import {cleanup, fireEvent, render} from 'react-testing-library';
 
 const TEST_CLASSNAME = 'react-select-test-for-jest';
 
@@ -43,7 +43,7 @@ describe('react-select', () => {
     });
 
     it('should pass sanity checks', () => {
-      const {container, getByText} = render(
+      const {container, getAllByText} = render(
         <BaseuiProvider>
           <Form onSubmit={() => {}} initialValues={{fruit: 'pineapple'}}>
             {({handleSubmit}) => (
@@ -55,12 +55,12 @@ describe('react-select', () => {
         </BaseuiProvider>
       );
       expect(container.querySelector(`.${TEST_CLASSNAME}-1`)).toBeDefined();
-      expect(getByText('Pineapple')).toBeDefined();
+      expect(getAllByText('Pineapple')).toBeDefined();
     });
 
     it('should update value on click', () => {
       const mockSubmit = jest.fn();
-      const {container, getByText} = render(
+      const {container, getByText, getAllByText} = render(
         <BaseuiProvider>
           <Form onSubmit={mockSubmit} initialValues={{fruit: 'pineapple'}}>
             {({handleSubmit}) => (
@@ -77,7 +77,7 @@ describe('react-select', () => {
       );
       const formNode = container.querySelector('form');
       const optionWatermelon = getByText('Watermelon');
-      expect(getByText('Pineapple')).toBeDefined();
+      expect(getAllByText('Pineapple')).toBeDefined();
       fireEvent.click(optionWatermelon);
       fireEvent.submit(formNode);
       expect(mockSubmit).toHaveBeenLastCalledWith(

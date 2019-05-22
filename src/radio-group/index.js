@@ -2,8 +2,8 @@
 import * as React from 'react';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
-import assignProps from '../util/assign-props';
 import {Radio, RadioGroup} from 'baseui/radio';
+import assignProps from '../util/assign-props';
 
 export default function render(props: FieldRenderProps) {
   const {formControlProps, inputProps, options, onChange} = assignProps(props);

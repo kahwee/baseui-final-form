@@ -1,9 +1,9 @@
 // @noflow
 import * as React from 'react';
-import BaseuiProvider from '../../with-baseui';
-import Slider from '../index';
 import {Field, Form} from 'react-final-form';
 import {fireEvent, render} from 'react-testing-library';
+import BaseuiProvider from '../../with-baseui';
+import Slider from '../index';
 
 describe('slider', () => {
   const defaultProps = {
