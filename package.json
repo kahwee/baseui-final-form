@@ -59,7 +59,7 @@
     "create-universal-package": "^4.0.0",
     "emotion-theming": "^10.0.10",
     "eslint": "^5.16.0",
-    "eslint-config-fusion": "^5.0.0",
+    "eslint-config-fusion": "^6.0.0",
     "eslint-plugin-cup": "^2.0.0",
     "eslint-plugin-flowtype": "^3.9.0",
     "eslint-plugin-import": "^2.16.0",
