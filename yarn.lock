@@ -10159,10 +10159,10 @@ style-loader@^0.23.1:
     loader-utils "^1.1.0"
     schema-utils "^1.0.0"
 
-styletron-engine-atomic@^1.1.0:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/styletron-engine-atomic/-/styletron-engine-atomic-1.1.2.tgz#b3cec962ab89fa133da0c87227f897350aeeef11"
-  integrity sha512-6N258sCi5dyjvITKqJkaJG1AZxOyXY7xuedetJeMlcgjfxTVSPZi0+EYJlcGr9MGnqxJerAMNpq2CtI7jrQ67A==
+styletron-engine-atomic@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/styletron-engine-atomic/-/styletron-engine-atomic-1.2.0.tgz#d316001ced41352c8e8d71d17d5d280e3c40f056"
+  integrity sha512-qEqqzNrDIS46RhqFHQ8m7y2+2uW1VwTqfq8kmNuffmPLxi0Jj1jrwqaBL/V8RLNrUQwEktbFCpaYH9fMMVlOng==
   dependencies:
     inline-style-prefixer "^4.0.0"
     styletron-standard "^2.0.3"

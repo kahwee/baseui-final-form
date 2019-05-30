@@ -78,7 +78,7 @@
     "react-testing-library": "^7.0.1",
     "rimraf": "^2.6.3",
     "storybook-readme": "^5.0.2",
-    "styletron-engine-atomic": "^1.1.0",
+    "styletron-engine-atomic": "^1.2.0",
     "styletron-react": "^4.4.6"
   },
   "peerDependencies": {
