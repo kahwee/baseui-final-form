@@ -1,6 +1,6 @@
 {
   "name": "baseui-final-form",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "main": "./dist-node-cjs/index.js",
   "module": "./dist-node-esm/index.js",
   "browser": {
@@ -8,6 +8,7 @@
     "./dist-node-esm/index.js": "./dist-browser-esm/index.js"
   },
   "files": [
+    "dist-browser-cjs",
     "dist-browser-esm",
     "dist-node-cjs",
     "dist-node-esm",
@@ -55,7 +56,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
-    "baseui": "^6.20.0",
+    "baseui": "^6.21.0",
     "create-universal-package": "^4.0.0",
     "emotion-theming": "^10.0.10",
     "eslint": "^5.16.0",
