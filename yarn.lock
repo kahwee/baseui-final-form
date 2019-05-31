@@ -3731,7 +3731,7 @@ create-react-context@<=0.2.2:
     fbjs "^0.8.0"
     gud "^1.0.0"
 
-create-react-context@^0.2.1, create-react-context@^0.2.2:
+create-react-context@^0.2.1:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.3.tgz#9ec140a6914a22ef04b8b09b7771de89567cb6f3"
   integrity sha512-CQBmD0+QGgTaxDL3OX1IDXYqjkp2It4RIbcb99jS6AEg27Ga+a9G3JtK6SIu0HBwPLZlmwt9F7UwWA4Bn92Rag==
@@ -10167,16 +10167,15 @@ styletron-engine-atomic@^1.1.0:
     inline-style-prefixer "^4.0.0"
     styletron-standard "^2.0.3"
 
-styletron-react@^4.4.6:
-  version "4.4.6"
-  resolved "https://registry.yarnpkg.com/styletron-react/-/styletron-react-4.4.6.tgz#61e07ad9d40468be2b9d74e72499fe36654eb236"
-  integrity sha512-v/U0CSpzU3FRIjawwQ3WO9V+UQnryyOuNlhnBvSYZTalz1U3FconRvL7zpTpDtQXzMiYrnpwXUTgomTAwrNNXg==
+styletron-react@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/styletron-react/-/styletron-react-5.0.1.tgz#b923a3d8f46d837f43bc0a1f1429185187419f61"
+  integrity sha512-rwr9fqfFBbkzxOUDxeIzZbhzZfWGmegsUY9Vr+cF0kCpqTl1M3ah5JBuvTECkEtt5v3CXhES19JV8nbIVtt5gQ==
   dependencies:
-    create-react-context "^0.2.2"
     prop-types "^15.6.0"
-    styletron-standard "^2.0.2"
+    styletron-standard "^2.0.3"
 
-styletron-standard@^2.0.2, styletron-standard@^2.0.3:
+styletron-standard@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/styletron-standard/-/styletron-standard-2.0.3.tgz#e453f420e977247bef655ee10b92c2f2d6fd3fc9"
   integrity sha512-p+BdWQn9oDClym/mGaTcZerQwSklKv/m1cBM2ETLACBsBLHp1f+UqglurxTD6nKv/mrHwXglE3t6qhuhD8dNTA==
