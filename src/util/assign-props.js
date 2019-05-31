@@ -18,13 +18,31 @@ type FormControlProps = {
 };
 type GenericInputProps = {
   id: string,
-  error?: string,
+  error?: any,
   [string]: any,
 };
 type AssignedProps = {
   formControlProps: FormControlProps,
   inputProps: GenericInputProps,
-  meta: any,
+  meta: {
+    // TODO: Make a diff of `FieldState` without all the functions
+    active?: boolean,
+    data?: Object,
+    dirty?: boolean,
+    dirtySinceLastSubmit?: boolean,
+    error?: any,
+    initial?: boolean,
+    invalid?: boolean,
+    meta?: boolean,
+    pristine?: boolean,
+    submitError?: any,
+    submitFailed?: boolean,
+    submitSucceeded?: boolean,
+    submitting?: boolean,
+    touched?: boolean,
+    valid?: boolean,
+    visited?: boolean,
+  },
   validate?: FieldValidator,
   name: string,
   label: ?(React.Node | ((props: {}) => React.Node)),

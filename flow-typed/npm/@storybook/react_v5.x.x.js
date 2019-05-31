@@ -1,25 +1,38 @@
-// flow-typed signature: 1aeadf523ef2d96985697463dd71c89d
-// flow-typed version: 35108faf5b/@storybook/react_v3.x.x/flow_>=v0.72.x
+// flow-typed signature: 68ee88c520cb9bb70866d8812664bc7b
+// flow-typed version: 00c3a083ad/@storybook/react_v5.x.x/flow_>=v0.72.x
 
 type NodeModule = typeof module;
 
 declare module '@storybook/react' {
   declare type Context = { kind: string, story: string };
-  declare type Renderable = React$Element<*>;
+  declare type Renderable =
+    | string
+    | number
+    | React$Element<any>
+    | Iterable<?Renderable>;
   declare type RenderCallback = (
     context: Context
-  ) => Renderable | Array<Renderable>;
-  declare type RenderFunction = () => Renderable | Array<Renderable>;
+  ) => Renderable;
+  declare type RenderFunction = () => Renderable;
 
   declare type StoryDecorator = (
     story: RenderFunction,
     context: Context
-  ) => Renderable | null;
+  ) => Renderable;
+
+  declare type DecoratorParameters = {
+    [key: string]: any,
+  };
 
   declare interface Story {
     +kind: string;
-    add(storyName: string, callback: RenderCallback): Story;
+    add(
+      storyName: string,
+      callback: RenderCallback,
+      parameters?: DecoratorParameters
+    ): Story;
     addDecorator(decorator: StoryDecorator): Story;
+    addParameters(parameters: DecoratorParameters): Story;
   }
 
   declare interface StoryObject {
@@ -34,6 +47,8 @@ declare module '@storybook/react' {
   }
 
   declare function addDecorator(decorator: StoryDecorator): void;
+  declare function addParameters(parameters: DecoratorParameters): void;
+  declare function clearDecorators(): void;
   declare function configure(fn: () => void, module: NodeModule): void;
   declare function setAddon(addon: Object): void;
   declare function storiesOf(name: string, module: NodeModule): Story;
