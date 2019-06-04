@@ -2907,10 +2907,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseui@^6.21.0:
-  version "6.21.0"
-  resolved "https://unpm.uberinternal.com/baseui/-/baseui-6.21.0.tgz#b77f681d62731345c5acd9fc7fe7c5df49a60280"
-  integrity sha512-zlTHpAYohwlydXQtorO4IvUXQ35DZonb3alY3IBM8JYvIZsuAQJzvI+nQaJy2dLYigcMO7J/BAB98K3ztMJ11w==
+baseui@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/baseui/-/baseui-7.0.0.tgz#740048a2e9c935638a657c6d4c876cb53c43906e"
+  integrity sha512-beZnu0V64Rh3Jaxh+UWEDGcmGidaCMw3SCZSeX3Nc1IRBMO21fWzba13GT5xDdZygZ7DY6IDXF0u/FQaqjdh/A==
   dependencies:
     date-fns "2.0.0-alpha.27"
     dayjs "^1.8.14"
