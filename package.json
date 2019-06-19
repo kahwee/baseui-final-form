@@ -1,6 +1,6 @@
 {
   "name": "baseui-final-form",
-  "version": "1.1.16",
+  "version": "2.0.0",
   "main": "./dist-node-cjs/index.js",
   "module": "./dist-node-esm/index.js",
   "browser": {
@@ -83,9 +83,9 @@
     "styletron-react": "^5.1.3"
   },
   "peerDependencies": {
-    "baseui": "^6.11.0",
-    "react": "^16.7.0-0",
-    "react-dom": "^16.7.0-0"
+    "baseui": "^7.5.0",
+    "react": "^16.8.0-0",
+    "react-dom": "^16.8.0-0"
   },
   "keywords": [
     "react",
