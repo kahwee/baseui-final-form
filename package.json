@@ -34,7 +34,7 @@
     "final-form-arrays": "^1.1.2",
     "react-final-form": "^6.3.0",
     "react-final-form-arrays": "3.1.0",
-    "react-select": "^2.4.2"
+    "react-select": "^3.0.4"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
