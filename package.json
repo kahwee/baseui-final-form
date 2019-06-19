@@ -30,10 +30,10 @@
     "flow": "flow check"
   },
   "dependencies": {
-    "final-form": "^4.13.0",
+    "final-form": "^4.16.1",
     "final-form-arrays": "^1.1.2",
-    "react-final-form": "^4.1.0",
-    "react-final-form-arrays": "2.0.3",
+    "react-final-form": "^6.3.0",
+    "react-final-form-arrays": "3.1.0",
     "react-select": "^2.4.2"
   },
   "resolutions": {
