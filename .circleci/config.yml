@@ -40,7 +40,7 @@ aliases:
 defaults: &defaults
   docker:
     # specify the version you desire here
-    - image: circleci/node:10.15
+    - image: circleci/node:10.16
 
     # Specify service dependencies here if necessary
     # CircleCI maintains a library of pre-built images
@@ -48,6 +48,7 @@ defaults: &defaults
     # - image: circleci/mongo:3.4.4
 
   working_directory: ~/repo
+  parallelism: 4
 
 jobs:
   build:
