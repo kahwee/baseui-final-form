@@ -1,7 +1,7 @@
 // @noflow
 import * as React from 'react';
 import {Field, Form} from 'react-final-form';
-import {fireEvent, render} from 'react-testing-library';
+import {fireEvent, render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
 import Toggle from '../index';
 

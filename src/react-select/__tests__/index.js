@@ -1,7 +1,7 @@
 // @noflow
 import * as React from 'react';
 import {Field, Form} from 'react-final-form';
-import {cleanup, fireEvent, render} from 'react-testing-library';
+import {cleanup, fireEvent, render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
 import CreatableSelect from 'react-select/creatable';
 import ReactSelect from '../index';

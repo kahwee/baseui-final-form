@@ -1,6 +1,6 @@
 // @noflow
 import * as React from 'react';
-import {render} from 'react-testing-library';
+import {render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
 import HelpIcon from '../help-icon';
 

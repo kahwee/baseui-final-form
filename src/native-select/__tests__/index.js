@@ -1,7 +1,7 @@
 // @noflow
 import * as React from 'react';
 import {Field, Form} from 'react-final-form';
-import {fireEvent, render} from 'react-testing-library';
+import {fireEvent, render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
 import NativeSelect from '../index';
 import options from './__fixtures__/fruit-options.json';
