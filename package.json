@@ -1,6 +1,6 @@
 {
   "name": "baseui-final-form",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "./dist-node-cjs/index.js",
   "module": "./dist-node-esm/index.js",
   "browser": {

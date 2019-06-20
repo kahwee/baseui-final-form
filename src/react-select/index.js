@@ -1,4 +1,4 @@
-// @flow
+// @noflow
 import * as React from 'react';
 import {FormControl} from 'baseui/form-control';
 import Select from 'react-select';

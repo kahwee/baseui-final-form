@@ -1,5 +1,5 @@
 /* eslint-env node */
-// @flow
+// @noflow
 
 import * as React from 'react';
 import {Button} from 'baseui/button';
