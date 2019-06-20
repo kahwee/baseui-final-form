@@ -50,7 +50,7 @@
     "@emotion/core": "^10.0.10",
     "@storybook/addon-actions": "^5.1.8",
     "@storybook/addon-info": "^5.1.8",
-    "@storybook/addon-links": "^5.1.8",
+    "@storybook/addon-links": "^5.1.9",
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.8",
     "babel-core": "7.0.0-bridge.0",

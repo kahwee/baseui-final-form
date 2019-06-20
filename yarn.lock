@@ -1380,14 +1380,14 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@^5.1.8":
-  version "5.1.8"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-5.1.8.tgz#03c307e20b7b868cd0935a52062b1a442cb9d33f"
-  integrity sha512-GSSgR2LM0HmBi8YBXsdzLsMaWaBs/u45Ahngcj9KNNwirWNvtAN571Kt/BMCiSe25q8aq/1MeZrENuIIvSe1bg==
+"@storybook/addon-links@^5.1.9":
+  version "5.1.9"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-5.1.9.tgz#944237bfb318cf4741b417d2b452b0b644650868"
+  integrity sha512-mwNxbXX9eI6G7iBk/1BJ2bSsLOv+/zek7BbF8x5LGTXgrp9bVB6dUxjPFHOmiUFqrLheHxUTsBlwZDFQdMdHBg==
   dependencies:
-    "@storybook/addons" "5.1.8"
-    "@storybook/core-events" "5.1.8"
-    "@storybook/router" "5.1.8"
+    "@storybook/addons" "5.1.9"
+    "@storybook/core-events" "5.1.9"
+    "@storybook/router" "5.1.9"
     common-tags "^1.8.0"
     core-js "^3.0.1"
     global "^4.3.2"
@@ -1417,7 +1417,7 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@^5.1.9":
+"@storybook/addons@5.1.9", "@storybook/addons@^5.1.9":
   version "5.1.9"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.1.9.tgz#ecf218d08508b97ca5e6e0f1ed361081385bd3ff"
   integrity sha512-1bavbcS/NiE65DwyKj8c0DmWmz9VekOinB+has2Pqt2bOffZoZwVnbmepcz9hH3GUyvp5fQBYbxTEmTDvF2lLA==
@@ -1601,7 +1601,7 @@
     recompose "^0.30.0"
     render-fragment "^0.1.1"
 
-"@storybook/core-events@5.0.11", "@storybook/core-events@^5.0.6":
+"@storybook/core-events@5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.0.11.tgz#c7f10df6de6eb9a92cb4fe30b77e956f11b971e6"
   integrity sha512-hwtazXO9hkoI5vtUm6koJ30+8FzbFuPO35AkAMAue+/OLZWJX3wzQ9gBKR4jOtRcWRRJsaBykltW/VH7b+NoPQ==
@@ -1615,7 +1615,7 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/core-events@5.1.9":
+"@storybook/core-events@5.1.9", "@storybook/core-events@^5.0.6":
   version "5.1.9"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.1.9.tgz#441a6297e2ccfa743e15d1db1f4ac445b91f40d8"
   integrity sha512-jHe2uyoLj9i6fntHtOj5azfGdLOb75LF0e1xXE8U2SX7Zp3uwbLAcfJ+dPStdc/q+f/wBiip3tH1dIjaNuUiMw==
