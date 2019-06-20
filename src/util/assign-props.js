@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import FormControlLabel from '../support/form-control-label';
-import type {FieldRenderProps, Option} from '../types.js';
+import type {FieldRenderProps, FieldRenderPropsMeta, Option} from '../types.js';
 import type {FieldValidator} from 'final-form';
 import type {OverrideT} from 'baseui/helpers/overrides';
 
@@ -24,25 +24,7 @@ type GenericInputProps = {
 type AssignedProps = {
   formControlProps: FormControlProps,
   inputProps: GenericInputProps,
-  meta: {
-    // TODO: Make a diff of `FieldState` without all the functions
-    active?: boolean,
-    data?: Object,
-    dirty?: boolean,
-    dirtySinceLastSubmit?: boolean,
-    error?: any,
-    initial?: boolean,
-    invalid?: boolean,
-    meta?: boolean,
-    pristine?: boolean,
-    submitError?: any,
-    submitFailed?: boolean,
-    submitSucceeded?: boolean,
-    submitting?: boolean,
-    touched?: boolean,
-    valid?: boolean,
-    visited?: boolean,
-  },
+  meta: FieldRenderPropsMeta,
   validate?: FieldValidator,
   name: string,
   label: ?(React.Node | ((props: {}) => React.Node)),
