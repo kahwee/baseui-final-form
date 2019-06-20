@@ -49,7 +49,7 @@
     "@babel/runtime": "^7.4.5",
     "@emotion/core": "^10.0.10",
     "@storybook/addon-actions": "^5.1.8",
-    "@storybook/addon-info": "^5.1.8",
+    "@storybook/addon-info": "^5.1.9",
     "@storybook/addon-links": "^5.1.8",
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.8",
