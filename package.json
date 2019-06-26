@@ -40,7 +40,7 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.4.5",
-    "@emotion/core": "^10.0.10",
+    "@emotion/core": "^10.0.14",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-info": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
