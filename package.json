@@ -66,7 +66,7 @@
     "final-form": "^4.16.1",
     "final-form-arrays": "^1.1.2",
     "flow-bin": "0.100.0",
-    "husky": "^2.5.0",
+    "husky": "^2.7.0",
     "jest": "^24.7.1",
     "jest-extended": "^0.11.1",
     "prettier": "^1.18.2",
