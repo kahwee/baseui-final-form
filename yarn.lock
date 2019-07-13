@@ -5166,10 +5166,10 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-final-form-arrays@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/final-form-arrays/-/final-form-arrays-1.1.2.tgz#7e33eb2485419e6956310cec76a717167c88d85c"
-  integrity sha512-Pmq3MXI9zbSsY7WZ2eodWQAHpsw2/i5YkagzcCgqzRcSSHB8BD3yWi7YPSGTPXuG0ixcQe9VAYpQ+UEWcqf4zg==
+final-form-arrays@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/final-form-arrays/-/final-form-arrays-2.0.0.tgz#08564d69d84c000ce015fcacbb3f2aa4d1f9b2b1"
+  integrity sha512-9gx2a/EYX7EZkoWGMu1DE04wtPOd6SdvUvp65ajl5twiqphM6bJbj5EyvxMFyn2Xr7XqhilCWdQil1jo6y/kHg==
 
 final-form@^4.16.1:
   version "4.16.1"
