@@ -85,7 +85,7 @@
   "peerDependencies": {
     "baseui": ">= 7.5.0 < 9",
     "final-form": "^4.16.1",
-    "final-form-arrays": "^1.1.2",
+    "final-form-arrays": "^3.0.0",
     "react": ">= 16.8.0 < 17",
     "react-dom": ">= 16.8.0 < 17",
     "react-final-form": ">= 6.3.0 < 7",
