@@ -28,6 +28,7 @@ describe('textarea', () => {
     const textareaNode = container.querySelector('textarea');
     const formNode = container.querySelector('form');
     const event = {target: {name: 'description', value: DESCRIPTION}};
+    expect(textareaNode.value).toBe('');
     fireEvent.change(textareaNode, event);
     expect(textareaNode.value).toBe(DESCRIPTION);
     fireEvent.submit(formNode);
