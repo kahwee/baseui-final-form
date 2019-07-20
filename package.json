@@ -20,7 +20,7 @@
   "scripts": {
     "clean": "rimraf lib dist es coverage",
     "transpile": "npm run clean && cup build",
-    "prepublishOnly": "npm run build && node -e \"const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json', {encoding: 'utf8'})); delete pkg.engines; fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n'); console.log(pkg)\"",
+    "prepublishOnly": "npm run build && node -e \"const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json', {encoding: 'utf8'})); delete pkg.engines; fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\\n'); console.log(pkg)\"",
     "build": "npm run transpile",
     "lint": "eslint src/*",
     "storybook": "start-storybook -p 6006",
