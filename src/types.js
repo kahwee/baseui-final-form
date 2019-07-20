@@ -36,6 +36,7 @@ export type FieldRenderPropsMeta = {
 };
 
 export type FieldRenderProps = {
+  formControlProps?: *,
   meta: FieldRenderPropsMeta,
   caption: ?(React.Node | ((props: {}) => React.Node)),
   onChange: (SyntheticInputEvent<*> | any) => void,

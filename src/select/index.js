@@ -3,13 +3,15 @@ import * as React from 'react';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
 import {Select} from 'baseui/select';
+import {adaptToFormControl} from '../form-control/adaptors';
 import assignProps from '../util/assign-props';
 
 type Props = {
   multi?: boolean,
 } & FieldRenderProps;
-export default function render({multi, ...props}: Props) {
-  const {formControlProps, inputProps, options, value, onChange} = assignProps(
+export default function render(props: Props) {
+  const multi = props.multi;
+  const {inputProps, options, value, onChange} = assignProps(
     ((props: any): FieldRenderProps)
   );
   if (!Array.isArray(options)) {
@@ -22,7 +24,7 @@ export default function render({multi, ...props}: Props) {
     selectedOptions = options.filter(option => option.id === value);
   }
   return (
-    <FormControl {...formControlProps}>
+    <FormControl {...adaptToFormControl(props)}>
       <Select
         {...inputProps}
         multi={multi}

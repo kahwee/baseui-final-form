@@ -3,15 +3,16 @@ import * as React from 'react';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
 import {Radio, RadioGroup} from 'baseui/radio';
+import {adaptToFormControl} from '../form-control/adaptors';
 import assignProps from '../util/assign-props';
 
 export default function render(props: FieldRenderProps) {
-  const {formControlProps, inputProps, options, onChange} = assignProps(props);
+  const {inputProps, options, onChange} = assignProps(props);
   if (!Array.isArray(options)) {
     throw new Error('Missing options');
   }
   return (
-    <FormControl {...formControlProps}>
+    <FormControl {...adaptToFormControl(props)}>
       <RadioGroup
         {...inputProps}
         onChange={(ev, item) => {
