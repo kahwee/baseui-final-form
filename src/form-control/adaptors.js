@@ -1,5 +1,4 @@
 // @flow
-// import * as React from 'react';
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
 import FormControlLabel from './form-control-label';
 import type {FieldRenderPropsMeta, OptionT} from '../types';
@@ -12,6 +11,7 @@ type AdaptToFormControlProps = {
   validate?: FieldValidator,
   options?: OptionT[],
   help?: string,
+  formControlProps?: *,
 } & ReactFinalFormFieldRenderProps;
 
 export function adaptToFormControl({
@@ -22,14 +22,18 @@ export function adaptToFormControl({
   caption,
   options,
   input,
+  // In case user wants to add additional paramters, including overrides.
+  formControlProps = {},
 }: AdaptToFormControlProps) {
   return {
+    ...formControlProps,
     labelFor: input.name,
     caption,
     help,
     error: meta && meta.error && meta.touched ? meta.error : false,
     label,
     overrides: {
+      ...(formControlProps.overrides ? formControlProps.overrides : {}),
       Label: {
         component: FormControlLabel,
         props: {

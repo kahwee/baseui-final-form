@@ -4,15 +4,14 @@ import {Button} from 'baseui/button';
 import {ButtonGroup} from 'baseui/button-group';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
+import {adaptToFormControl} from '../form-control/adaptors';
 import assignProps from '../util/assign-props';
 import type {ButtonGroupProps} from './types';
 
-export default function render({
-  mode = 'radio',
-  $size = 'default',
-  ...props
-}: ButtonGroupProps) {
-  const {formControlProps, inputProps, options, onChange, name} = assignProps(
+export default function render(props: ButtonGroupProps) {
+  const mode = props.mode ? props.mode : 'radio';
+  const $size = props.$size ? props.$size : 'default';
+  const {inputProps, options, onChange, name} = assignProps(
     ((props: any): FieldRenderProps)
   );
   if (!Array.isArray(options)) {
@@ -21,7 +20,7 @@ export default function render({
   const checkboxValues = mode === 'checkbox' ? inputProps.value || [] : [];
   const radioValue = mode === 'radio' ? inputProps.value : '';
   return (
-    <FormControl {...formControlProps}>
+    <FormControl {...adaptToFormControl(props)}>
       <ButtonGroup
         selected={
           mode === 'radio'

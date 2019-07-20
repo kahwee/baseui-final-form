@@ -3,20 +3,14 @@ import * as React from 'react';
 import {Checkbox} from 'baseui/checkbox';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
+import {adaptToFormControl} from '../form-control/adaptors';
 import assignProps from '../util/assign-props';
 
 export default function render(props: FieldRenderProps) {
-  const {
-    formControlProps,
-    inputProps,
-    meta,
-    label,
-    onChange,
-    value,
-  } = assignProps(props);
+  const {inputProps, meta, label, onChange, value} = assignProps(props);
   inputProps.type = 'checkbox';
   return (
-    <FormControl {...formControlProps} label={false}>
+    <FormControl {...adaptToFormControl(props)} label={false}>
       <Checkbox
         {...inputProps}
         isError={!!meta.error}
