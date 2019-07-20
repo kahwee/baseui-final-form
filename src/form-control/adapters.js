@@ -22,7 +22,7 @@ export function adaptToFormControl({
   caption,
   options,
   input,
-  // In case user wants to add additional paramters, including overrides.
+  // In case user wants to add additional parameters, including overrides.
   formControlProps = {},
 }: AdaptToFormControlProps) {
   return {

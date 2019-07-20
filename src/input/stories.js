@@ -29,7 +29,7 @@ type AddressProps = {
   label: string,
 };
 export const Address = ({name, label}: AddressProps) => (
-  <React.Fragment>
+  <>
     <Field
       name={`${name}.street1`}
       component={Input}
@@ -48,7 +48,7 @@ export const Address = ({name, label}: AddressProps) => (
       label={`${label} zip code`}
       help="Giving us your zip code helps us customize content for your better"
     />
-  </React.Fragment>
+  </>
 );
 
 storiesOf('Input', module)
@@ -64,13 +64,13 @@ storiesOf('Input', module)
             component={Input}
             help="How can I help?"
             caption={
-              <React.Fragment>
+              <>
                 You can use tooltips in many places, including inline text{' '}
                 <StatefulTooltip content="Tooltips display short messages.">
                   <FakeLink>such as this</FakeLink>
                 </StatefulTooltip>
                 .
-              </React.Fragment>
+              </>
             }
             label="First name"
             validate={minLength3}
