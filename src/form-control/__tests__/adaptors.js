@@ -1,0 +1,42 @@
+// @noflow
+import * as React from 'react';
+import {Field, Form} from 'react-final-form';
+import {FormControl} from 'baseui/form-control';
+import {Input} from 'baseui/input';
+import {adaptToFormControl} from '../adaptors';
+import {render} from '@testing-library/react';
+import BaseuiProvider from '../../with-baseui';
+
+describe('form-control', () => {
+  it('should pass sanity test', () => {
+    const CAPTION_TEXT = 'Caption here';
+    const LABEL_TEXT = 'Label here';
+    const {container, getByText} = render(
+      <BaseuiProvider>
+        <Form onSubmit={() => {}}>
+          {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+              <Field
+                name="firstName"
+                caption={CAPTION_TEXT}
+                label={LABEL_TEXT}
+                help="Basic help"
+                render={props => (
+                  <div>
+                    <FormControl {...adaptToFormControl(props)}>
+                      <Input />
+                    </FormControl>
+                  </div>
+                )}
+              />
+            </form>
+          )}
+        </Form>
+      </BaseuiProvider>
+    );
+    expect(getByText(CAPTION_TEXT)).toBeDefined();
+    expect(getByText(LABEL_TEXT)).toBeDefined();
+    const inputNode = container.querySelectorAll('input');
+    expect(inputNode).toHaveLength(1);
+  });
+});
