@@ -12,6 +12,6 @@ describe('help-icon', () => {
       </BaseuiProvider>
     );
     const spanNode = container.querySelectorAll('span');
-    expect(spanNode).toHaveLength(1);
+    expect(spanNode).toHaveLength(2);
   });
 });

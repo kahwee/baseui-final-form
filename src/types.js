@@ -3,7 +3,7 @@ import * as React from 'react';
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
 import type {FieldValidator} from 'final-form';
 
-export type Option = {
+export type OptionT = {
   label: string,
   id: string,
   disabled?: boolean,
@@ -42,6 +42,6 @@ export type FieldRenderProps = {
   label: ?(React.Node | ((props: {}) => React.Node)),
   disabled?: boolean,
   help?: string,
-  options?: Option[],
+  options?: OptionT[],
   validate?: FieldValidator,
 } & ReactFinalFormFieldRenderProps;

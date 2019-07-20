@@ -1,7 +1,11 @@
 //@flow
 import * as React from 'react';
-import FormControlLabel from '../support/form-control-label';
-import type {FieldRenderProps, FieldRenderPropsMeta, Option} from '../types.js';
+import FormControlLabel from '../form-control/form-control-label';
+import type {
+  FieldRenderProps,
+  FieldRenderPropsMeta,
+  OptionT,
+} from '../types.js';
 import type {FieldValidator} from 'final-form';
 import type {OverrideT} from 'baseui/helpers/overrides';
 
@@ -34,7 +38,7 @@ type AssignedProps = {
   onFocus: (?SyntheticFocusEvent<*>) => void,
   value: any,
   checked?: boolean,
-  options?: Option[],
+  options?: OptionT[],
 };
 export default function assignProps({
   meta,
