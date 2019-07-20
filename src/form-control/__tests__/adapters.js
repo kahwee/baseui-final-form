@@ -3,11 +3,11 @@ import * as React from 'react';
 import {Field, Form} from 'react-final-form';
 import {FormControl} from 'baseui/form-control';
 import {Input} from 'baseui/input';
-import {adaptToFormControl} from '../adaptors';
+import {adaptToFormControl} from '../adapters';
 import {render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
 
-describe('form-control', () => {
+describe('form-control/adapters', () => {
   it('should pass sanity test', () => {
     const CAPTION_TEXT = 'Caption here';
     const LABEL_TEXT = 'Label here';

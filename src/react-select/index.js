@@ -1,7 +1,7 @@
 // @noflow
 import * as React from 'react';
 import {FormControl} from 'baseui/form-control';
-import {adaptToFormControl} from '../form-control/adaptors';
+import {adaptToFormControl} from '../form-control/adapters';
 import Select from 'react-select';
 import assignProps from '../util/assign-props';
 import type {FieldRenderProps, ReactSelectOption} from '../types.js';

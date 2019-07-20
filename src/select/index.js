@@ -3,7 +3,7 @@ import * as React from 'react';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
 import {Select} from 'baseui/select';
-import {adaptToFormControl} from '../form-control/adaptors';
+import {adaptToFormControl} from '../form-control/adapters';
 import assignProps from '../util/assign-props';
 
 type Props = {
