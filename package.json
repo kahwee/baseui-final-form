@@ -68,7 +68,7 @@
     "final-form-arrays": "^3.0.1",
     "flow-bin": "0.100.0",
     "global": "^4.4.0",
-    "husky": "^3.0.0",
+    "husky": "^3.0.1",
     "jest": "^24.7.1",
     "jest-extended": "^0.11.2",
     "lodash": "^4.17.15",
