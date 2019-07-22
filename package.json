@@ -54,7 +54,7 @@
     "baseui": "8.8.0",
     "create-universal-package": "^4.0.0",
     "emotion-theming": "^10.0.14",
-    "eslint": "^6.0.1",
+    "eslint": "^6.1.0",
     "eslint-config-fusion": "^6.0.1",
     "eslint-plugin-cup": "^2.0.0",
     "eslint-plugin-flowtype": "^3.12.1",
