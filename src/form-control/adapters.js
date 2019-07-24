@@ -1,4 +1,5 @@
 // @flow
+import * as React from 'react';
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
 import FormControlLabel from './form-control-label';
 import type {FieldRenderPropsMeta, OptionT} from '../types';
