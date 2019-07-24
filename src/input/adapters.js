@@ -18,7 +18,7 @@ export function adaptToInput({
   return {
     ...inputProps,
     ...input,
-    onChange: args => {
+    onChange: (args: *) => {
       if (input.onChange) {
         input.onChange(args);
       }
