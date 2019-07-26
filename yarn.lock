@@ -3379,10 +3379,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseui@8.10.0:
-  version "8.10.0"
-  resolved "https://registry.yarnpkg.com/baseui/-/baseui-8.10.0.tgz#37db28719ae66ce5eca29d7a1907964c03d0474b"
-  integrity sha512-HNm/PPbsX/R+foOYGIWISe32aAOB+4hw1FNi8XalV7pkfTmYIpOSh53oKhNmkmWnYmsXHPoqzjxZtErvy4OHiQ==
+baseui@8.11.0:
+  version "8.11.0"
+  resolved "https://registry.yarnpkg.com/baseui/-/baseui-8.11.0.tgz#a69ca09d0cb9be9acd5d312c54cfeab5634461dd"
+  integrity sha512-udPE7Ze5aIpaR5Zq7QkrKI9ttzzxk68ugEkWBJre3Et+7YJpHQb461AChob/YsoN8253zrRoX5ppB5s3MEjXxQ==
   dependencies:
     card-validator "^6.1.0"
     date-fns "2.0.0-beta.3"
@@ -8780,14 +8780,7 @@ polished@^2.3.3:
   dependencies:
     "@babel/runtime" "^7.2.0"
 
-polished@^3.2.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/polished/-/polished-3.3.0.tgz#59158368b29466e19f16f5ed38007397fb66f51d"
-  integrity sha512-R04iFBAViTVQ5vMZqhwCZPcG3Av4WyUP2kxTfsr+yNoO60CXai9u7YMlExZZh56/DRoCamXKbusaTbTsBX0vtw==
-  dependencies:
-    "@babel/runtime" "^7.4.4"
-
-polished@^3.3.1:
+polished@^3.2.0, polished@^3.3.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/polished/-/polished-3.4.1.tgz#1eb5597ec1792206365635811d465751f5cbf71c"
   integrity sha512-GflTnlP5rrpDoigjczEkS6Ye7NDA4sFvAnlr5hSDrEvjiVj97Xzev3hZlLi3UB27fpxyTS9rWU64VzVLWkG+mg==
