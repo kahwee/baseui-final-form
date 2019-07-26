@@ -43,7 +43,7 @@ import {
 } from 'baseui/radio';
 import {styled} from 'baseui';
 import {FormControl} from 'baseui/form-control';
-import {adaptToRadioGroup} from 'baseui-final-form/select';
+import {adaptToRadioGroup} from 'baseui-final-form/radio-group';
 import {adaptToFormControl} from 'baseui-final-form/form-control';
 
 const withOverriddenFields = (
