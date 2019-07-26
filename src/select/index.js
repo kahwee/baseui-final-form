@@ -5,7 +5,9 @@ import {Select} from 'baseui/select';
 import {adaptToFormControl} from '../form-control';
 import {adaptToMultiSelect, adaptToSingleSelect} from './adapters';
 
-type Props = *;
+type Props = {
+  multi: boolean,
+};
 export default function render(props: Props) {
   return (
     <FormControl {...adaptToFormControl(props)}>
