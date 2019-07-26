@@ -38,8 +38,11 @@ const singleField = (
 With overrides:
 
 ```js
-import {Select} from 'baseui-final-form';
+import {Select as BaseuiSelect} from 'baseui/select';
 import {styled} from 'baseui';
+import {FormControl} from 'baseui/form-control';
+import {adaptToMultiSelect} from 'baseui-final-form/select';
+import {adaptToFormControl} from 'baseui-final-form/form-control';
 
 const CustomValueWrapper = styled('span', {
   display: 'inline-flex',
@@ -63,24 +66,31 @@ function CustomOptionLabel({
 const withOverriddenFields = (
   <Field
     name="fruits"
-    component={Select}
+    render={props => (
+      <FormControl {...adaptToFormControl(props)}>
+        <BaseuiSelect
+          {...adaptToMultiSelect(props)}
+          getOptionLabel={({option}) => (
+            <CustomOptionLabel option={option} />
+          )}
+          overrides={{
+            DropdownListItem: {
+              style: ({$theme, $isHighlighted}) => ({
+                backgroundColor: $isHighlighted
+                  ? $theme.colors.positive50
+                  : 'transparent',
+                ':hover': {
+                  backgroundColor: $theme.colors.positive50,
+                },
+              }),
+            },
+          }}
+        />
+      </FormControl>
+    )}
     caption="Please select multiple fruits"
     label="My fruits"
     options={options}
-    multi
-    getOptionLabel={({option}) => <CustomOptionLabel option={option} />}
-    overrides={{
-      DropdownListItem: {
-        style: ({$theme, $isHighlighted}) => ({
-          backgroundColor: $isHighlighted
-            ? $theme.colors.positive50
-            : 'transparent',
-          ':hover': {
-            backgroundColor: $theme.colors.positive50,
-          },
-        }),
-      },
-    }}
   />
 );
 ```

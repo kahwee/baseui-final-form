@@ -3,7 +3,7 @@ import * as React from 'react';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
 import {Input} from 'baseui/input';
-import {adaptToFormControl} from '../form-control/adapters';
+import {adaptToFormControl} from '../form-control';
 import {adaptToInput} from './adapters';
 
 type Props = {
@@ -16,3 +16,5 @@ export default function render(props: Props) {
     </FormControl>
   );
 }
+
+export {adaptToInput};
