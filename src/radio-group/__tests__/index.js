@@ -38,50 +38,6 @@ describe('radiogroup', () => {
     /* eslint-enable no-console */
   });
 
-  it('should be initialized as {}, then updated to peach, then be updated to apple', () => {
-    const mockSubmit = jest.fn();
-    const {container, getByLabelText} = render(
-      <BaseuiProvider>
-        <Form onSubmit={mockSubmit}>
-          {({handleSubmit}) => (
-            <form onSubmit={handleSubmit}>
-              <Field {...defaultProps} />
-            </form>
-          )}
-        </Form>
-      </BaseuiProvider>
-    );
-    const formNode = container.querySelector('form');
-    const radioPeach = getByLabelText('Peach');
-    const radioApple = getByLabelText('Apple');
-    expect(radioPeach.checked).toBe(false);
-    expect(radioApple.checked).toBe(false);
-    fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenLastCalledWith(
-      {},
-      expect.anything(),
-      expect.any(Function)
-    );
-    fireEvent.click(radioPeach);
-    expect(radioPeach.checked).toBe(true);
-    expect(radioApple.checked).toBe(false);
-    fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenLastCalledWith(
-      {fruit: 'peach'},
-      expect.anything(),
-      expect.any(Function)
-    );
-    fireEvent.click(radioApple);
-    expect(radioPeach.checked).toBe(false);
-    expect(radioApple.checked).toBe(true);
-    fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenLastCalledWith(
-      {fruit: 'apple'},
-      expect.anything(),
-      expect.any(Function)
-    );
-  });
-
   it('should be initialized as peach then be updated to apple', () => {
     const mockSubmit = jest.fn();
     const {container, getByLabelText} = render(
