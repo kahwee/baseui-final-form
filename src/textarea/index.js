@@ -3,7 +3,7 @@ import * as React from 'react';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
 import {Textarea} from 'baseui/textarea';
-import {adaptToFormControl} from '../form-control/adapters';
+import {adaptToFormControl} from '../form-control';
 import {adaptToInput} from '../input/adapters';
 
 /**

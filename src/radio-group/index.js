@@ -3,7 +3,7 @@ import * as React from 'react';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
 import {Radio, RadioGroup} from 'baseui/radio';
-import {adaptToFormControl} from '../form-control/adapters';
+import {adaptToFormControl} from '../form-control';
 import assignProps from '../util/assign-props';
 
 export default function render(props: FieldRenderProps) {
