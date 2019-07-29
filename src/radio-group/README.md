@@ -1,4 +1,4 @@
-# Select
+# Radio group
 
 This uses Baseui's RadioGroup and Radio.
 
