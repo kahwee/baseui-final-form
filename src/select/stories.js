@@ -52,6 +52,7 @@ storiesOf('Select', module)
           />
           <Field
             name="anotherFruit"
+            placeholder="Select something!"
             component={Select}
             label="Another fruits"
             options={options}

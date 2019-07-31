@@ -14,8 +14,10 @@ export function adaptToInput({
   input,
   // In case user wants to add additional parameters, including overrides.
   inputProps = {},
+  ...restProps
 }: AdaptToInputProps) {
   return {
+    ...restProps,
     ...inputProps,
     ...input,
     onChange: (args: *) => {
