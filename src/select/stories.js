@@ -50,6 +50,13 @@ storiesOf('Select', module)
             help="Telling us your favorite fruit helps us understand you better"
             onChange={action('fruit changed')}
           />
+          <Field
+            name="anotherFruit"
+            component={Select}
+            label="Another fruits"
+            options={options}
+            onChange={action('anotherFruit changed')}
+          />
           <Button type="submit" disabled={pristine || invalid}>
             Submit
           </Button>
