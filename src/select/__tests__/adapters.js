@@ -70,6 +70,53 @@ describe('select/adapters', () => {
     /* eslint-enable no-console */
   });
 
+  it('should pass props such as placeholder to BaseWeb (single)', () => {
+    const placeholder = 'My placeholder';
+    const {getByText} = render(
+      <BaseuiProvider>
+        <Form onSubmit={() => {}}>
+          {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+              <Field
+                name="hello"
+                options={[]}
+                placeholder={placeholder}
+                render={props => (
+                  <BaseuiSelect {...adaptToSingleSelect(props)} />
+                )}
+              />
+            </form>
+          )}
+        </Form>
+      </BaseuiProvider>
+    );
+    expect(getByText(placeholder).textContent).toBe(placeholder);
+  });
+
+  it('should pass props such as placeholder to BaseWeb (multi)', () => {
+    const placeholder = 'My placeholder';
+    const {getByText} = render(
+      <BaseuiProvider>
+        <Form onSubmit={() => {}}>
+          {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+              <Field
+                name="hello"
+                multi={true}
+                options={[]}
+                placeholder={placeholder}
+                render={props => (
+                  <BaseuiSelect {...adaptToSingleSelect(props)} />
+                )}
+              />
+            </form>
+          )}
+        </Form>
+      </BaseuiProvider>
+    );
+    expect(getByText(placeholder).textContent).toBe(placeholder);
+  });
+
   it('should pass trigger blur, focus and change for single select', () => {
     const onChange = jest.fn();
     const {container, getByText} = render(

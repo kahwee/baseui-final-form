@@ -9,13 +9,19 @@ type AdaptToSingleSelectProps = {
   options: Array<OptionT>,
 } & FieldRenderProps;
 export function adaptToSingleSelect(props: *) {
-  const {meta, options, input} = ((props: any): AdaptToSingleSelectProps);
+  const {
+    meta,
+    options,
+    input,
+    ...restProps
+  } = ((props: any): AdaptToSingleSelectProps);
   if (!options || !Array.isArray(options)) {
     throw new Error('Missing options');
   }
   // $FlowFixMe
   let selectedOption = options.filter<{}>(option => option.id === input.value);
   return {
+    ...restProps,
     id: input.name,
     options,
     multi: false,
@@ -46,7 +52,12 @@ type AdaptToMultiSelectProps = {
   options: Array<OptionT>,
 } & FieldRenderProps;
 export function adaptToMultiSelect(props: *) {
-  const {meta, options, input} = ((props: any): AdaptToMultiSelectProps);
+  const {
+    meta,
+    options,
+    input,
+    ...restProps
+  } = ((props: any): AdaptToMultiSelectProps);
   if (!options || !Array.isArray(options)) {
     throw new Error('Missing options');
   }
@@ -55,6 +66,7 @@ export function adaptToMultiSelect(props: *) {
     input.value.includes(option.id)
   );
   return {
+    ...restProps,
     id: input.name,
     options,
     multi: true,
