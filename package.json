@@ -7,15 +7,6 @@
     "./dist-node-cjs/index.js": "./dist-browser-cjs/index.js",
     "./dist-node-esm/index.js": "./dist-browser-esm/index.js"
   },
-  "files": [
-    "dist-browser-cjs",
-    "dist-browser-esm",
-    "dist-node-cjs",
-    "dist-node-esm",
-    "src",
-    "!**__tests__**",
-    "!stories.js"
-  ],
   "author": "KahWee Teng <tengkahwee@gmail.com>",
   "scripts": {
     "prepublish": "npm run build",
