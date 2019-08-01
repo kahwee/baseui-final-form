@@ -1,9 +1,9 @@
 // @noflow
 import * as React from 'react';
+import {AdaptedSlider} from '../index';
 import {Field, Form} from 'react-final-form';
 import {fireEvent, render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
-import Slider from '../index';
 
 describe('slider', () => {
   const defaultProps = {
@@ -11,7 +11,7 @@ describe('slider', () => {
     label: 'Age',
     min: 18,
     max: 120,
-    component: Slider,
+    component: AdaptedSlider,
   };
 
   it('should be submitted with default values of 1 when initialized', () => {

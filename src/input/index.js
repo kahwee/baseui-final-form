@@ -17,4 +17,4 @@ export default function render(props: Props) {
   );
 }
 
-export {adaptToInput};
+export {adaptToInput, render as AdaptedInput};

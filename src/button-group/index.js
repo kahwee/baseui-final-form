@@ -61,3 +61,5 @@ export default function render(props: ButtonGroupProps) {
     </FormControl>
   );
 }
+
+export {render as AdaptedButtonGroup};

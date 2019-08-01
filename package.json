@@ -1,12 +1,8 @@
 {
   "name": "baseui-final-form",
-  "version": "2.0.12",
-  "main": "./dist-node-cjs/index.js",
-  "module": "./dist-node-esm/index.js",
-  "browser": {
-    "./dist-node-cjs/index.js": "./dist-browser-cjs/index.js",
-    "./dist-node-esm/index.js": "./dist-browser-esm/index.js"
-  },
+  "version": "2.0.13",
+  "main": "index.js",
+  "module": "index.es.js",
   "author": "KahWee Teng <tengkahwee@gmail.com>",
   "scripts": {
     "prepublish": "npm run build",

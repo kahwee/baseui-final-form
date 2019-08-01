@@ -25,4 +25,4 @@ export default function render(props: Props) {
   );
 }
 
-export {adaptToRadioGroup};
+export {adaptToRadioGroup, render as AdaptedRadioGroup};

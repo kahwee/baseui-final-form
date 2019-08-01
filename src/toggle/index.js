@@ -8,3 +8,5 @@ export default function render(props: FieldRenderProps) {
     checkmarkType: 'toggle',
   });
 }
+
+export {render as AdaptedToggle};

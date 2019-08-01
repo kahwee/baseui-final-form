@@ -80,3 +80,5 @@ export default function render({
     </FormControl>
   );
 }
+
+export {render as AdaptedReactSelect};
