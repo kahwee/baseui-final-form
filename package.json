@@ -5,7 +5,6 @@
   "module": "index.es.js",
   "author": "KahWee Teng <tengkahwee@gmail.com>",
   "scripts": {
-    "prepublish": "npm run build",
     "build:copy-files": "shx cp README.md dist/README.md",
     "build:copy-flow-files": "node ./scripts/flow-copy-src.js",
     "build:es2015": "cross-env NODE_ENV=production babel ./src --out-dir ./dist --ignore **.test.js,**/__tests__/**,**/e2e.js,template-component/**",
