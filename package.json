@@ -14,7 +14,7 @@
     "build:package-json": "node ./scripts/build-package-json.js",
     "build": "npm run clean && yarn build:es2015 && yarn build:es2015modules && yarn build:es && yarn build:copy-files && yarn build:copy-flow-files && yarn build:package-json",
     "clean": "rimraf lib dist es coverage",
-    "prepublishOnly": "npm run build && node -e \"const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json', {encoding: 'utf8'})); delete pkg.engines; fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\\n'); console.log(pkg)\"",
+    "prepublishOnly": "node -e \"const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json', {encoding: 'utf8'})); delete pkg.engines; fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\\n'); console.log(pkg)\"",
     "lint": "eslint src/*",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook -c .storybook -o storybook-static",
