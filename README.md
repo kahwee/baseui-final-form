@@ -116,9 +116,17 @@ This includes the `overrides` prop.
 
 ### Overriding components of baseui
 
-You can override the component wrapped by `baseui-final-form` using the `overrides` prop.
+If you want to override BaseWeb components, you can use the new `adapt*` functions supplied by `baseui-final-form`:
 
 ```javascript
+import {adaptToFormControl} from 'baseui-final-form/form-control';
+import {adaptToRadioGroup} from 'baseui-final-form/radio-group';
+import {FormControl} from 'baseui/form-control';
+import {
+  Radio as BaseuiRadio,
+  RadioGroup as BaseuiRadioGroup,
+} from 'baseui/radio';
+
 const MyComponent = () => {
   return (
     <Form
@@ -137,11 +145,33 @@ const MyComponent = () => {
               {id: 'peach', label: 'Peach'},
               {id: 'pineapple', label: 'Pineapple'},
             ]}
-            overrides={{
-              RadioMark: {
-                style: ({$theme}) => ({borderColor: $theme.colors.positive}),
-              },
-            }}
+            render={props => (
+              <FormControl {...adaptToFormControl(props)}>
+                <BaseuiRadioGroup {...adaptToRadioGroup(props)}>
+                  {options.map(option => (
+                    <BaseuiRadio
+                      value={option.id}
+                      key={option.id}
+                      overrides={{
+                        // eslint-disable-next-line react/display-name
+                        Label: ({$value}) => (
+                          <Block font="font400">
+                            Custom label for value: {$value}
+                          </Block>
+                        ),
+                        RadioMarkOuter: {
+                          style: ({$theme}) => ({
+                            backgroundColor: $theme.colors.positive,
+                          }),
+                        },
+                      }}
+                    >
+                      {option.label}
+                    </BaseuiRadio>
+                  ))}
+                </BaseuiRadioGroup>
+              </FormControl>
+            )}
           />
         </form>
       )}
