@@ -1,9 +1,9 @@
 // @noflow
 import * as React from 'react';
+import {AdaptedCheckboxGroup} from '../index';
 import {Field, Form} from 'react-final-form';
 import {cleanup, fireEvent, render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
-import CheckboxGroup from '../index';
 import options from '../../native-select/__tests__/__fixtures__/fruit-options.json';
 
 describe('CheckboxGroup', () => {
@@ -11,7 +11,7 @@ describe('CheckboxGroup', () => {
     name: 'fruits',
     label: 'My favorite fruits',
     options,
-    component: CheckboxGroup,
+    component: AdaptedCheckboxGroup,
   };
 
   afterEach(cleanup);
@@ -26,7 +26,7 @@ describe('CheckboxGroup', () => {
           <Form onSubmit={() => {}}>
             {({handleSubmit}) => (
               <form onSubmit={handleSubmit}>
-                <Field name="hello" component={CheckboxGroup} />
+                <Field name="hello" component={AdaptedCheckboxGroup} />
               </form>
             )}
           </Form>

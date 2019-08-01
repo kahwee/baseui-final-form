@@ -17,3 +17,5 @@ export default function render(props: FieldRenderProps) {
     </FormControl>
   );
 }
+
+export {render as AdaptedTextarea};

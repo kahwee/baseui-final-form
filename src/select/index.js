@@ -19,4 +19,4 @@ export default function render(props: Props) {
     </FormControl>
   );
 }
-export {adaptToMultiSelect, adaptToSingleSelect};
+export {adaptToMultiSelect, adaptToSingleSelect, render as AdaptedSelect};
