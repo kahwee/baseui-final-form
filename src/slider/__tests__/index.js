@@ -16,6 +16,7 @@ describe.skip('slider', () => {
 
   it('should be submitted with default values of 2 when initialized', () => {
     const mockSubmit = jest.fn();
+
     const {container} = render(
       <BaseuiProvider>
         <Form onSubmit={mockSubmit} initialValues={{age: [19, 40]}}>
