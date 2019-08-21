@@ -1,5 +1,6 @@
 // @flow
 import {type FieldRenderProps} from 'react-final-form';
+import {uniqueConcat} from './unique-concat';
 import type {FieldRenderPropsMeta} from '../types';
 import type {OnChangeParamsT, OptionT} from 'baseui/select';
 
@@ -52,7 +53,8 @@ type AdaptToMultiSelectProps = {
   options: Array<OptionT>,
 } & FieldRenderProps;
 export function adaptToMultiSelect(props: *) {
-  const {
+  const idKey = 'id';
+  let {
     meta,
     options,
     input,
@@ -61,20 +63,32 @@ export function adaptToMultiSelect(props: *) {
   if (!options || !Array.isArray(options)) {
     throw new Error('Missing options');
   }
+  let newOptions = uniqueConcat<OptionT>(
+    options,
+    input.value.map(option => {
+      return {
+        [idKey]: option,
+        label: option,
+      };
+    }),
+    idKey
+  );
+
   // $FlowFixMe
-  let selectedOption = options.filter<{}>(option =>
+  let selectedOption = newOptions.filter<{}>(option =>
     input.value.includes(option.id)
   );
   return {
     ...restProps,
     id: input.name,
-    options,
+    options: newOptions,
     multi: true,
     onChange: ({value, option, type}: OnChangeParamsT) => {
       if (input.onChange) {
         input.onChange(
           Array.isArray(value) ? value.map(option => option.id) : undefined
         );
+        newOptions.concat(value);
       }
     },
     onBlur: (ev: any) => {
