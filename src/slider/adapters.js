@@ -1,17 +1,21 @@
 // @flow
 import {type FieldRenderProps} from 'react-final-form';
 import type {FieldRenderPropsMeta} from '../types';
+import type {ParamsT} from 'baseui/slider';
 
-type AdaptToMultiSelectProps = {
+type AdaptToSliderProps = {
+  min?: number,
+  max?: number,
   meta: FieldRenderPropsMeta,
 } & FieldRenderProps;
 export function adaptToSlider(props: {}) {
-  const {meta, input, min, max} = ((props: any): AdaptToMultiSelectProps);
+  const {meta, input, min, max} = ((props: any): AdaptToSliderProps);
   const transformedValue = input.value || [min, max] || [];
   return {
     id: input.name,
     value: transformedValue,
-    onChange: ({value}) => {
+    onChange: (onChangeParams: any) => {
+      const {value} = ((onChangeParams: any): {...ParamsT});
       input.onChange(value);
     },
     ...(typeof min === 'undefined' ? {} : {min}),
