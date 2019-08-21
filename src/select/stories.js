@@ -124,6 +124,27 @@ storiesOf('Select', module)
       )}
     />
   ))
+  .add('Multiple with Createable', () => (
+    <Form
+      onSubmit={action('submit')}
+      initialValues={{fruits: ['pineapple', 'apple']}}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="fruits"
+            render={props => (
+              <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
+            )}
+            options={options}
+            onChange={action('fruit changed')}
+          />
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
   .add('With overrides and custom components', () => (
     <Form
       onSubmit={action('submit')}

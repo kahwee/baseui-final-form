@@ -1,5 +1,5 @@
-// flow-typed signature: 79835d69595840752286b1c47d71deba
-// flow-typed version: 88a77ba9f4/global_v4.x.x/flow_>=v0.52.x
+// flow-typed signature: fbd67ad8c50f1a54de472bb2945903eb
+// flow-typed version: c6154227d1/global_v4.x.x/flow_>=v0.104.x
 
 declare module 'global' {
   declare module.exports: typeof window;
