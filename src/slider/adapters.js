@@ -14,8 +14,8 @@ export function adaptToSlider(props: {}) {
     onChange: ({value}) => {
       input.onChange(value);
     },
-    min,
-    max,
+    ...(typeof min === 'undefined' ? {} : {min}),
+    ...(typeof max === 'undefined' ? {} : {max}),
     isError: !!meta.error,
   };
 }

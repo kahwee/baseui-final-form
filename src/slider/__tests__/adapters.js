@@ -1,26 +1,36 @@
 // @noflow
 import * as React from 'react';
 import {Field, Form} from 'react-final-form';
-import {Slider} from 'baseui/slider';
 import {adaptToSlider} from '../adapters';
 import {fireEvent, render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
 
 // Test skipped due to compatibility issues
-describe.skip('slider/adaptToSlider', () => {
+describe('slider/adaptToSlider', () => {
   it('should be submitted with default values of 1 when initialized', () => {
     const mockSubmit = jest.fn();
+    const Slider = require('baseui/slider').Slider;
+    jest.mock('baseui/slider', () => {
+      return {
+        Slider: () => null,
+      };
+    });
+
     const {container} = render(
       <BaseuiProvider>
         <Form onSubmit={mockSubmit} initialValues={{age: [19]}}>
-          {({handleSubmit}) => (
-            <form onSubmit={handleSubmit}>
-              <Field
-                name="age"
-                render={props => <Slider {...adaptToSlider(props)} />}
-              />
-            </form>
-          )}
+          {({handleSubmit}) => {
+            return (
+              <form onSubmit={handleSubmit}>
+                <Field
+                  name="age"
+                  render={props => {
+                    return <Slider {...adaptToSlider(props)} />;
+                  }}
+                />
+              </form>
+            );
+          }}
         </Form>
       </BaseuiProvider>
     );
@@ -35,6 +45,12 @@ describe.skip('slider/adaptToSlider', () => {
 
   it('should be submitted with default values of 2 when initialized', () => {
     const mockSubmit = jest.fn();
+    const Slider = require('baseui/slider').Slider;
+    jest.mock('baseui/slider', () => {
+      return {
+        Slider: () => null,
+      };
+    });
     const {container} = render(
       <BaseuiProvider>
         <Form onSubmit={mockSubmit} initialValues={{age: [19, 40]}}>
