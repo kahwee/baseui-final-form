@@ -14,6 +14,7 @@ export function adaptToSingleSelect(props: *) {
     meta,
     options,
     input,
+    disabled,
     ...restProps
   } = ((props: any): AdaptToSingleSelectProps);
   if (!options || !Array.isArray(options)) {
@@ -25,6 +26,7 @@ export function adaptToSingleSelect(props: *) {
     ...restProps,
     id: input.name,
     options,
+    disabled,
     multi: false,
     onChange: ({value, option, type}: OnChangeParamsT) => {
       if (input.onChange) {
@@ -58,6 +60,7 @@ export function adaptToMultiSelect(props: *) {
     meta,
     options,
     input,
+    disabled,
     ...restProps
   } = ((props: any): AdaptToMultiSelectProps);
   if (!options || !Array.isArray(options)) {
@@ -84,6 +87,7 @@ export function adaptToMultiSelect(props: *) {
     ...restProps,
     id: input.name,
     options: newOptions,
+    disabled,
     multi: true,
     onChange: ({value, option, type}: OnChangeParamsT) => {
       if (input.onChange) {

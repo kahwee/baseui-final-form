@@ -9,10 +9,11 @@ type AdaptToSliderProps = {
   meta: FieldRenderPropsMeta,
 } & FieldRenderProps;
 export function adaptToSlider(props: {}) {
-  const {meta, input, min, max} = ((props: any): AdaptToSliderProps);
+  const {meta, input, min, max, disabled} = ((props: any): AdaptToSliderProps);
   const transformedValue = input.value || [min, max] || [];
   return {
     id: input.name,
+    disabled,
     value: transformedValue,
     onChange: (onChangeParams: any) => {
       const {value} = ((onChangeParams: any): {...ParamsT});
