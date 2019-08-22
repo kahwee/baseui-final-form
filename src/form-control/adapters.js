@@ -12,6 +12,7 @@ type AdaptToFormControlProps = {
   validate?: FieldValidator,
   options?: OptionT[],
   help?: string,
+  disabled?: boolean,
   formControlProps?: *,
 } & FieldRenderProps;
 export function adaptToFormControl(props: *) {

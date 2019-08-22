@@ -1,15 +1,19 @@
 // @flow
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
+import type {DatepickerPropsT} from 'baseui/datepicker';
 import type {FieldRenderPropsMeta} from '../types';
 
 export type onChangeParamsT = {date: ?Date | Array<Date>};
 
 type AdaptToDatepickerProps = {
+  disabled?: boolean,
   meta: FieldRenderPropsMeta,
   transformTo: (val: any) => ?Date | Array<Date>,
   transformFrom: (val: ?Date | Array<Date>) => any,
 } & ReactFinalFormFieldRenderProps;
-export function adaptToSingleDatepicker(props: AdaptToDatepickerProps) {
+export function adaptToSingleDatepicker(
+  props: AdaptToDatepickerProps
+): DatepickerPropsT {
   const {
     meta,
     disabled,
@@ -37,7 +41,9 @@ export function adaptToSingleDatepicker(props: AdaptToDatepickerProps) {
   };
 }
 
-export function adaptToRangeDatepicker(props: AdaptToDatepickerProps) {
+export function adaptToRangeDatepicker(
+  props: AdaptToDatepickerProps
+): DatepickerPropsT {
   const {
     meta,
     disabled,
@@ -45,7 +51,6 @@ export function adaptToRangeDatepicker(props: AdaptToDatepickerProps) {
     transformFrom = val => val,
     input,
   } = props;
-  console.log(input, 222);
   return {
     range: true,
     id: input.name,

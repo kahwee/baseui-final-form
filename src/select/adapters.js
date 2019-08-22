@@ -6,6 +6,7 @@ import type {OnChangeParamsT, OptionT} from 'baseui/select';
 
 type AdaptToSingleSelectProps = {
   meta: FieldRenderPropsMeta,
+  disabled?: boolean,
   onChange: (SyntheticInputEvent<*> | any) => void,
   options: Array<OptionT>,
 } & FieldRenderProps;
@@ -55,6 +56,7 @@ export function adaptToSingleSelect(props: *) {
 type AdaptToMultiSelectProps = {
   meta: FieldRenderPropsMeta,
   options: Array<OptionT>,
+  disabled?: boolean,
 } & FieldRenderProps;
 export function adaptToMultiSelect(props: *) {
   const idKey = 'id';
