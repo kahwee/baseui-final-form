@@ -12,6 +12,7 @@ type AdaptToDatepickerProps = {
 export function adaptToSingleDatepicker(props: AdaptToDatepickerProps) {
   const {
     meta,
+    disabled,
     // $FlowFixMe
     transformTo = (val: any) => {
       return ((val: any): ?Date | Array<Date>);
@@ -25,6 +26,7 @@ export function adaptToSingleDatepicker(props: AdaptToDatepickerProps) {
   return {
     range: false,
     id: input.name,
+    disabled,
     value: transformTo(input.value),
     onChange: ({date}: onChangeParamsT) => {
       if (input.onChange) {
@@ -38,13 +40,16 @@ export function adaptToSingleDatepicker(props: AdaptToDatepickerProps) {
 export function adaptToRangeDatepicker(props: AdaptToDatepickerProps) {
   const {
     meta,
+    disabled,
     transformTo = val => val,
     transformFrom = val => val,
     input,
   } = props;
+  console.log(input, 222);
   return {
     range: true,
     id: input.name,
+    disabled,
     value: Array.isArray(input.value)
       ? input.value.map(d => transformTo(d))
       : null,
