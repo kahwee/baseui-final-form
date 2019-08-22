@@ -4,6 +4,7 @@ import type {FieldRenderPropsMeta} from '../types';
 
 type AdaptToInputProps = {
   meta: FieldRenderPropsMeta,
+  disabled?: boolean,
   onChange: (SyntheticInputEvent<*> | any) => void,
   inputProps?: *,
 } & ReactFinalFormFieldRenderProps;

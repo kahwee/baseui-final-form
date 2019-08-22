@@ -4,6 +4,7 @@ import type {FieldRenderPropsMeta} from '../types';
 import type {ParamsT} from 'baseui/slider';
 
 type AdaptToSliderProps = {
+  disabled?: boolean,
   min?: number,
   max?: number,
   meta: FieldRenderPropsMeta,
