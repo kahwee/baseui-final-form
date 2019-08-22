@@ -30,9 +30,15 @@ storiesOf('Datepicker', module)
         <form onSubmit={handleSubmit}>
           <Field
             name="birthday"
-            transformTo={val => new Date(val)}
+            disabled
+            label="Birthday"
+            transformTo={val => (val ? new Date(val) : new Date())}
             transformFrom={val => val.toISOString()}
-            render={props => <Datepicker {...adaptToSingleDatepicker(props)} />}
+            render={props => (
+              <FormControl {...adaptToFormControl(props)}>
+                <Datepicker {...adaptToSingleDatepicker(props)} />
+              </FormControl>
+            )}
             onChange={action('birthday changed')}
           />
           <Button type="submit" disabled={pristine || invalid}>
@@ -50,9 +56,14 @@ storiesOf('Datepicker', module)
         <form onSubmit={handleSubmit}>
           <Field
             name="vacation"
-            transformTo={val => new Date(val)}
+            label="Vacation"
+            transformTo={val => (val ? new Date(val) : new Date())}
             transformFrom={val => val.toISOString()}
-            render={props => <Datepicker {...adaptToRangeDatepicker(props)} />}
+            render={props => (
+              <FormControl {...adaptToFormControl(props)}>
+                <Datepicker {...adaptToRangeDatepicker(props)} />
+              </FormControl>
+            )}
             onChange={action('vacation changed')}
           />
           <Button type="submit" disabled={pristine || invalid}>
