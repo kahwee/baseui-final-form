@@ -18,7 +18,9 @@ export function adaptToSingleSelect(props: *) {
     ...restProps
   } = ((props: any): AdaptToSingleSelectProps);
   if (!options || !Array.isArray(options)) {
-    throw new Error('Missing options');
+    throw new Error(
+      `Invalid options in "${input.name}", expects options to be Array<OptionT>.`
+    );
   }
   // $FlowFixMe
   let selectedOption = options.filter<{}>(option => option.id === input.value);
@@ -64,7 +66,9 @@ export function adaptToMultiSelect(props: *) {
     ...restProps
   } = ((props: any): AdaptToMultiSelectProps);
   if (!options || !Array.isArray(options)) {
-    throw new Error('Missing options');
+    throw new Error(
+      `Invalid options in "${input.name}", expects options to be Array<OptionT>.`
+    );
   }
   let newOptions = uniqueConcat<OptionT>(
     options,
