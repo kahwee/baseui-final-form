@@ -10,6 +10,7 @@ type AdaptToInputProps = {
 
 export function adaptToInput({
   meta,
+  disabled,
   onChange,
   input,
   // In case user wants to add additional parameters, including overrides.
@@ -20,6 +21,7 @@ export function adaptToInput({
     ...restProps,
     ...inputProps,
     ...input,
+    disabled,
     onChange: (args: *) => {
       if (input.onChange) {
         input.onChange(args);

@@ -20,6 +20,7 @@ export function adaptToFormControl(props: *) {
     label,
     help,
     caption,
+    disabled,
     input,
     // In case user wants to add additional parameters, including overrides.
     formControlProps = {},
@@ -29,6 +30,7 @@ export function adaptToFormControl(props: *) {
     labelFor: input.name,
     caption,
     help,
+    disabled,
     error: meta && meta.error ? meta.error : false,
     label,
     overrides: {
