@@ -65,12 +65,14 @@ export function adaptToMultiSelect(props: *) {
   }
   let newOptions = uniqueConcat<OptionT>(
     options,
-    input.value.map(option => {
-      return {
-        [idKey]: option,
-        label: option,
-      };
-    }),
+    Array.isArray(input.value)
+      ? input.value.map(option => {
+          return {
+            [idKey]: option,
+            label: option,
+          };
+        })
+      : [],
     idKey
   );
 

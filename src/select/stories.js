@@ -132,10 +132,24 @@ storiesOf('Select', module)
         <form onSubmit={handleSubmit}>
           <Field
             name="fruits"
+            label="My fruits"
             render={props => (
-              <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
+              <FormControl {...adaptToFormControl(props)}>
+                <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
+              </FormControl>
             )}
             options={options}
+            onChange={action('fruit changed')}
+          />
+          <Field
+            name="toys"
+            label="Toys"
+            render={props => (
+              <FormControl {...adaptToFormControl(props)}>
+                <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
+              </FormControl>
+            )}
+            options={[]}
             onChange={action('fruit changed')}
           />
           <Button type="submit" disabled={pristine || invalid}>
