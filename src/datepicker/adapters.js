@@ -8,60 +8,33 @@ export type onChangeParamsT = {date: ?Date | Array<Date>};
 type AdaptToDatepickerProps = {
   disabled?: boolean,
   meta: FieldRenderPropsMeta,
-  transformTo: (val: any) => ?Date | Array<Date>,
-  transformFrom: (val: ?Date | Array<Date>) => any,
 } & ReactFinalFormFieldRenderProps;
-export function adaptToSingleDatepicker(
-  props: AdaptToDatepickerProps
-): DatepickerPropsT {
-  const {
-    meta,
-    disabled,
-    // $FlowFixMe
-    transformTo = (val: any) => {
-      return ((val: any): ?Date | Array<Date>);
-    },
-    // $FlowFixMe
-    transformFrom = (val: any) => {
-      return ((val: any): ?Date | Array<Date>);
-    },
-    input,
-  } = props;
+export function adaptToSingleDatepicker(props: {}): DatepickerPropsT {
+  const {meta, disabled, input} = ((props: any): AdaptToDatepickerProps);
   return {
     range: false,
     id: input.name,
     disabled,
-    value: transformTo(input.value),
+    value: input.value,
     onChange: ({date}: onChangeParamsT) => {
       if (input.onChange) {
-        input.onChange(transformFrom(date));
+        input.onChange(date);
       }
     },
     error: meta.error && meta.touched,
   };
 }
 
-export function adaptToRangeDatepicker(
-  props: AdaptToDatepickerProps
-): DatepickerPropsT {
-  const {
-    meta,
-    disabled,
-    transformTo = val => val,
-    transformFrom = val => val,
-    input,
-  } = props;
+export function adaptToRangeDatepicker(props: {}): DatepickerPropsT {
+  const {meta, disabled, input} = ((props: any): AdaptToDatepickerProps);
   return {
     range: true,
     id: input.name,
     disabled,
-    value: Array.isArray(input.value)
-      ? input.value.map(d => transformTo(d))
-      : null,
+    value: Array.isArray(input.value) ? input.value : null,
     onChange: ({date}: onChangeParamsT) => {
       if (input.onChange && Array.isArray(date) && date.length > 0) {
-        const newDate = date.map(d => transformFrom(d));
-        input.onChange(newDate);
+        input.onChange(date);
       }
     },
     error: meta.error && meta.touched,
