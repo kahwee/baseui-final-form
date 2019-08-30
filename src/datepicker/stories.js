@@ -30,10 +30,9 @@ storiesOf('Datepicker', module)
         <form onSubmit={handleSubmit}>
           <Field
             name="birthday"
-            disabled
             label="Birthday"
-            transformTo={val => (val ? new Date(val) : new Date())}
-            transformFrom={val => val.toISOString()}
+            format={val => (val ? new Date(val) : new Date())}
+            parse={val => val.toISOString()}
             render={props => (
               <FormControl {...adaptToFormControl(props)}>
                 <Datepicker {...adaptToSingleDatepicker(props)} />
@@ -57,8 +56,10 @@ storiesOf('Datepicker', module)
           <Field
             name="vacation"
             label="Vacation"
-            transformTo={val => (val ? new Date(val) : new Date())}
-            transformFrom={val => val.toISOString()}
+            format={value =>
+              (value || []).map(val => (val ? new Date(val) : new Date()))
+            }
+            parse={value => (value || []).map(val => val.toISOString())}
             render={props => (
               <FormControl {...adaptToFormControl(props)}>
                 <Datepicker {...adaptToRangeDatepicker(props)} />
@@ -83,8 +84,10 @@ storiesOf('Datepicker', module)
             name="vacation"
             label="Start Date"
             caption="YYYY/MM/DD"
-            transformTo={val => new Date(val)}
-            transformFrom={val => val.toISOString()}
+            format={value =>
+              (value || []).map(val => (val ? new Date(val) : new Date()))
+            }
+            parse={value => (value || []).map(val => val.toISOString())}
             render={props => (
               <FormControl {...adaptToFormControl(props)}>
                 <Datepicker
