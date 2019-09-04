@@ -1,9 +1,9 @@
 // @noflow
 import * as React from 'react';
+import {AdaptedTextarea} from '../index';
 import {Field, Form} from 'react-final-form';
-import {fireEvent, render} from 'react-testing-library';
+import {fireEvent, render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
-import Textarea from '../index';
 
 describe('textarea', () => {
   it('should record a submission in final-form when changed in baseui/textarea', () => {
@@ -16,7 +16,7 @@ describe('textarea', () => {
             <form onSubmit={handleSubmit}>
               <Field
                 name="description"
-                component={Textarea}
+                component={AdaptedTextarea}
                 caption="Description"
                 label="Description"
               />
@@ -28,6 +28,7 @@ describe('textarea', () => {
     const textareaNode = container.querySelector('textarea');
     const formNode = container.querySelector('form');
     const event = {target: {name: 'description', value: DESCRIPTION}};
+    expect(textareaNode.value).toBe('');
     fireEvent.change(textareaNode, event);
     expect(textareaNode.value).toBe(DESCRIPTION);
     fireEvent.submit(formNode);

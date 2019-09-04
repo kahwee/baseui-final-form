@@ -1,6 +1,6 @@
 // @noflow
 import * as React from 'react';
-import {render} from 'react-testing-library';
+import {render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
 import FormControlLabel from '../form-control-label';
 
@@ -12,6 +12,6 @@ describe('help-icon', () => {
       </BaseuiProvider>
     );
     const spanNode = container.querySelectorAll('span');
-    expect(spanNode).toHaveLength(1);
+    expect(spanNode).toHaveLength(2);
   });
 });

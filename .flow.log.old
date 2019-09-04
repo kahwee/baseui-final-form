@@ -1,0 +1,30 @@
+[2019-08-30 12:17:30.228] argv=/Users/kahwee/Uber/baseui-final-form/node_modules/flow-bin/flow-osx-v0.106.3/flow start --flowconfig-name .flowconfig --autostop --from vscode --temp-dir /tmp/flow /Users/kahwee/Uber/baseui-final-form
+[2019-08-30 12:17:30.228] lazy_mode=off
+[2019-08-30 12:17:30.228] arch=classic
+[2019-08-30 12:17:30.228] abstract_locations=off
+[2019-08-30 12:17:30.228] max_workers=12
+[2019-08-30 12:17:30.261] Initializing Server (This might take some time)
+[2019-08-30 12:17:30.261] executable=/Users/kahwee/Uber/baseui-final-form/node_modules/flow-bin/flow-osx-v0.106.3/flow
+[2019-08-30 12:17:30.263] version=0.106.3
+[2019-08-30 12:17:30.272] No saved state available
+[2019-08-30 12:17:30.275] Parsing
+[2019-08-30 12:17:31.114] File /Users/kahwee/Uber/baseui-final-form/node_modules/map-or-similar/map-or-similar.min.gzip.js is malformed
+[2019-08-30 12:17:32.091] File /Users/kahwee/Uber/baseui-final-form/node_modules/memoizerific/memoizerific.min.gzip.js is malformed
+[2019-08-30 12:17:32.299] Removing persistent connection client #1
+[2019-08-30 12:17:33.407] Building package heap
+[2019-08-30 12:17:33.507] Loading libraries
+[2019-08-30 12:17:35.078] Resolving dependencies
+[2019-08-30 12:17:35.993] Resolved requires changed
+[2019-08-30 12:17:36.070] to_merge: Focused: 51, Dependents: 0, Dependencies: 349
+[2019-08-30 12:17:36.070] Calculating dependencies
+[2019-08-30 12:17:36.072] Merging
+[2019-08-30 12:17:40.345] Merge skipped 0 of 400 modules
+[2019-08-30 12:17:40.346] Done
+[2019-08-30 12:17:40.346] Checked set: Focused: 51, Dependents: 0, Dependencies: 349
+[2019-08-30 12:17:40.346] Server is READY
+[2019-08-30 12:17:40.346] Took 10.085532 seconds to initialize.
+[2019-08-30 12:17:40.351] Running a serial workload
+[2019-08-30 12:17:40.351] Request: status
+[2019-08-30 12:17:40.352] Status: Error
+[2019-08-30 12:17:40.353] Killing the worker processes
+Monitor is exiting with status Autostop (Autostop)

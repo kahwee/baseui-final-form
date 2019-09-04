@@ -1,30 +1,20 @@
 //@flow
 import * as React from 'react';
-import FormControlLabel from '../support/form-control-label';
-import type {FieldRenderProps, Option} from '../types.js';
+import type {
+  FieldRenderProps,
+  FieldRenderPropsMeta,
+  OptionT,
+} from '../types.js';
 import type {FieldValidator} from 'final-form';
-import type {OverrideT} from 'baseui/helpers/overrides';
 
-type FormControlProps = {
-  overrides: {
-    Label?: OverrideT<*>,
-    Caption?: OverrideT<*>,
-    ControlContainer?: OverrideT<*>,
-  },
-  label: ?(React.Node | ((props: {}) => React.Node)),
-  caption: ?(React.Node | ((props: {}) => React.Node)),
-  error: boolean | React.Node | ((props: {}) => React.Node),
-  help?: string,
-};
 type GenericInputProps = {
   id: string,
-  error?: string,
+  error?: any,
   [string]: any,
 };
 type AssignedProps = {
-  formControlProps: FormControlProps,
   inputProps: GenericInputProps,
-  meta: any,
+  meta: FieldRenderPropsMeta,
   validate?: FieldValidator,
   name: string,
   label: ?(React.Node | ((props: {}) => React.Node)),
@@ -34,7 +24,7 @@ type AssignedProps = {
   onFocus: (?SyntheticFocusEvent<*>) => void,
   value: any,
   checked?: boolean,
-  options?: Option[],
+  options?: OptionT[],
 };
 export default function assignProps({
   meta,
@@ -48,16 +38,6 @@ export default function assignProps({
   ...inputProps
 }: FieldRenderProps): AssignedProps {
   return {
-    formControlProps: {
-      labelFor: input.name,
-      caption,
-      help,
-      error: meta && meta.error && meta.touched ? meta.error : false,
-      label,
-      overrides: {
-        Label: {component: FormControlLabel, props: {help}},
-      },
-    },
     inputProps: {
       ...inputProps,
       ...input,

@@ -2,15 +2,16 @@
 import * as React from 'react';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
+import {adaptToFormControl} from '../form-control';
 import assignProps from '../util/assign-props';
 
 export default function render(props: FieldRenderProps) {
-  const {formControlProps, inputProps, options} = assignProps(props);
+  const {inputProps, options} = assignProps(props);
   if (!Array.isArray(options)) {
     throw new Error('Missing options');
   }
   return (
-    <FormControl {...formControlProps}>
+    <FormControl {...adaptToFormControl(props)}>
       <select {...inputProps}>
         {options.map((option, index) => {
           return (
@@ -23,3 +24,5 @@ export default function render(props: FieldRenderProps) {
     </FormControl>
   );
 }
+
+export {render as AdaptedNativeSelect};

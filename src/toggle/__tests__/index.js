@@ -1,16 +1,16 @@
 // @noflow
 import * as React from 'react';
+import {AdaptedToggle} from '../index';
 import {Field, Form} from 'react-final-form';
-import {fireEvent, render} from 'react-testing-library';
+import {fireEvent, render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
-import Toggle from '../index';
 
 describe('toggle', () => {
   const defaultProps = {
     name: 'isGoing',
     label: "Yes, I'll join",
     caption: 'RSVP if you are going to our event',
-    component: Toggle,
+    component: AdaptedToggle,
   };
 
   it('should be submitted correctly when toggled', () => {

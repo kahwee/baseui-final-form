@@ -1,6 +1,7 @@
-// @flow
+// @noflow
 import * as React from 'react';
 import {FormControl} from 'baseui/form-control';
+import {adaptToFormControl} from '../form-control';
 import Select from 'react-select';
 import assignProps from '../util/assign-props';
 import type {FieldRenderProps, ReactSelectOption} from '../types.js';
@@ -15,7 +16,7 @@ export default function render({
   isMulti,
   ...props
 }: Props) {
-  const {formControlProps, inputProps, options, value, onChange} = assignProps(
+  const {inputProps, options, value, onChange} = assignProps(
     ((props: any): FieldRenderProps)
   );
   if (!Array.isArray(options)) {
@@ -46,15 +47,18 @@ export default function render({
   }
   return (
     <FormControl
-      {...formControlProps}
-      overrides={{
-        ...formControlProps.overrides,
-        ControlContainer: {
-          style: ({$theme}) => ({
-            fontFamily: $theme.typography.font400.fontFamily,
-          }),
+      {...adaptToFormControl({
+        ...props,
+        formControlProps: {
+          overrides: {
+            ControlContainer: {
+              style: ({$theme}) => ({
+                fontFamily: $theme.typography.font400.fontFamily,
+              }),
+            },
+          },
         },
-      }}
+      })}
     >
       <RootSelect
         {...inputProps}
@@ -76,3 +80,5 @@ export default function render({
     </FormControl>
   );
 }
+
+export {render as AdaptedReactSelect};

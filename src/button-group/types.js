@@ -1,5 +1,5 @@
 // @flow
-import {type FieldRenderProps} from '../types.js';
+import type {FieldRenderProps} from '../types.js';
 
 export type ButtonGroupProps = {
   mode: 'radio' | 'checkbox',

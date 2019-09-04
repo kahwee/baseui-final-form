@@ -1,14 +1,16 @@
 // @flow
-
 import * as React from 'react';
+import {Select as BaseuiSelect} from 'baseui/select';
 import {Button} from 'baseui/button';
 import {Field, Form} from 'react-final-form';
+import {FormControl} from 'baseui/form-control';
 import {H6} from 'baseui/typography';
 import {action} from '@storybook/addon-actions';
+import {adaptToFormControl} from '../form-control';
 import {storiesOf} from '@storybook/react';
 import {styled} from 'baseui';
 import {withReadme} from 'storybook-readme';
-import Select from './index';
+import Select, {adaptToMultiSelect, adaptToSingleSelect} from './index';
 import SelectReadme from './README.md';
 import options from '../native-select/__tests__/__fixtures__/fruit-options.json';
 
@@ -48,6 +50,33 @@ storiesOf('Select', module)
             help="Telling us your favorite fruit helps us understand you better"
             onChange={action('fruit changed')}
           />
+          <Field
+            name="anotherFruit"
+            placeholder="Select something!"
+            component={Select}
+            label="Another fruits"
+            options={options}
+            onChange={action('anotherFruit changed')}
+          />
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
+  .add('Single with adapt', () => (
+    <Form
+      onSubmit={action('submit')}
+      initialValues={{fruit: 'pineapple'}}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="fruit"
+            render={props => <BaseuiSelect {...adaptToSingleSelect(props)} />}
+            options={options}
+            onChange={action('fruit changed')}
+          />
           <Button type="submit" disabled={pristine || invalid}>
             Submit
           </Button>
@@ -76,6 +105,60 @@ storiesOf('Select', module)
       )}
     />
   ))
+  .add('Multiple with adapt', () => (
+    <Form
+      onSubmit={action('submit')}
+      initialValues={{fruits: ['pineapple', 'apple']}}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="fruits"
+            render={props => <BaseuiSelect {...adaptToMultiSelect(props)} />}
+            options={options}
+            onChange={action('fruit changed')}
+          />
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
+  .add('Multiple with Createable', () => (
+    <Form
+      onSubmit={action('submit')}
+      initialValues={{fruits: ['pineapple', 'apple']}}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="fruits"
+            label="My fruits"
+            render={props => (
+              <FormControl {...adaptToFormControl(props)}>
+                <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
+              </FormControl>
+            )}
+            options={options}
+            onChange={action('fruit changed')}
+          />
+          <Field
+            name="toys"
+            label="Toys"
+            render={props => (
+              <FormControl {...adaptToFormControl(props)}>
+                <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
+              </FormControl>
+            )}
+            options={[]}
+            onChange={action('fruit changed')}
+          />
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
   .add('With overrides and custom components', () => (
     <Form
       onSubmit={action('submit')}
@@ -87,24 +170,31 @@ storiesOf('Select', module)
           </H6>
           <Field
             name="fruits"
-            component={Select}
+            render={props => (
+              <FormControl {...adaptToFormControl(props)}>
+                <BaseuiSelect
+                  {...adaptToMultiSelect(props)}
+                  getOptionLabel={({option}) => (
+                    <CustomOptionLabel option={option} />
+                  )}
+                  overrides={{
+                    DropdownListItem: {
+                      style: ({$theme, $isHighlighted}) => ({
+                        backgroundColor: $isHighlighted
+                          ? $theme.colors.positive50
+                          : 'transparent',
+                        ':hover': {
+                          backgroundColor: $theme.colors.positive50,
+                        },
+                      }),
+                    },
+                  }}
+                />
+              </FormControl>
+            )}
             caption="Please select multiple fruits"
             label="My fruits"
             options={options}
-            multi
-            getOptionLabel={({option}) => <CustomOptionLabel option={option} />}
-            overrides={{
-              DropdownListItem: {
-                style: ({$theme, $isHighlighted}) => ({
-                  backgroundColor: $isHighlighted
-                    ? $theme.colors.positive50
-                    : 'transparent',
-                  ':hover': {
-                    backgroundColor: $theme.colors.positive50,
-                  },
-                }),
-              },
-            }}
           />
           <Button type="submit" disabled={pristine || invalid}>
             Submit

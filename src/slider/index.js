@@ -3,30 +3,16 @@ import * as React from 'react';
 import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
 import {Slider} from 'baseui/slider';
-import assignProps from '../util/assign-props';
+import {adaptToFormControl} from '../form-control';
+import {adaptToSlider} from './adapters';
 
 export default function render(props: FieldRenderProps) {
-  const {
-    formControlProps,
-    inputProps,
-    meta,
-    label,
-    onChange,
-    value,
-  } = assignProps(props);
-  const transformedValue = value || [inputProps.min, inputProps.max] || [];
+  const {label} = props;
   return (
-    <FormControl {...formControlProps}>
-      <Slider
-        {...inputProps}
-        value={transformedValue}
-        isError={!!meta.error}
-        onChange={({value}) => {
-          onChange(value);
-        }}
-      >
-        {label}
-      </Slider>
+    <FormControl {...adaptToFormControl(props)}>
+      <Slider {...adaptToSlider(props)}>{label}</Slider>
     </FormControl>
   );
 }
+
+export {adaptToSlider, render as AdaptedSlider};

@@ -1,14 +1,14 @@
 /* eslint-env node */
-// @flow
+// @noflow
 
 import * as React from 'react';
 import {Button} from 'baseui/button';
 import {Field, Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
-import CreatableSelect from 'react-select/lib/Creatable';
+import CreatableSelect from 'react-select/creatable';
 import Select from './index';
-import makeAnimated from 'react-select/lib/animated';
+import makeAnimated from 'react-select/animated';
 import options from '../native-select/__tests__/__fixtures__/fruit-options.json';
 
 storiesOf('react-select', module)
