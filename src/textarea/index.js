@@ -4,7 +4,7 @@ import {type FieldRenderProps} from '../types.js';
 import {FormControl} from 'baseui/form-control';
 import {Textarea} from 'baseui/textarea';
 import {adaptToFormControl} from '../form-control';
-import {adaptToInput} from '../input/adapters';
+import {adaptToTextarea} from './adapters';
 
 /**
  * textarea is incredibly similar to input, check out input/adapters for
@@ -13,7 +13,7 @@ import {adaptToInput} from '../input/adapters';
 export default function render(props: FieldRenderProps) {
   return (
     <FormControl {...adaptToFormControl(props)}>
-      <Textarea {...adaptToInput(props)} />
+      <Textarea {...adaptToTextarea(props)} />
     </FormControl>
   );
 }

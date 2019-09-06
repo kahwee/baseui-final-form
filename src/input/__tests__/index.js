@@ -1,4 +1,4 @@
-// @noflow
+// @flow
 import * as React from 'react';
 import {Field, Form} from 'react-final-form';
 import {fireEvent, render} from '@testing-library/react';

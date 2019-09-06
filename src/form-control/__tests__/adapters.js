@@ -1,8 +1,7 @@
-// @noflow
+// @flow
 import * as React from 'react';
 import {Field, Form} from 'react-final-form';
 import {FormControl} from 'baseui/form-control';
-import {Input} from 'baseui/input';
 import {adaptToFormControl} from '../adapters';
 import {render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
@@ -24,7 +23,7 @@ describe('form-control/adapters', () => {
                 render={props => (
                   <div>
                     <FormControl {...adaptToFormControl(props)}>
-                      <Input />
+                      <input name={props.input.name} />
                     </FormControl>
                   </div>
                 )}

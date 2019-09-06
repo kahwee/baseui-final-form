@@ -1,4 +1,4 @@
-// @noflow
+// @flow
 import * as React from 'react';
 import {render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';

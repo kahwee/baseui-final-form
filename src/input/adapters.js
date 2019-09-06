@@ -1,6 +1,7 @@
 // @flow
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
 import type {FieldRenderPropsMeta} from '../types';
+import type {InputPropsT} from 'baseui/input';
 
 type AdaptToInputProps = {
   meta: FieldRenderPropsMeta,
@@ -8,16 +9,18 @@ type AdaptToInputProps = {
   onChange: (SyntheticInputEvent<*> | any) => void,
   inputProps?: *,
 } & ReactFinalFormFieldRenderProps;
-
-export function adaptToInput({
-  meta,
-  disabled,
-  onChange,
-  input,
-  // In case user wants to add additional parameters, including overrides.
-  inputProps = {},
-  ...restProps
-}: AdaptToInputProps) {
+export function adaptToInput(
+  props: ReactFinalFormFieldRenderProps
+): InputPropsT {
+  const {
+    meta,
+    disabled,
+    onChange,
+    input,
+    // In case user wants to add additional parameters, including overrides.
+    inputProps = {},
+    ...restProps
+  } = ((props: any): AdaptToInputProps);
   return {
     ...restProps,
     ...inputProps,
