@@ -18,4 +18,4 @@ export default function render(props: FieldRenderProps) {
   );
 }
 
-export {render as AdaptedTextarea};
+export {render as AdaptedTextarea, adaptToTextarea};
