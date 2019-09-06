@@ -1,4 +1,4 @@
-// @noflow
+// @flow
 import * as React from 'react';
 import {AdaptedTextarea} from '../index';
 import {Field, Form} from 'react-final-form';

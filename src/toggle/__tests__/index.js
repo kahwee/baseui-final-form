@@ -1,4 +1,4 @@
-// @noflow
+// @flow
 import * as React from 'react';
 import {AdaptedToggle} from '../index';
 import {Field, Form} from 'react-final-form';

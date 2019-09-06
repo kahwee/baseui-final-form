@@ -1,4 +1,4 @@
-// @noflow
+// @flow
 import * as React from 'react';
 import {Field, Form} from 'react-final-form';
 import {Input} from 'baseui/input';

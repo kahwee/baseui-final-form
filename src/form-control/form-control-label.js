@@ -5,7 +5,7 @@ import {StyledLabel} from 'baseui/form-control';
 import HelpIcon from '../support/help-icon';
 
 type Props = {
-  children: React.Node,
+  children?: ?React.Node,
   help?: string,
 };
 const FormControlLabel = ({children, help, ...rest}: Props) => {
