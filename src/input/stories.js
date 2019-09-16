@@ -205,4 +205,24 @@ storiesOf('Input', module)
         </form>
       )}
     />
+  ))
+  .add('With validation of min length 3', () => (
+    <Form
+      validateOnBlur
+      onSubmit={action('submit')}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="firstName"
+            component={Input}
+            label="First name"
+            validate={minLength3}
+            defaultValue="ab"
+          />
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
   ));
