@@ -124,7 +124,7 @@ storiesOf('Select', module)
       )}
     />
   ))
-  .add('Multiple with Createable', () => (
+  .add('Createable', () => (
     <Form
       onSubmit={action('submit')}
       initialValues={{fruits: ['pineapple', 'apple']}}
@@ -142,15 +142,26 @@ storiesOf('Select', module)
             onChange={action('fruit changed')}
           />
           <Field
-            name="toys"
-            label="Toys"
+            name="multiCreatable"
+            label="Multi createable"
             render={props => (
               <FormControl {...adaptToFormControl(props)}>
                 <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
               </FormControl>
             )}
             options={[]}
-            onChange={action('fruit changed')}
+            onChange={action('Multi createable changed')}
+          />
+          <Field
+            name="singleCreatable"
+            label="Single creatable"
+            render={props => (
+              <FormControl {...adaptToFormControl(props)}>
+                <BaseuiSelect creatable {...adaptToSingleSelect(props)} />
+              </FormControl>
+            )}
+            options={[]}
+            onChange={action('Single creatable changed')}
           />
           <Button type="submit" disabled={pristine || invalid}>
             Submit
