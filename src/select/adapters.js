@@ -11,6 +11,7 @@ type AdaptToSingleSelectProps = {
   options: Array<OptionT>,
 } & FieldRenderProps;
 export function adaptToSingleSelect(props: *) {
+  const idKey = 'id';
   const {
     meta,
     options,
@@ -23,12 +24,26 @@ export function adaptToSingleSelect(props: *) {
       `Invalid options in "${input.name}", expects options to be Array<OptionT>.`
     );
   }
+  let newOptions = uniqueConcat<OptionT>(
+    options,
+    input.value
+      ? [
+          {
+            [idKey]: input.value,
+            label: input.value,
+          },
+        ]
+      : [],
+    idKey
+  );
   // $FlowFixMe
-  let selectedOption = options.filter<{}>(option => option.id === input.value);
+  let selectedOption = newOptions.filter<{}>(
+    option => input.value === option.id
+  );
   return {
     ...restProps,
     id: input.name,
-    options,
+    options: newOptions,
     disabled,
     multi: false,
     onChange: ({value, option, type}: OnChangeParamsT) => {

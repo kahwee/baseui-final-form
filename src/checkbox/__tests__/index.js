@@ -1,21 +1,21 @@
 // @noflow
 import * as React from 'react';
+import {AdaptedCheckbox} from '../index';
 import {Field, Form} from 'react-final-form';
-import {fireEvent, render} from '@testing-library/react';
+import {render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
-import Checkbox from '../index';
 
 describe('checkbox', () => {
   const defaultProps = {
     name: 'isGoing',
     label: "Yes, I'll join",
     caption: 'RSVP if you are going to our event',
-    component: Checkbox,
+    component: AdaptedCheckbox,
   };
 
-  it('should be submitted correctly when toggled', () => {
+  it('should render correctly with form-control', () => {
     const mockSubmit = jest.fn();
-    const {container} = render(
+    const {getByText} = render(
       <BaseuiProvider>
         <Form onSubmit={mockSubmit}>
           {({handleSubmit}) => (
@@ -26,64 +26,7 @@ describe('checkbox', () => {
         </Form>
       </BaseuiProvider>
     );
-    const inputNode = container.querySelector('input');
-    const labelNode = inputNode.parentNode;
-    const formNode = container.querySelector('form');
-    fireEvent.click(labelNode);
-    expect(inputNode.checked).toBe(true);
-    fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenLastCalledWith(
-      {isGoing: true},
-      expect.anything(),
-      expect.anything()
-    );
-    fireEvent.click(labelNode);
-    expect(inputNode.checked).toBe(false);
-    fireEvent.submit(formNode);
-    expect(mockSubmit).toHaveBeenLastCalledWith(
-      {isGoing: false},
-      expect.anything(),
-      expect.anything()
-    );
-  });
-
-  [true, 'blahblah', 1, 2000].forEach(value => {
-    it(`should be initialized as Boolean(true) when ${typeof value} ${String(
-      value
-    )}`, () => {
-      const {container} = render(
-        <BaseuiProvider>
-          <Form onSubmit={() => {}} initialValues={{isGoing: value}}>
-            {({handleSubmit}) => (
-              <form onSubmit={handleSubmit}>
-                <Field {...defaultProps} />
-              </form>
-            )}
-          </Form>
-        </BaseuiProvider>
-      );
-      const inputNode = container.querySelector('input');
-      expect(inputNode.checked).toBe(true);
-    });
-  });
-
-  [false, null, undefined, 0].forEach(value => {
-    it(`should be initialized as Boolean(false) when ${typeof value} ${String(
-      value
-    )}`, () => {
-      const {container} = render(
-        <BaseuiProvider>
-          <Form onSubmit={() => {}} initialValues={{isGoing: value}}>
-            {({handleSubmit}) => (
-              <form onSubmit={handleSubmit}>
-                <Field {...defaultProps} />
-              </form>
-            )}
-          </Form>
-        </BaseuiProvider>
-      );
-      const inputNode = container.querySelector('input');
-      expect(inputNode.checked).toBe(false);
-    });
+    expect(getByText(defaultProps.caption)).toBeTruthy();
+    expect(getByText(defaultProps.label)).toBeTruthy();
   });
 });
