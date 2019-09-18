@@ -1,9 +1,9 @@
 // @flow
 import * as React from 'react';
+import {AdaptedInput} from '../index';
 import {Field, Form} from 'react-final-form';
 import {fireEvent, render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';
-import Input from '../index';
 
 describe('input', () => {
   it('should record a submission in final-form when changed in baseui/input', () => {
@@ -15,7 +15,7 @@ describe('input', () => {
             <form onSubmit={handleSubmit}>
               <Field
                 name="firstName"
-                component={Input}
+                component={AdaptedInput}
                 caption="First name"
                 label="First name"
                 help="Basic help"
