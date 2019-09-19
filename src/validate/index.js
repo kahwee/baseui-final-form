@@ -1,5 +1,5 @@
 // @flow
-import isNumeric from './util/is-numeric';
+import isNumeric from '../util/is-numeric';
 
 export function minLength(len: number) {
   return function(value: ?string) {
@@ -42,6 +42,15 @@ export function required(value: ?string | ?number | ?boolean) {
     return 'Required';
   }
   return;
+}
+
+export function uuid(value: string) {
+  return value &&
+    !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(
+      value
+    )
+    ? 'Invalid UUID format'
+    : undefined;
 }
 
 export function email(value: string) {
