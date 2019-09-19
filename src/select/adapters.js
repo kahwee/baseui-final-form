@@ -87,22 +87,21 @@ export function adaptToMultiSelect(props: *) {
       `Invalid options in "${input.name}", expects options to be Array<OptionT>.`
     );
   }
+  const values = Array.isArray(input.value) ? input.value : [];
   let newOptions = uniqueConcat<OptionT>(
     options,
-    Array.isArray(input.value)
-      ? input.value.map(option => {
-          return {
-            [idKey]: option,
-            label: option,
-          };
-        })
-      : [],
+    values.map(option => {
+      return {
+        [idKey]: option,
+        label: option,
+      };
+    }),
     idKey
   );
 
   // $FlowFixMe
   let selectedOption = newOptions.filter<{}>(option =>
-    input.value.includes(option.id)
+    values.includes(option.id)
   );
   return {
     ...restProps,
