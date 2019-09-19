@@ -1,5 +1,5 @@
 // @flow
-import {validate as v} from '../index';
+import * as v from '../index';
 
 describe('validate', () => {
   Object.keys(v).forEach(validateKey => {
@@ -17,6 +17,7 @@ describe('validate', () => {
       }
     });
   });
+
   it('should check "minLength" boundaries', () => {
     const minLen2 = v.minLength(2);
     expect(minLen2('')).toBeUndefined();
@@ -85,5 +86,12 @@ describe('validate', () => {
     expect(v.numeric('-1.09')).toBeUndefined();
     expect(v.numeric(1.23)).toBeUndefined();
     expect(v.numeric('1.23')).toBeUndefined();
+  });
+
+  it('should check "uuid" boundaries', () => {
+    expect(v.uuid('83cd3add-8a17-459e-b1cb-0becd3891f3d')).toBeUndefined();
+    expect(v.uuid('ecf0bd9f-143f-4cb8-bf5c-0f6b209bb020')).toBeUndefined();
+    expect(v.uuid('1.23')).toBeString();
+    expect(v.uuid('')).toBeUndefined();
   });
 });
