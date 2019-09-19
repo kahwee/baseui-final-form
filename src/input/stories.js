@@ -2,11 +2,14 @@
 // @flow
 
 import * as React from 'react';
-import {AdaptedInput} from './index';
+import {AdaptedInput, adaptToInput} from './index';
 import {Button} from 'baseui/button';
 import {Field, Form} from 'react-final-form';
+import {FormControl} from 'baseui/form-control';
+import {MaskedInput} from 'baseui/input';
 import {StatefulTooltip} from 'baseui/tooltip';
 import {action} from '@storybook/addon-actions';
+import {adaptToFormControl} from '../form-control';
 import {minLength, required} from '../validate';
 import {storiesOf} from '@storybook/react';
 import {styled} from 'baseui';
@@ -98,6 +101,35 @@ storiesOf('AdaptedInput', module)
             caption="Example of disabled field"
             disabled
             label="Social security number"
+          />
+
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
+  .add('MaskedInput', () => (
+    <Form
+      onSubmit={action('submit')}
+      initialValues={{phoneNumber: 1234567890}}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="phoneNumber"
+            caption="This is MaskedInput from Base Web"
+            render={props => {
+              return (
+                <FormControl {...adaptToFormControl(props)}>
+                  <MaskedInput
+                    {...adaptToInput(props)}
+                    placeholder="Phone number"
+                    mask="(999) 999-9999"
+                  />
+                </FormControl>
+              );
+            }}
           />
 
           <Button type="submit" disabled={pristine || invalid}>
