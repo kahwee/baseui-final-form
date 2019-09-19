@@ -117,6 +117,32 @@ describe('select/adapters', () => {
     expect(getByText(placeholder).textContent).toBe(placeholder);
   });
 
+  it('should initialize fine if initialValues is undefined', async () => {
+    const onChange = jest.fn();
+    render(
+      <BaseuiProvider>
+        <Form onSubmit={() => {}} initialValues={{fruit: undefined}}>
+          {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+              <FormSpy onChange={onChange} subscription={{values: true}} />
+              <Field
+                options={[]}
+                name="fruit"
+                multi
+                render={props => (
+                  <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
+                )}
+              />
+            </form>
+          )}
+        </Form>
+      </BaseuiProvider>
+    );
+    expect(onChange).toHaveBeenLastCalledWith({
+      values: {fruit: undefined},
+    });
+  });
+
   it('should pass trigger blur, focus and change for single select', () => {
     const onChange = jest.fn();
     const {container, getByText} = render(
