@@ -52,7 +52,7 @@
     "delay": "^4.3.0",
     "emotion-theming": "^10.0.19",
     "eslint": "^6.4.0",
-    "eslint-config-fusion": "^6.0.3",
+    "eslint-config-fusion": "^6.0.4",
     "eslint-plugin-cup": "^2.0.2",
     "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-import": "^2.18.2",
