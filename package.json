@@ -125,6 +125,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "react-select": "^3.0.4"
+    "react-select": "^3.0.7"
   }
 }
