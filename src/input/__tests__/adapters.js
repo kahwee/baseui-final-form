@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import {Field, Form} from 'react-final-form';
-import {Input} from 'baseui/input';
+import {Input} from 'baseui/input/index';
 import {adaptToInput} from '../adapters';
 import {fireEvent, render} from '@testing-library/react';
 import {minLength} from '../../validate';

@@ -3,11 +3,11 @@ import * as React from 'react';
 import {
   Radio as BaseuiRadio,
   RadioGroup as BaseuiRadioGroup,
-} from 'baseui/radio';
-import {Block} from 'baseui/block';
-import {Button} from 'baseui/button';
+} from 'baseui/radio/index';
+import {Block} from 'baseui/block/index';
+import {Button} from 'baseui/button/index';
 import {Field, Form} from 'react-final-form';
-import {FormControl} from 'baseui/form-control';
+import {FormControl} from 'baseui/form-control/index';
 import {action} from '@storybook/addon-actions';
 import {adaptToFormControl} from '../form-control';
 import {storiesOf} from '@storybook/react';

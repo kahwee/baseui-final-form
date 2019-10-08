@@ -40,9 +40,9 @@ This is future-proof for future BaseWeb where RadioGroup no longer has `override
 import {
   Radio as BaseuiRadio,
   RadioGroup as BaseuiRadioGroup,
-} from 'baseui/radio';
+} from 'baseui/radio/index';
 import {styled} from 'baseui';
-import {FormControl} from 'baseui/form-control';
+import {FormControl} from 'baseui/form-control/index';
 import {adaptToRadioGroup} from 'baseui-final-form/radio-group';
 import {adaptToFormControl} from 'baseui-final-form/form-control';
 

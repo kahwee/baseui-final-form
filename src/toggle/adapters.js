@@ -1,5 +1,5 @@
 // @flow
-import {type PropsT, STYLE_TYPE} from 'baseui/checkbox';
+import {type PropsT, STYLE_TYPE} from 'baseui/checkbox/index';
 import {adaptToCheckbox} from '../checkbox';
 
 export function adaptToToggle(props: any): PropsT {
