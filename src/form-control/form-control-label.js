@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import {StatefulTooltip} from 'baseui/tooltip';
-import {StyledLabel} from 'baseui/form-control';
+import {StyledLabel} from 'baseui/form-control/index';
 import HelpIcon from '../support/help-icon';
 
 type Props = {

@@ -1,7 +1,7 @@
 // @flow
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
 import type {FieldRenderPropsMeta} from '../types';
-import type {PropsT} from 'baseui/checkbox';
+import type {PropsT} from 'baseui/checkbox/index';
 
 type AdaptToCheckboxProps = {
   meta: FieldRenderPropsMeta,

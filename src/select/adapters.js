@@ -2,7 +2,7 @@
 import {type FieldRenderProps} from 'react-final-form';
 import {uniqueConcat} from './unique-concat';
 import type {FieldRenderPropsMeta} from '../types';
-import type {OnChangeParamsT, OptionT} from 'baseui/select';
+import type {OnChangeParamsT, OptionT} from 'baseui/select/index';
 
 type AdaptToSingleSelectProps = {
   meta: FieldRenderPropsMeta,

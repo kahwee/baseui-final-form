@@ -1,10 +1,10 @@
 // @flow
 import * as React from 'react';
-import {Select as BaseuiSelect} from 'baseui/select';
-import {Button} from 'baseui/button';
+import {Select as BaseuiSelect} from 'baseui/select/index';
+import {Button} from 'baseui/button/index';
 import {Field, Form} from 'react-final-form';
-import {FormControl} from 'baseui/form-control';
-import {H6} from 'baseui/typography';
+import {FormControl} from 'baseui/form-control/index';
+import {H6} from 'baseui/typography/index';
 import {action} from '@storybook/addon-actions';
 import {adaptToFormControl} from '../form-control';
 import {storiesOf} from '@storybook/react';

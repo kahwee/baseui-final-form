@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import {Field, Form} from 'react-final-form';
-import {FormControl} from 'baseui/form-control';
+import {FormControl} from 'baseui/form-control/index';
 import {adaptToFormControl} from '../adapters';
 import {render} from '@testing-library/react';
 import BaseuiProvider from '../../with-baseui';

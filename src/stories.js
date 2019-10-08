@@ -2,8 +2,8 @@
 // @flow
 
 import * as React from 'react';
-import {Block} from 'baseui/block';
-import {Button, SHAPE, SIZE} from 'baseui/button';
+import {Block} from 'baseui/block/index';
+import {Button, SHAPE, SIZE} from 'baseui/button/index';
 import {Field, Form} from 'react-final-form'; // This is for Field arrays
 import {FieldArray} from 'react-final-form-arrays';
 import {
