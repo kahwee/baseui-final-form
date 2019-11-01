@@ -78,7 +78,7 @@
     "rimraf": "^3.0.0",
     "shx": "^0.3.2",
     "storybook-readme": "^5.0.8",
-    "styletron-engine-atomic": "^1.4.1",
+    "styletron-engine-atomic": "^1.4.3",
     "styletron-react": "^5.2.2"
   },
   "peerDependencies": {
