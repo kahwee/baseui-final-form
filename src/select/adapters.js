@@ -9,6 +9,7 @@ type AdaptToSingleSelectProps = {
   disabled?: boolean,
   onChange: (SyntheticInputEvent<*> | any) => void,
   options: Array<OptionT>,
+  defaultOption?: OptionT,
 } & FieldRenderProps;
 export function adaptToSingleSelect(props: *) {
   const idKey = 'id';
@@ -17,6 +18,7 @@ export function adaptToSingleSelect(props: *) {
     options,
     input,
     disabled,
+    defaultOption,
     ...restProps
   } = ((props: any): AdaptToSingleSelectProps);
   if (!options || !Array.isArray(options)) {
@@ -63,7 +65,10 @@ export function adaptToSingleSelect(props: *) {
         input.onFocus(((ev: any): SyntheticFocusEvent<*>));
       }
     },
-    value: selectedOption,
+    value:
+      meta.pristine && !input.value && defaultOption
+        ? defaultOption
+        : selectedOption,
     error: meta.error && meta.touched,
   };
 }
