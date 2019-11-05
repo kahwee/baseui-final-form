@@ -9,7 +9,7 @@ type AdaptToSingleSelectProps = {
   disabled?: boolean,
   onChange: (SyntheticInputEvent<*> | any) => void,
   options: Array<OptionT>,
-  defaultOption?: OptionT,
+  softDefaultValue?: OptionT,
 } & FieldRenderProps;
 export function adaptToSingleSelect(props: *) {
   const idKey = 'id';
@@ -18,7 +18,7 @@ export function adaptToSingleSelect(props: *) {
     options,
     input,
     disabled,
-    defaultOption,
+    softDefaultValue, //softDefaultValue will not override initial values
     ...restProps
   } = ((props: any): AdaptToSingleSelectProps);
   if (!options || !Array.isArray(options)) {
@@ -41,6 +41,9 @@ export function adaptToSingleSelect(props: *) {
   // $FlowFixMe
   let selectedOption = newOptions.filter<{}>(
     option => input.value === option.id
+  );
+  const defaultOption = newOptions.find(
+    option => softDefaultValue === option.id
   );
   return {
     ...restProps,
@@ -66,7 +69,7 @@ export function adaptToSingleSelect(props: *) {
       }
     },
     value:
-      meta.pristine && !input.value && defaultOption
+      meta.pristine && !input.value && softDefaultValue
         ? defaultOption
         : selectedOption,
     error: meta.error && meta.touched,
