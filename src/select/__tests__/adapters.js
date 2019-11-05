@@ -220,4 +220,56 @@ describe('select/adapters', () => {
       getByText('Apple');
     }).toThrow();
   });
+
+  it('Default option should be selected when no initial value is provided', () => {
+    const {getByText} = render(
+      <BaseuiProvider>
+        <Form onSubmit={() => {}}>
+          {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+              <Field
+                name="fruit"
+                options={[
+                  {id: 'pineapple', label: 'Pineapple'},
+                  {id: 'watermelon', label: 'Watermelon'},
+                  {id: 'defaultOption', label: 'Default Option'},
+                ]}
+                softDefaultValue={'defaultOption'}
+                render={props => (
+                  <BaseuiSelect {...adaptToSingleSelect(props)} />
+                )}
+              />
+            </form>
+          )}
+        </Form>
+      </BaseuiProvider>
+    );
+    expect(getByText('Default Option').textContent).toBe('Default Option');
+  });
+
+  it('Default option should not be selected when an initial value is provided', () => {
+    const {getByText} = render(
+      <BaseuiProvider>
+        <Form onSubmit={() => {}} initialValues={{fruit: 'pineapple'}}>
+          {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+              <Field
+                name="fruit"
+                options={[
+                  {id: 'pineapple', label: 'Pineapple'},
+                  {id: 'watermelon', label: 'Watermelon'},
+                  {id: 'defaultOption', label: 'Default Option'},
+                ]}
+                softDefaultValue={'defaultOption'}
+                render={props => (
+                  <BaseuiSelect {...adaptToSingleSelect(props)} />
+                )}
+              />
+            </form>
+          )}
+        </Form>
+      </BaseuiProvider>
+    );
+    expect(getByText('Pineapple').textContent).toBe('Pineapple');
+  });
 });
