@@ -42,9 +42,9 @@ export function adaptToSingleSelect(props: *) {
   let selectedOption = newOptions.filter<{}>(
     option => input.value === option.id
   );
-  const defaultOption = newOptions.find(
-    option => softDefaultValue === option.id
-  );
+  const defaultOption =
+    softDefaultValue &&
+    newOptions.find(option => softDefaultValue === option.id);
   return {
     ...restProps,
     id: input.name,
@@ -69,7 +69,7 @@ export function adaptToSingleSelect(props: *) {
       }
     },
     value:
-      meta.pristine && !input.value && softDefaultValue
+      meta.pristine && !input.value && defaultOption
         ? defaultOption
         : selectedOption,
     error: meta.error && meta.touched,
