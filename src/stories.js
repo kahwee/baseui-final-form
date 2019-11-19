@@ -12,7 +12,7 @@ import {
   ModalButton,
   ModalFooter,
   ModalHeader,
-} from 'baseui/modal';
+} from 'baseui/modal/index';
 import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
 import Delete from 'baseui/icon/delete'; // This is for Field arrays

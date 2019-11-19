@@ -5,6 +5,6 @@ import {adaptToCheckbox} from '../checkbox';
 export function adaptToToggle(props: any): PropsT {
   return {
     ...((adaptToCheckbox(props): any): PropsT),
-    checkmarkType: STYLE_TYPE.toggle,
+    checkmarkType: STYLE_TYPE.toggle_round,
   };
 }
