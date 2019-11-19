@@ -2,7 +2,7 @@
 import {type FieldRenderProps} from 'react-final-form';
 import {uniqueConcat} from './unique-concat';
 import type {FieldRenderPropsMeta} from '../types';
-import type {OnChangeParamsT, OptionT} from 'baseui/select/index';
+import type {OnChangeParamsT, OptionT, ValueT} from 'baseui/select/index';
 
 type AdaptToSingleSelectProps = {
   meta: FieldRenderPropsMeta,
@@ -11,7 +11,12 @@ type AdaptToSingleSelectProps = {
   options: Array<OptionT>,
   softDefaultValue?: OptionT,
 } & FieldRenderProps;
-export function adaptToSingleSelect(props: *) {
+export const adaptToSingleSelect = (
+  props: *
+): {
+  value: ValueT,
+  options: ValueT,
+} => {
   const idKey = 'id';
   const {
     meta,
@@ -74,14 +79,19 @@ export function adaptToSingleSelect(props: *) {
         : selectedOption,
     error: meta.error && meta.touched,
   };
-}
+};
 
 type AdaptToMultiSelectProps = {
   meta: FieldRenderPropsMeta,
   options: Array<OptionT>,
   disabled?: boolean,
 } & FieldRenderProps;
-export function adaptToMultiSelect(props: *) {
+export const adaptToMultiSelect = (
+  props: *
+): {
+  value: ValueT,
+  options: ValueT,
+} => {
   const idKey = 'id';
   let {
     meta,
@@ -138,4 +148,4 @@ export function adaptToMultiSelect(props: *) {
     value: selectedOption,
     error: meta.error && meta.touched,
   };
-}
+};
