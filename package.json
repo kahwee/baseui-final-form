@@ -50,7 +50,7 @@
     "cross-env": "^6.0.3",
     "delay": "^4.3.0",
     "emotion-theming": "^10.0.19",
-    "eslint": "^6.6.0",
+    "eslint": "^6.7.2",
     "eslint-config-fusion": "^6.0.4",
     "eslint-plugin-cup": "^2.0.2",
     "eslint-plugin-flowtype": "^4.3.0",
