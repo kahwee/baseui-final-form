@@ -234,7 +234,7 @@ describe('select/adapters', () => {
                   {id: 'watermelon', label: 'Watermelon'},
                   {id: 'defaultOption', label: 'Default Option'},
                 ]}
-                softDefaultValue={'defaultOption'}
+                softDefaultValue="defaultOption"
                 render={props => (
                   <BaseuiSelect {...adaptToSingleSelect(props)} />
                 )}
@@ -260,7 +260,7 @@ describe('select/adapters', () => {
                   {id: 'watermelon', label: 'Watermelon'},
                   {id: 'defaultOption', label: 'Default Option'},
                 ]}
-                softDefaultValue={'defaultOption'}
+                softDefaultValue="defaultOption"
                 render={props => (
                   <BaseuiSelect {...adaptToSingleSelect(props)} />
                 )}

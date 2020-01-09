@@ -1617,14 +1617,14 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0", "@babel/runtime@^7.6.2", "@babel/runtime@^7.6.3":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.6.3":
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
   integrity sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.7.7":
+"@babel/runtime@^7.7.6", "@babel/runtime@^7.7.7":
   version "7.7.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.7.tgz#194769ca8d6d7790ec23605af9ee3e42a0aa79cf"
   integrity sha512-uCnC2JEVAu8AKB5do1WRIsvrdJ0flYx/A/9f/6chdacnEZ7LmavjdsDXr5ksYBegxtuTPR5Va9/+13QF/kFkCA==
@@ -2571,10 +2571,10 @@
     "@svgr/plugin-svgo" "^4.3.1"
     loader-utils "^1.2.3"
 
-"@testing-library/dom@^6.3.0":
-  version "6.8.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.8.0.tgz#25beb7ff489b9e06fd505b37ffa70c2032e9f05c"
-  integrity sha512-ZQKq2M4I5DOvOOJpGdN25YYCjMQ7FA9Wk2WiSi1Or5vmRWrU6udxuTEyV5MukxsZRJkzrfSjDsrfNAyMGAhcdA==
+"@testing-library/dom@^6.11.0":
+  version "6.11.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.11.0.tgz#962a38f1a721fdb7c9e35e7579e33ff13a00eda4"
+  integrity sha512-Pkx9LMIGshyNbfmecjt18rrAp/ayMqGH674jYER0SXj0iG9xZc+zWRjk2Pg9JgPBDvwI//xGrI/oOQkAi4YEew==
   dependencies:
     "@babel/runtime" "^7.6.2"
     "@sheerun/mutationobserver-shim" "^0.3.2"
@@ -2583,14 +2583,14 @@
     pretty-format "^24.9.0"
     wait-for-expect "^3.0.0"
 
-"@testing-library/react@^9.3.1":
-  version "9.3.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-9.3.1.tgz#96573fb9942e1ca0ed1ec9984ea7b12b66945963"
-  integrity sha512-BXlYrbxTkifNVb7rIC8EHqYXgG/rBeULqG3V0wbEAuSaZ7n5ERX9Bcp0i+9EecrNpLNPwR0cIxdKNp6qVTZS9A==
+"@testing-library/react@^9.4.0":
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-9.4.0.tgz#b021ac8cb987c8dc54c6841875f745bf9b2e88e5"
+  integrity sha512-XdhDWkI4GktUPsz0AYyeQ8M9qS/JFie06kcSnUVcpgOwFjAu9vhwR83qBl+lw9yZWkbECjL8Hd+n5hH6C0oWqg==
   dependencies:
-    "@babel/runtime" "^7.6.0"
-    "@testing-library/dom" "^6.3.0"
-    "@types/testing-library__react" "^9.1.0"
+    "@babel/runtime" "^7.7.6"
+    "@testing-library/dom" "^6.11.0"
+    "@types/testing-library__react" "^9.1.2"
 
 "@types/babel__core@^7.1.0":
   version "7.1.3"
@@ -2729,7 +2729,7 @@
   dependencies:
     pretty-format "^24.3.0"
 
-"@types/testing-library__react@^9.1.0":
+"@types/testing-library__react@^9.1.2":
   version "9.1.2"
   resolved "https://registry.yarnpkg.com/@types/testing-library__react/-/testing-library__react-9.1.2.tgz#e33af9124c60a010fc03a34eff8f8a34a75c4351"
   integrity sha512-CYaMqrswQ+cJACy268jsLAw355DZtPZGt3Jwmmotlcu8O/tkoXBI6AeZ84oZBJsIsesozPKzWzmv/0TIU+1E9Q==
@@ -3793,10 +3793,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseui@^9.21.0:
-  version "9.21.0"
-  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.21.0.tgz#44aa5ab3c8e725df47cbe9ef5723046112b9f3d7"
-  integrity sha512-X/UCR9IdkInD5K40AbCLZ6dU9F3wO3yGFDY+9NDVXMOfXwQkqFDd//IdlUyol78ppnRb0A7bxRO3ITCTdB8rlg==
+baseui@^9.37.0:
+  version "9.37.0"
+  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.37.0.tgz#5343be86d6a5b67fac2ba5c329fdbf958d533b06"
+  integrity sha512-lfHt/kOHs9bqg3FvB65L0r5G+LAqjxZLScmpNilngEiPAlLmiGP0RdAol3ioKjScwJpy2+ECNcVdxPpIi37z2A==
   dependencies:
     card-validator "^6.2.0"
     date-fns "^2.6.0"
@@ -3808,9 +3808,9 @@ baseui@^9.21.0:
     react-focus-lock "^2.2.1"
     react-input-mask "^2.0.4"
     react-is "^16.8.6"
-    react-movable "^2.3.0"
+    react-movable "^2.4.0"
     react-multi-ref "^1.0.0"
-    react-range "^1.4.3"
+    react-range "^1.4.4"
     react-virtualized "^9.21.1"
     react-virtualized-auto-sizer "^1.0.2"
     react-window "^1.8.5"
@@ -10056,10 +10056,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-movable@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-movable/-/react-movable-2.3.0.tgz#679d6a15bead651dd6c2b3ce0458b386be00661f"
-  integrity sha512-zxXDGJhi6UCpapXcla5KcyT+3e716YFWaaE28a8RtZAYKHMWKFmSEQ0Ne8foPTnGBGGlfoskm43I+1iPqBP0QA==
+react-movable@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-movable/-/react-movable-2.4.0.tgz#c3fb46ca204f9899a72d300ed052679008b315e3"
+  integrity sha512-xKOF7wbeRfAbjBzz+bmC0fs3h8DhOoJx/THDaXyLK1QxvgcERXKUvldHVoI8YajSalxLLfHZ/pYJl0QFXoc83A==
 
 react-multi-ref@^1.0.0:
   version "1.0.0"
@@ -10088,10 +10088,10 @@ react-popper@^1.3.4:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
-react-range@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.4.3.tgz#49a4b4743c67ddceba1e438ec9709858e0e4c2a9"
-  integrity sha512-C4Ctof47TftIQeV26wwR8BdAd6zPvzXcxh75ZqbFU55jRLIj6Mj8W77PKK6RQa+WjI8J5+RqlP+E3OJ3B4FxaQ==
+react-range@^1.4.4:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.4.7.tgz#e087aadd0861ccffc4ed5640e755f81948af629a"
+  integrity sha512-CWNX3z7p7x0YS/Tonvcidl+LM5olsr7QXKXQeunfPgiPAzAK+BOa5kLL4hbt2oxfjCIHCFRePEdxL2eKqeNTTA==
 
 react-select@^3.0.4:
   version "3.0.8"

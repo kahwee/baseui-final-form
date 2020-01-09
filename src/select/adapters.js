@@ -75,7 +75,7 @@ export const adaptToSingleSelect = (
     },
     value:
       meta.pristine && !input.value && defaultOption
-        ? defaultOption
+        ? [defaultOption]
         : selectedOption,
     error: meta.error && meta.touched,
   };
