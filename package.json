@@ -60,7 +60,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
-    "final-form": "^4.18.5",
+    "final-form": "^4.18.6",
     "final-form-arrays": "^3.0.1",
     "flow-bin": "0.109.0",
     "flow-copy-source": "^2.0.9",
@@ -82,7 +82,7 @@
   },
   "peerDependencies": {
     "baseui": ">= 8.0.0 < 10",
-    "final-form": "^4.18.5",
+    "final-form": "^4.18.6",
     "final-form-arrays": "^3.0.1",
     "react": ">= 16.9.0 < 17",
     "react-dom": ">= 16.9.0 < 17",
