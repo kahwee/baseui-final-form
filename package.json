@@ -125,5 +125,9 @@
   "license": "MIT",
   "dependencies": {
     "react-select": "^3.0.4"
+  },
+  "volta": {
+    "node": "10.18.0",
+    "yarn": "1.21.1"
   }
 }
