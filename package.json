@@ -46,7 +46,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-styletron-display-name": "^1.1.4",
     "baseui": "^9.37.0",
-    "create-universal-package": "^4.0.0",
+    "create-universal-package": "^4.1.0",
     "cross-env": "^6.0.3",
     "delay": "^4.3.0",
     "emotion-theming": "^10.0.27",
@@ -73,7 +73,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-final-form": "^6.3.3",
-    "react-final-form-arrays": "3.1.1",
+    "react-final-form-arrays": "^3.1.1",
     "rimraf": "^3.0.0",
     "shx": "^0.3.2",
     "storybook-readme": "^5.0.8",
@@ -82,11 +82,11 @@
   },
   "peerDependencies": {
     "baseui": ">= 8.0.0 < 10",
-    "final-form": "^4.18.5",
-    "final-form-arrays": "^3.0.1",
+    "final-form": "^4.18.6",
+    "final-form-arrays": "^3.0.2",
     "react": ">= 16.9.0 < 17",
     "react-dom": ">= 16.9.0 < 17",
-    "react-final-form": ">= 6.3.0 < 7",
+    "react-final-form": ">= 6.3.2 < 7",
     "react-final-form-arrays": ">= 3.1.1"
   },
   "keywords": [
