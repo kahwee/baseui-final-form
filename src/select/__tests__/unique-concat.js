@@ -6,7 +6,11 @@ describe('select/unique-concat', () => {
     // [0] arr1
     // [1] arr2
     // [2] output
-    [[{id: 'a'}, {id: 'b'}], [{id: 'a'}, {id: 'b'}], [{id: 'a'}, {id: 'b'}]],
+    [
+      [{id: 'a'}, {id: 'b'}],
+      [{id: 'a'}, {id: 'b'}],
+      [{id: 'a'}, {id: 'b'}],
+    ],
     [[{id: 'a'}], [{id: 'a'}, {id: 'b'}], [{id: 'a'}, {id: 'b'}]],
     [[{id: 'b'}], [{id: 'a'}, {id: 'b'}], [{id: 'b'}, {id: 'a'}]],
     [[{id: 'b'}], [], [{id: 'b'}]],
