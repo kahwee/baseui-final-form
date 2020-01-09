@@ -45,11 +45,11 @@ export const adaptToSingleSelect = (
   );
   // $FlowFixMe
   let selectedOption = newOptions.filter<{}>(
-    option => input.value === option.id
+    option => input.value === option[idKey]
   );
   const defaultOption =
     softDefaultValue &&
-    newOptions.find(option => softDefaultValue === option.id);
+    newOptions.find(option => softDefaultValue === option[idKey]);
   return {
     ...restProps,
     id: input.name,
@@ -59,7 +59,7 @@ export const adaptToSingleSelect = (
     onChange: ({value, option, type}: OnChangeParamsT) => {
       if (input.onChange) {
         input.onChange(
-          Array.isArray(value) && value[0] ? value[0].id : undefined
+          Array.isArray(value) && value[0] ? value[0][idKey] : undefined
         );
       }
     },
@@ -119,7 +119,7 @@ export const adaptToMultiSelect = (
 
   // $FlowFixMe
   let selectedOption = newOptions.filter<{}>(option =>
-    values.includes(option.id)
+    values.includes(option[idKey])
   );
   return {
     ...restProps,
@@ -130,7 +130,7 @@ export const adaptToMultiSelect = (
     onChange: ({value, option, type}: OnChangeParamsT) => {
       if (input.onChange) {
         input.onChange(
-          Array.isArray(value) ? value.map(option => option.id) : undefined
+          Array.isArray(value) ? value.map(option => option[idKey]) : undefined
         );
         newOptions.concat(value);
       }
