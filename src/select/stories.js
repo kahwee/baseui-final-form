@@ -7,6 +7,7 @@ import {FormControl} from 'baseui/form-control/index';
 import {H6} from 'baseui/typography/index';
 import {action} from '@storybook/addon-actions';
 import {adaptToFormControl} from '../form-control';
+import {required} from '../validate';
 import {storiesOf} from '@storybook/react';
 import {styled} from 'baseui';
 import {withReadme} from 'storybook-readme';
@@ -73,9 +74,14 @@ storiesOf('Select', module)
         <form onSubmit={handleSubmit}>
           <Field
             name="fruit"
-            render={props => <BaseuiSelect {...adaptToSingleSelect(props)} />}
+            render={props => (
+              <FormControl {...adaptToFormControl(props)}>
+                <BaseuiSelect {...adaptToSingleSelect(props)} />
+              </FormControl>
+            )}
             options={options}
             onChange={action('fruit changed')}
+            validate={required}
           />
           <Button type="submit" disabled={pristine || invalid}>
             Submit
@@ -113,7 +119,12 @@ storiesOf('Select', module)
         <form onSubmit={handleSubmit}>
           <Field
             name="fruits"
-            render={props => <BaseuiSelect {...adaptToMultiSelect(props)} />}
+            validate={required}
+            render={props => (
+              <FormControl {...adaptToFormControl(props)}>
+                <BaseuiSelect {...adaptToMultiSelect(props)} />
+              </FormControl>
+            )}
             options={options}
             onChange={action('fruit changed')}
           />
@@ -144,6 +155,7 @@ storiesOf('Select', module)
           <Field
             name="multiCreatable"
             label="Multi createable"
+            validate={required}
             render={props => (
               <FormControl {...adaptToFormControl(props)}>
                 <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
@@ -155,6 +167,7 @@ storiesOf('Select', module)
           <Field
             name="singleCreatable"
             label="Single creatable"
+            validate={required}
             render={props => (
               <FormControl {...adaptToFormControl(props)}>
                 <BaseuiSelect creatable {...adaptToSingleSelect(props)} />

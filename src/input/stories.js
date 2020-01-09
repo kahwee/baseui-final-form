@@ -18,10 +18,14 @@ import Readme from './README.md';
 
 const minLength3 = minLength(3);
 
-const FakeLink = styled<{}>('span', props => ({
-  borderBottom: `1px dotted ${props.$theme.colors.primary500}`,
-  color: props.$theme.colors.primary500,
-}));
+const FakeLink =
+  styled <
+  {} >
+  ('span',
+  props => ({
+    borderBottom: `1px dotted ${props.$theme.colors.primary500}`,
+    color: props.$theme.colors.primary500,
+  }));
 
 type AddressProps = {
   name: string,
