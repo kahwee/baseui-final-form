@@ -60,7 +60,7 @@ const withOverriddenFields = (
     render={props => (
       <FormControl {...adaptToFormControl(props)}>
         <BaseuiRadioGroup {...adaptToRadioGroup(props)}>
-          {options.map(option => (
+          {props.options.map(option => (
             <BaseuiRadio
               value={option.id}
               key={option.id}
