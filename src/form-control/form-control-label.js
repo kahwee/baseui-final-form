@@ -8,7 +8,7 @@ type Props = {
   children?: ?React.Node,
   help?: string,
 };
-const FormControlLabel = ({children, help, ...rest}: Props) => {
+export const FormControlLabel = ({children, help, ...rest}: Props) => {
   return (
     <StyledLabel {...rest} data-label="data-label">
       {children}
@@ -32,5 +32,3 @@ const FormControlLabel = ({children, help, ...rest}: Props) => {
     </StyledLabel>
   );
 };
-
-export default FormControlLabel;

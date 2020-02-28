@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import {type FieldRenderProps} from 'react-final-form';
-import FormControlLabel from './form-control-label';
+import {FormControlLabel} from './form-control-label';
 import type {FieldRenderPropsMeta, OptionT} from '../types';
 import type {FieldValidator} from 'final-form';
 
