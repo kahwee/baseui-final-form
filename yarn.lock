@@ -4862,10 +4862,10 @@ eslint-config-cup@^2.0.1:
   resolved "https://registry.yarnpkg.com/eslint-config-cup/-/eslint-config-cup-2.0.3.tgz#a9ff1c82455716c4ea68adfbc145b8527bc2bb9e"
   integrity sha512-F/IiKuWLGIAAFenwxqI4mf3UzfJgahjMn2dlJ/NGWbTbfzvvVL9yh+lWCYlSD5sr/S8jRW5BOCnorSl9b5zhIg==
 
-eslint-config-fusion@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-fusion/-/eslint-config-fusion-6.1.0.tgz#19a9dbd3a1314641c8705d1dd0c2b281c1fcfc5b"
-  integrity sha512-vKm5eVMtzLIGtbG6QWiHaGGaYBC5ZaqSZ27P19dyUnKPGNCbzOPJ4f4NMcjVMX+RcSwwBTDgjkXy0BqNg+CP3g==
+eslint-config-fusion@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-fusion/-/eslint-config-fusion-6.2.0.tgz#af584d6d7547190cbad5dc1a640d191d5135785b"
+  integrity sha512-7H4gT0o6Wyu0vDZy9Y4cBQBAy6MDn/xHRPqbD0Cr2gxjcuzroxk0gPW2FljSp0j6nPMo2/shbF6InQsHtEoOkw==
   dependencies:
     eslint-config-uber-universal-stage-3 "^3.0.1"
 
