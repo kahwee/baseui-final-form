@@ -45,9 +45,9 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-styletron-display-name": "^1.1.4",
-    "baseui": "^9.59.0",
+    "baseui": "^9.60.1",
     "create-universal-package": "^4.1.0",
-    "cross-env": "^7.0.0",
+    "cross-env": "^7.0.1",
     "delay": "^4.3.0",
     "emotion-theming": "^10.0.27",
     "eslint": "^6.8.0",
@@ -77,7 +77,7 @@
     "rimraf": "^3.0.2",
     "shx": "^0.3.2",
     "storybook-readme": "^5.0.8",
-    "styletron-engine-atomic": "^1.4.5",
+    "styletron-engine-atomic": "^1.4.6",
     "styletron-react": "^5.2.7"
   },
   "peerDependencies": {
