@@ -3180,10 +3180,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseui@^9.59.0:
-  version "9.59.0"
-  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.59.0.tgz#7e3f4a4ff1368a2a6a93a4fe7ac2f6f8368a2a2f"
-  integrity sha512-WOL9UhLx+YiryDie635t0hrgYh5CiRJsjVi5rBYrgTveXoDWoEE9DQdPIUa6Z20dg5hsplnu/+lCGcSNJpEhTg==
+baseui@^9.60.1:
+  version "9.60.1"
+  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.60.1.tgz#6c415bd7bd28dcbc9fd8dadd98635492ed2567bb"
+  integrity sha512-fADOWY3LToW/A7AhooKaaEyGYhbDZJm7ywOhvg3pnXhz9F8T4rQw+PMiw1eOyJlWJnMFJShNAQuGR1ZJukx0Wg==
   dependencies:
     card-validator "^6.2.0"
     date-fns "^2.6.0"
@@ -4125,10 +4125,10 @@ credit-card-type@^8.0.0:
   resolved "https://registry.yarnpkg.com/credit-card-type/-/credit-card-type-8.3.0.tgz#f93c187c9362411544158c91d552efcc443aa87a"
   integrity sha512-czfZUpQ7W9CDxZL4yFLb1kFtM/q2lTOY975hL2aO+DC8+GRNDVSXVCHXhVFZPxiUKmQCZbFP8vIhxx5TBQaThw==
 
-cross-env@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.0.tgz#5a3b2ddce51ec713ea58f2fb79ce22e65b4f5479"
-  integrity sha512-rV6M9ldNgmwP7bx5u6rZsTbYidzwvrwIYZnT08hSGLcQCcggofgFW+sNe7IhA1SRauPS0QuLbbX+wdNtpqE5CQ==
+cross-env@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.1.tgz#c8e03412ea0e1370fe3f0066929a70b8e1e90c39"
+  integrity sha512-1+DmLosu38kC4s1H4HzNkcolwdANifu9+5bE6uKQCV4L6jvVdV9qdRAk8vV3GoWRe0x4z+K2fFhgoDMqwNsPqQ==
   dependencies:
     cross-spawn "^7.0.1"
 
@@ -10890,10 +10890,10 @@ style-loader@^1.0.0:
     loader-utils "^1.2.3"
     schema-utils "^2.6.4"
 
-styletron-engine-atomic@^1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/styletron-engine-atomic/-/styletron-engine-atomic-1.4.5.tgz#cd9daea4ff864910b2a5abbf5ffb46129348aadb"
-  integrity sha512-6q7x+XmtZDPh+kVIbP6vlXb6lPA8uIWp3S5TI+Db1XT1hqWWp6OyYR5rXrAgf7edk8DbiYAsmbuY36yOVuEAgA==
+styletron-engine-atomic@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/styletron-engine-atomic/-/styletron-engine-atomic-1.4.6.tgz#0cfaa32dd8c386a4736b9cd25361711712c4fd98"
+  integrity sha512-1dPXjIjdd3nrQdh1PYvQ3MOd0syzAkFVJzaH31rwy0lhSSsKzfCqn1WLtaLqvL5z89J9wwAsu9CaNZis06K+4g==
   dependencies:
     inline-style-prefixer "^5.1.0"
     styletron-standard "^3.0.4"
