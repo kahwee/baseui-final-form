@@ -3,7 +3,7 @@ import * as React from 'react';
 import {
   Radio as BaseuiRadio,
   RadioGroup as BaseuiRadioGroup,
-} from 'baseui/radio/index';
+} from 'baseui/radio';
 import {Field, Form} from 'react-final-form';
 import {adaptToRadioGroup} from '../adapters';
 import {cleanup, fireEvent, render} from '@testing-library/react';

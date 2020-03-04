@@ -1,6 +1,6 @@
 // @noflow
 import * as React from 'react';
-import {Checkbox} from 'baseui/checkbox/index';
+import {Checkbox} from 'baseui/checkbox';
 import {Field, Form} from 'react-final-form';
 import {adaptToCheckbox} from '../index';
 import {fireEvent, render} from '@testing-library/react';

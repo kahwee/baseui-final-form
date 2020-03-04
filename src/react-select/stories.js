@@ -2,7 +2,7 @@
 // @noflow
 
 import * as React from 'react';
-import {Button} from 'baseui/button/index';
+import {Button} from 'baseui/button';
 import {Field, Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';

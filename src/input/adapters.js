@@ -1,7 +1,7 @@
 // @flow
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
 import type {FieldRenderPropsMeta} from '../types';
-import type {InputPropsT} from 'baseui/input/index';
+import type {InputPropsT} from 'baseui/input';
 
 type AdaptToInputProps = {
   meta: FieldRenderPropsMeta,

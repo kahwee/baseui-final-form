@@ -32,13 +32,13 @@ Sample component:
 
 ```javascript
 import * as React from 'react';
-import {Button} from 'baseui/button/index';
+import {Button} from 'baseui/button';
 import {AdaptedRadioGroup} from 'baseui-final-form/radio-group';
 import {adaptToInput} from 'baseui-final-form/input';
 import {adaptToFormControl} from 'baseui-final-form/form-control';
 import {Field, Form} from 'react-final-form';
-import {MaskedInput} from 'baseui/input/index';
-import {FormControl} from 'baseui/form-control/index';
+import {MaskedInput} from 'baseui/input';
+import {FormControl} from 'baseui/form-control';
 
 const MyComponent = () => {
   return (
@@ -101,15 +101,15 @@ This library wraps the corresponding `baseui`'s components under the hood:
 
 | When you import from `baseui-final-form`                      | How `baseui-final-form` imports from `baseui`?          |
 | ------------------------------------------------------------- | ------------------------------------------------------- |
-| `import {AdaptedInput} from 'baseui-final-form/input';`       | `import {Input} from 'baseui/input/index';`                   |
-| `import {AdaptedCheckbox} from 'baseui-final-form/checkbox';` | `import {Checkbox} from 'baseui/checkbox/index';`             |
-| `import {CheckboxGroup} from 'baseui-final-form';`            | `import {Checkbox} from 'baseui/checkbox/index';`             |
+| `import {AdaptedInput} from 'baseui-final-form/input';`       | `import {Input} from 'baseui/input';`                   |
+| `import {AdaptedCheckbox} from 'baseui-final-form/checkbox';` | `import {Checkbox} from 'baseui/checkbox';`             |
+| `import {CheckboxGroup} from 'baseui-final-form';`            | `import {Checkbox} from 'baseui/checkbox';`             |
 | `import {NativeSelect} from 'baseui-final-form';`             |                                                         |
-| `import {RadioGroup} from 'baseui-final-form';`               | `import {RadioGroup, StyledRadio} from 'baseui/radio/index';` |
-| `import {AdaptedSelect} from 'baseui-final-form/select';`     | `import {Select} from 'baseui/select/index';`                 |
-| `import {AdaptedSlider} from 'baseui-final-form/slider';`     | `import {Slider} from 'baseui/slider/index';`                 |
-| `import {AdaptedTextarea} from 'baseui-final-form/textarea';` | `import {Textarea} from 'baseui/textarea/index';`             |
-| `import {AdaptedToggle} from 'baseui-final-form/toggle';`     | `import {Checkbox} from 'baseui/checkbox/index';`             |
+| `import {RadioGroup} from 'baseui-final-form';`               | `import {RadioGroup, StyledRadio} from 'baseui/radio';` |
+| `import {AdaptedSelect} from 'baseui-final-form/select';`     | `import {Select} from 'baseui/select';`                 |
+| `import {AdaptedSlider} from 'baseui-final-form/slider';`     | `import {Slider} from 'baseui/slider';`                 |
+| `import {AdaptedTextarea} from 'baseui-final-form/textarea';` | `import {Textarea} from 'baseui/textarea';`             |
+| `import {AdaptedToggle} from 'baseui-final-form/toggle';`     | `import {Checkbox} from 'baseui/checkbox';`             |
 
 If you want to pass in additional props, such as `disabled`, to the underlying `baseui` component, can you do it this way:
 
@@ -143,11 +143,11 @@ If you want to override BaseWeb components, you can use the new `adapt*` functio
 ```javascript
 import {adaptToFormControl} from 'baseui-final-form/form-control';
 import {adaptToRadioGroup} from 'baseui-final-form/radio-group';
-import {FormControl} from 'baseui/form-control/index';
+import {FormControl} from 'baseui/form-control';
 import {
   Radio as BaseuiRadio,
   RadioGroup as BaseuiRadioGroup,
-} from 'baseui/radio/index';
+} from 'baseui/radio';
 
 const MyComponent = () => {
   return (

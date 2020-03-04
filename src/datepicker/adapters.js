@@ -1,6 +1,6 @@
 // @flow
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
-import type {DatepickerPropsT} from 'baseui/datepicker/index';
+import type {DatepickerPropsT} from 'baseui/datepicker';
 import type {FieldRenderPropsMeta} from '../types';
 
 export type onChangeParamsT = {date: ?Date | Array<Date>};

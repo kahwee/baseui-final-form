@@ -1,7 +1,7 @@
 // @flow
 import {type FieldRenderProps} from 'react-final-form';
 import type {FieldRenderPropsMeta} from '../types';
-import type {ParamsT} from 'baseui/slider/index';
+import type {ParamsT} from 'baseui/slider';
 
 type AdaptToSliderProps = {
   disabled?: boolean,

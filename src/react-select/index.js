@@ -1,6 +1,6 @@
 // @noflow
 import * as React from 'react';
-import {FormControl} from 'baseui/form-control/index';
+import {FormControl} from 'baseui/form-control';
 import {adaptToFormControl} from '../form-control';
 import Select from 'react-select';
 import assignProps from '../util/assign-props';

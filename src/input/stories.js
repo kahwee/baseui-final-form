@@ -3,11 +3,11 @@
 
 import * as React from 'react';
 import {AdaptedInput, adaptToInput} from './index';
-import {Button} from 'baseui/button/index';
+import {Button} from 'baseui/button';
 import {Field, Form} from 'react-final-form';
-import {FormControl} from 'baseui/form-control/index';
-import {MaskedInput} from 'baseui/input/index';
-import {StatefulTooltip} from 'baseui/tooltip/index';
+import {FormControl} from 'baseui/form-control';
+import {MaskedInput} from 'baseui/input';
+import {StatefulTooltip} from 'baseui/tooltip';
 import {action} from '@storybook/addon-actions';
 import {adaptToFormControl} from '../form-control';
 import {minLength, required} from '../validate';
