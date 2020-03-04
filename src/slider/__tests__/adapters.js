@@ -9,8 +9,8 @@ import BaseuiProvider from '../../with-baseui';
 describe('slider/adaptToSlider', () => {
   it('should be submitted with default values of 1 when initialized', () => {
     const mockSubmit = jest.fn();
-    const Slider = require('baseui/slider/index').Slider;
-    jest.mock('baseui/slider/index', () => {
+    const Slider = require('baseui/slider').Slider;
+    jest.mock('baseui/slider', () => {
       return {
         Slider: () => null,
       };
@@ -45,8 +45,8 @@ describe('slider/adaptToSlider', () => {
 
   it('should be submitted with default values of 2 when initialized', () => {
     const mockSubmit = jest.fn();
-    const Slider = require('baseui/slider/index').Slider;
-    jest.mock('baseui/slider/index', () => {
+    const Slider = require('baseui/slider').Slider;
+    jest.mock('baseui/slider', () => {
       return {
         Slider: () => null,
       };

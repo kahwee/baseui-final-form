@@ -3,8 +3,8 @@
 
 import * as React from 'react';
 import {AdaptedCheckbox, adaptToCheckbox} from './index';
-import {Button} from 'baseui/button/index';
-import {Checkbox} from 'baseui/checkbox/index';
+import {Button} from 'baseui/button';
+import {Checkbox} from 'baseui/checkbox';
 import {Field, Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';

@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import {Block} from 'baseui/block/index';
-import {Button, SHAPE, SIZE} from 'baseui/button/index';
+import {Button, SHAPE, SIZE} from 'baseui/button';
 import {Field, Form} from 'react-final-form'; // This is for Field arrays
 import {FieldArray} from 'react-final-form-arrays';
 import {

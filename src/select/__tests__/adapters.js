@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import {Select as BaseuiSelect} from 'baseui/select/index';
+import {Select as BaseuiSelect} from 'baseui/select';
 import {Field, Form, FormSpy} from 'react-final-form';
 import {adaptToMultiSelect, adaptToSingleSelect} from '../adapters';
 import {cleanup, fireEvent, render} from '@testing-library/react';

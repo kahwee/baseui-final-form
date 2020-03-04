@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
-import {FormControl} from 'baseui/form-control/index';
-import {Radio, RadioGroup} from 'baseui/radio/index';
+import {FormControl} from 'baseui/form-control';
+import {Radio, RadioGroup} from 'baseui/radio';
 import {adaptToFormControl} from '../form-control';
 import {adaptToRadioGroup} from './adapters';
 import type {OptionT} from './types.js';

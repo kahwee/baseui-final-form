@@ -38,9 +38,9 @@ const singleField = (
 With overrides:
 
 ```js
-import {Select as BaseuiSelect} from 'baseui/select/index';
+import {Select as BaseuiSelect} from 'baseui/select';
 import {styled} from 'baseui';
-import {FormControl} from 'baseui/form-control/index';
+import {FormControl} from 'baseui/form-control';
 import {adaptToMultiSelect} from 'baseui-final-form/select';
 import {adaptToFormControl} from 'baseui-final-form/form-control';
 

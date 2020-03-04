@@ -1,5 +1,5 @@
-// flow-typed signature: 30773316f36fb33bfeb8b45cdbcb6f2e
-// flow-typed version: 1ea39ed6d8/lodash_v4.x.x/flow_>=v0.104.x
+// flow-typed signature: f7d238209f95ef70612e272867370738
+// flow-typed version: ae5262dc1f/lodash_v4.x.x/flow_>=v0.104.x
 
 declare module "lodash" {
   declare type Path = $ReadOnlyArray<string | number> | string | number;
@@ -233,15 +233,15 @@ declare module "lodash" {
       array?: ?$ReadOnlyArray<T>,
       ...values: Array<?$ReadOnlyArray<T>>
     ): Array<T>;
-    differenceBy<T>(
+    differenceBy<T, U>(
       array?: ?$ReadOnlyArray<T>,
-      values?: ?$ReadOnlyArray<T>,
-      iteratee?: ?ValueOnlyIteratee<T>
+      values?: ?$ReadOnlyArray<U>,
+      iteratee?: ?ValueOnlyIteratee<T | U>
     ): T[];
-    differenceWith<T>(
+    differenceWith<T, U>(
       array?: ?$ReadOnlyArray<T>,
-      values?: ?$ReadOnlyArray<T>,
-      comparator?: ?Comparator<T>
+      values?: ?$ReadOnlyArray<U>,
+      comparator?: ?(item: T, item2: U) => boolean
     ): T[];
     drop<T>(array?: ?Array<T>, n?: ?number): Array<T>;
     dropRight<T>(array?: ?Array<T>, n?: ?number): Array<T>;

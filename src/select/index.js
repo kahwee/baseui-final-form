@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
-import {FormControl} from 'baseui/form-control/index';
-import {Select} from 'baseui/select/index';
+import {FormControl} from 'baseui/form-control';
+import {Select} from 'baseui/select';
 import {adaptToFormControl} from '../form-control';
 import {adaptToMultiSelect, adaptToSingleSelect} from './adapters';
 
