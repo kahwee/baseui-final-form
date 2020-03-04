@@ -3180,10 +3180,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseui@^9.59.0:
-  version "9.59.0"
-  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.59.0.tgz#7e3f4a4ff1368a2a6a93a4fe7ac2f6f8368a2a2f"
-  integrity sha512-WOL9UhLx+YiryDie635t0hrgYh5CiRJsjVi5rBYrgTveXoDWoEE9DQdPIUa6Z20dg5hsplnu/+lCGcSNJpEhTg==
+baseui@^9.60.1:
+  version "9.60.1"
+  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.60.1.tgz#6c415bd7bd28dcbc9fd8dadd98635492ed2567bb"
+  integrity sha512-fADOWY3LToW/A7AhooKaaEyGYhbDZJm7ywOhvg3pnXhz9F8T4rQw+PMiw1eOyJlWJnMFJShNAQuGR1ZJukx0Wg==
   dependencies:
     card-validator "^6.2.0"
     date-fns "^2.6.0"
