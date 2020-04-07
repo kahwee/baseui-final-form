@@ -8,7 +8,7 @@ export function uniqueConcat<T>(
   return arr1.concat<T, T>(
     arr2.reduce<T>((valA, valB) => {
       // $FlowFixMe
-      const found = arr1.some<T>(val1 => val1[idKey] === valB[idKey]);
+      const found = arr1.some<T>((val1) => val1[idKey] === valB[idKey]);
       if (found) {
         return valA;
       } else {

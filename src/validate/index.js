@@ -2,7 +2,7 @@
 import isNumeric from '../util/is-numeric';
 
 export function minLength(len: number) {
-  return function(value: ?string) {
+  return function (value: ?string) {
     if (value && value.length < len) {
       return `Length is too short, you need at least ${String(
         len
@@ -12,7 +12,7 @@ export function minLength(len: number) {
 }
 
 export function maxLength(len: number) {
-  return function(value: ?string) {
+  return function (value: ?string) {
     if (value && value.length > len) {
       return `Length is too long, you cannot have more than ${String(
         len
@@ -22,7 +22,7 @@ export function maxLength(len: number) {
 }
 
 export function minValue(min: number) {
-  return function(value: ?string | number) {
+  return function (value: ?string | number) {
     if (value && isNumeric(value) && Number(value) < min) {
       return `Value needs to be bigger than ${String(min)}.`;
     }
@@ -30,7 +30,7 @@ export function minValue(min: number) {
 }
 
 export function maxValue(max: number) {
-  return function(value: ?string | number) {
+  return function (value: ?string | number) {
     if (value && isNumeric(value) && Number(value) > max) {
       return `Value needs to be smaller than ${String(max)}.`;
     }

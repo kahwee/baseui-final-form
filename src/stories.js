@@ -144,7 +144,7 @@ storiesOf('Playground', module)
           <Modal onClose={close} isOpen={isOpen}>
             <Form
               initialValues={{target: 'city'}}
-              onSubmit={values => {
+              onSubmit={(values) => {
                 action('submit')(values);
                 close();
               }}
@@ -227,7 +227,7 @@ storiesOf('Playground', module)
           ...arrayMutators,
         }}
         subscription={{submitting: true, pristine: true}}
-        render={props => {
+        render={(props) => {
           const {handleSubmit, pristine, invalid, form} = props;
           return (
             <form onSubmit={handleSubmit}>

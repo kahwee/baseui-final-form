@@ -24,9 +24,11 @@ export default function render(props: ButtonGroupProps) {
       <ButtonGroup
         selected={
           mode === 'radio'
-            ? options.indexOf(options.find(option => option.id === radioValue))
-            : checkboxValues.map(val =>
-                options.indexOf(options.find(option => option.id === val))
+            ? options.indexOf(
+                options.find((option) => option.id === radioValue)
+              )
+            : checkboxValues.map((val) =>
+                options.indexOf(options.find((option) => option.id === val))
               )
         }
         mode={mode}
@@ -40,7 +42,9 @@ export default function render(props: ButtonGroupProps) {
               onChange([...checkboxValues, clickedOption.id]);
             } else {
               // If it does, remove it to values.
-              onChange(checkboxValues.filter(val => val !== clickedOption.id));
+              onChange(
+                checkboxValues.filter((val) => val !== clickedOption.id)
+              );
             }
           }
         }}

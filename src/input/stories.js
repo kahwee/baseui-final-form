@@ -18,7 +18,7 @@ import Readme from './README.md';
 
 const minLength3 = minLength(3);
 
-const FakeLink = styled<{}>('span', props => ({
+const FakeLink = styled<{}>('span', (props) => ({
   borderBottom: `1px dotted ${props.$theme.colors.primary500}`,
   color: props.$theme.colors.primary500,
 }));
@@ -82,7 +82,7 @@ storiesOf('AdaptedInput', module)
             name="initializedAsZero"
             component={AdaptedInput}
             label="Initialized as 0"
-            parse={value => {
+            parse={(value) => {
               const parsedValue = Number.parseFloat(value);
               if (!Number.isNaN(parsedValue)) {
                 return parsedValue;
@@ -115,7 +115,7 @@ storiesOf('AdaptedInput', module)
           <Field
             name="phoneNumber"
             caption="This is MaskedInput from Base Web"
-            render={props => {
+            render={(props) => {
               return (
                 <FormControl {...adaptToFormControl(props)}>
                   <MaskedInput

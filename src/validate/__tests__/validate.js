@@ -3,7 +3,7 @@ import * as v from '../index';
 
 describe('validate', () => {
   // $FlowFixMe
-  Object.keys(v).forEach(validateKey => {
+  Object.keys(v).forEach((validateKey) => {
     it(`should pass "${validateKey}" when value isn't defined`, () => {
       // $FlowFixMe
       const results = v[validateKey]();

@@ -21,7 +21,7 @@ describe('select/unique-concat', () => {
   ];
 
   it('should run through positives', () => {
-    positives.forEach(positive => {
+    positives.forEach((positive) => {
       expect(uniqueConcat(positive[0], positive[1])).toEqual(positive[2]);
     });
   });

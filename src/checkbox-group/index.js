@@ -22,12 +22,12 @@ export default function render(props: FieldRenderProps) {
               name={`${name}.${option.id}`}
               {...option}
               key={index}
-              onChange={ev => {
+              onChange={(ev) => {
                 let newValue;
                 if (ev.target.checked) {
                   newValue = [...value, option.id];
                 } else {
-                  newValue = value.filter(val => val !== option.id);
+                  newValue = value.filter((val) => val !== option.id);
                 }
                 onChange(newValue);
               }}

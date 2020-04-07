@@ -24,7 +24,7 @@ describe('slider/adaptToSlider', () => {
               <form onSubmit={handleSubmit}>
                 <Field
                   name="age"
-                  render={props => {
+                  render={(props) => {
                     return <Slider {...adaptToSlider(props)} />;
                   }}
                 />
@@ -60,7 +60,7 @@ describe('slider/adaptToSlider', () => {
                 name="age"
                 min={18}
                 max={120}
-                render={props => {
+                render={(props) => {
                   return <Slider {...adaptToSlider(props)} />;
                 }}
               />
