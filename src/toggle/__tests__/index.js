@@ -47,7 +47,7 @@ describe('toggle', () => {
     );
   });
 
-  [true, 'blahblah', 1, 2000].forEach(value => {
+  [true, 'blahblah', 1, 2000].forEach((value) => {
     it(`should be initialized as Boolean(true) when ${typeof value} ${String(
       value
     )}`, () => {
@@ -67,7 +67,7 @@ describe('toggle', () => {
     });
   });
 
-  [false, null, undefined, 0].forEach(value => {
+  [false, null, undefined, 0].forEach((value) => {
     it(`should be initialized as Boolean(false) when ${typeof value} ${String(
       value
     )}`, () => {

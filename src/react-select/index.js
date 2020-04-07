@@ -30,9 +30,9 @@ export default function render({
 
   let selectedOptions;
   if (isMulti) {
-    selectedOptions = value.map(singleValue => {
+    selectedOptions = value.map((singleValue) => {
       const selectedOption = adaptedOptions.find(
-        option => option.value === singleValue
+        (option) => option.value === singleValue
       );
       return selectedOption
         ? selectedOption
@@ -43,7 +43,7 @@ export default function render({
           };
     });
   } else {
-    selectedOptions = adaptedOptions.filter(option => option.value === value);
+    selectedOptions = adaptedOptions.filter((option) => option.value === value);
   }
   return (
     <FormControl
@@ -64,11 +64,11 @@ export default function render({
         {...inputProps}
         isMulti={isMulti}
         value={selectedOptions}
-        onChange={selectedOptions => {
+        onChange={(selectedOptions) => {
           if (isMulti) {
             onChange(
               Array.isArray(selectedOptions)
-                ? selectedOptions.map(option => option.value)
+                ? selectedOptions.map((option) => option.value)
                 : undefined
             );
           } else {

@@ -47,15 +47,15 @@ storiesOf('RadioGroup', module)
             caption="Please select a fruit (except watermelon which trigger validation error)"
             label="My favorite fruit"
             options={options}
-            validate={val => {
+            validate={(val) => {
               if (val === 'watermelon') {
                 return 'You cannot choose watermelon';
               }
             }}
-            render={props => (
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <BaseuiRadioGroup {...adaptToRadioGroup(props)}>
-                  {options.map(option => (
+                  {options.map((option) => (
                     <BaseuiRadio
                       value={option.id}
                       key={option.id}

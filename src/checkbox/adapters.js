@@ -23,7 +23,7 @@ export function adaptToCheckbox(props: ReactFinalFormFieldRenderProps): PropsT {
     isError: !!meta.error,
     checked: !!input.value,
     children: label,
-    onChange: ev => {
+    onChange: (ev) => {
       input.onChange(ev.target.checked);
     },
   };

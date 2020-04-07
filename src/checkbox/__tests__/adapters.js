@@ -18,7 +18,7 @@ describe('checkbox/adapters', () => {
               <Field
                 name="isGoing"
                 label={label}
-                render={props => {
+                render={(props) => {
                   return <Checkbox {...adaptToCheckbox(props)} />;
                 }}
               />
@@ -48,7 +48,7 @@ describe('checkbox/adapters', () => {
     );
   });
 
-  [true, 'blahblah', 1, 2000].forEach(value => {
+  [true, 'blahblah', 1, 2000].forEach((value) => {
     it(`should be initialized as Boolean(true) when ${typeof value} ${String(
       value
     )}`, () => {
@@ -60,7 +60,7 @@ describe('checkbox/adapters', () => {
                 <Field
                   name="isGoing"
                   label={label}
-                  render={props => {
+                  render={(props) => {
                     return <Checkbox {...adaptToCheckbox(props)} />;
                   }}
                 />
@@ -74,7 +74,7 @@ describe('checkbox/adapters', () => {
     });
   });
 
-  [false, null, undefined, 0].forEach(value => {
+  [false, null, undefined, 0].forEach((value) => {
     it(`should be initialized as Boolean(false) when ${typeof value} ${String(
       value
     )}`, () => {
@@ -86,7 +86,7 @@ describe('checkbox/adapters', () => {
                 <Field
                   name="isGoing"
                   label={label}
-                  render={props => {
+                  render={(props) => {
                     return <Checkbox {...adaptToCheckbox(props)} />;
                   }}
                 />

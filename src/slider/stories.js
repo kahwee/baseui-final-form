@@ -66,7 +66,7 @@ storiesOf('Slider', module)
             name="age"
             min={18}
             max={120}
-            render={props => {
+            render={(props) => {
               return <Slider {...adaptToSlider(props)} />;
             }}
           />

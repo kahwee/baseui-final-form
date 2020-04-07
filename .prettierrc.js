@@ -8,6 +8,5 @@ module.exports = {
   bracketSpacing: false,
   jsxBracketSameLine: false,
   rangeStart: 0,
-  rangeEnd: Infinity,
-  parser: 'babylon',
+  rangeEnd: Infinity
 };

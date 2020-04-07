@@ -26,7 +26,7 @@ storiesOf('Checkbox', module).add('Basic', () => (
         <Field
           name="adaptedCheckbox"
           label="Testing"
-          render={props => {
+          render={(props) => {
             return <Checkbox {...adaptToCheckbox(props)} />;
           }}
         />

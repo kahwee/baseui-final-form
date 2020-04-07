@@ -28,7 +28,7 @@ describe('select/adapters', () => {
               <form onSubmit={handleSubmit}>
                 <Field
                   name="hello"
-                  render={props => (
+                  render={(props) => (
                     <BaseuiSelect {...adaptToSingleSelect(props)} />
                   )}
                 />
@@ -55,7 +55,7 @@ describe('select/adapters', () => {
               <form onSubmit={handleSubmit}>
                 <Field
                   name="hello"
-                  render={props => (
+                  render={(props) => (
                     <BaseuiSelect {...adaptToMultiSelect(props)} />
                   )}
                 />
@@ -81,7 +81,7 @@ describe('select/adapters', () => {
                 name="hello"
                 options={[]}
                 placeholder={placeholder}
-                render={props => (
+                render={(props) => (
                   <BaseuiSelect {...adaptToSingleSelect(props)} />
                 )}
               />
@@ -105,7 +105,7 @@ describe('select/adapters', () => {
                 multi={true}
                 options={[]}
                 placeholder={placeholder}
-                render={props => (
+                render={(props) => (
                   <BaseuiSelect {...adaptToSingleSelect(props)} />
                 )}
               />
@@ -129,7 +129,7 @@ describe('select/adapters', () => {
                 options={[]}
                 name="fruit"
                 multi
-                render={props => (
+                render={(props) => (
                   <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
                 )}
               />
@@ -153,7 +153,7 @@ describe('select/adapters', () => {
               <FormSpy onChange={onChange} subscription={{values: true}} />
               <Field
                 {...defaultProps}
-                render={props => (
+                render={(props) => (
                   <BaseuiSelect {...adaptToSingleSelect(props)} />
                 )}
               />
@@ -185,7 +185,7 @@ describe('select/adapters', () => {
               <Field
                 {...defaultProps}
                 multi
-                render={props => (
+                render={(props) => (
                   <BaseuiSelect {...adaptToMultiSelect(props)} />
                 )}
               />
@@ -235,7 +235,7 @@ describe('select/adapters', () => {
                   {id: 'defaultOption', label: 'Default Option'},
                 ]}
                 softDefaultValue="defaultOption"
-                render={props => (
+                render={(props) => (
                   <BaseuiSelect {...adaptToSingleSelect(props)} />
                 )}
               />
@@ -261,7 +261,7 @@ describe('select/adapters', () => {
                   {id: 'defaultOption', label: 'Default Option'},
                 ]}
                 softDefaultValue="defaultOption"
-                render={props => (
+                render={(props) => (
                   <BaseuiSelect {...adaptToSingleSelect(props)} />
                 )}
               />

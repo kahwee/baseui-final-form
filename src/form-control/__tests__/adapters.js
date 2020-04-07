@@ -20,7 +20,7 @@ describe('form-control/adapters', () => {
                 caption={CAPTION_TEXT}
                 label={LABEL_TEXT}
                 help="Basic help"
-                render={props => (
+                render={(props) => (
                   <div>
                     <FormControl {...adaptToFormControl(props)}>
                       <input name={props.input.name} />

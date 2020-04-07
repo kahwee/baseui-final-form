@@ -19,7 +19,7 @@ describe('input/adapters', () => {
             <form onSubmit={handleSubmit}>
               <Field
                 name="firstName"
-                render={props => <Input {...adaptToInput(props)} />}
+                render={(props) => <Input {...adaptToInput(props)} />}
               />
             </form>
           )}
@@ -62,7 +62,7 @@ describe('input/adapters', () => {
             <form onSubmit={handleSubmit}>
               <Field
                 name="firstName"
-                render={props => <Input {...adaptToInput(props)} />}
+                render={(props) => <Input {...adaptToInput(props)} />}
                 validate={minLength3}
               />
             </form>

@@ -74,7 +74,7 @@ storiesOf('Select', module)
         <form onSubmit={handleSubmit}>
           <Field
             name="fruit"
-            render={props => (
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <BaseuiSelect {...adaptToSingleSelect(props)} />
               </FormControl>
@@ -120,7 +120,7 @@ storiesOf('Select', module)
           <Field
             name="fruits"
             validate={required}
-            render={props => (
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <BaseuiSelect {...adaptToMultiSelect(props)} />
               </FormControl>
@@ -144,7 +144,7 @@ storiesOf('Select', module)
           <Field
             name="fruits"
             label="My fruits"
-            render={props => (
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
               </FormControl>
@@ -156,7 +156,7 @@ storiesOf('Select', module)
             name="multiCreatable"
             label="Multi createable"
             validate={required}
-            render={props => (
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <BaseuiSelect creatable {...adaptToMultiSelect(props)} />
               </FormControl>
@@ -168,7 +168,7 @@ storiesOf('Select', module)
             name="singleCreatable"
             label="Single creatable"
             validate={required}
-            render={props => (
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <BaseuiSelect creatable {...adaptToSingleSelect(props)} />
               </FormControl>
@@ -194,7 +194,7 @@ storiesOf('Select', module)
           </H6>
           <Field
             name="fruits"
-            render={props => (
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <BaseuiSelect
                   {...adaptToMultiSelect(props)}
