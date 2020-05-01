@@ -46,7 +46,7 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-styletron-display-name": "^1.1.4",
-    "baseui": "^9.67.2",
+    "baseui": "^9.73.2",
     "create-universal-package": "^4.1.1",
     "cross-env": "^7.0.2",
     "delay": "^4.3.0",

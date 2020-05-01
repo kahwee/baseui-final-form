@@ -1031,6 +1031,18 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@date-io/core@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@date-io/core/-/core-2.6.0.tgz#01efa47b225d1a94d3138583588b919442149ee8"
+  integrity sha512-GkM3jTlh9r3MfZEuFKV4g1JSbxz1G0Or1CBKkhPcw7UCJRjjsk5mLVYZYtUQEsOY8rCSFUTdCOm63ulWzAC/pw==
+
+"@date-io/date-fns@^2.4.0":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@date-io/date-fns/-/date-fns-2.6.1.tgz#f0879f161203804ae5314401fcf0bc7133596eca"
+  integrity sha512-N8NwnUB9cs794aCmEW+TZv8uFFAPii/AzyEKJ6K2v+eZ4QbLuOuDcyX0BIQ98XH0YsBbZcTHggnFKHSX2bNaEw==
+  dependencies:
+    "@date-io/core" "^2.6.0"
+
 "@egoist/vue-to-react@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@egoist/vue-to-react/-/vue-to-react-1.1.0.tgz#83c884b8608e8ee62e76c03e91ce9c26063a91ad"
@@ -3278,11 +3290,12 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseui@^9.67.2:
-  version "9.67.2"
-  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.67.2.tgz#4b159a06169ede2319002755fddf541aec0ce6d6"
-  integrity sha512-aQMhl+7cmeK7nB9gmzr2VIJFtb1BENeLPPhqP2rtLR28XjBdv6828GHOXthtVP8Llc/OOSOBh1HfeIrrxPlBpg==
+baseui@^9.73.2:
+  version "9.73.2"
+  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.73.2.tgz#d85e236f4f305a39fb4d9e5e17f1fb27e40832cc"
+  integrity sha512-DrAifIgUTmqu0M7GJN8BURqDgHJ61efOPLBnwOSoAByGZYqykZbcstp2BMbkc4lTpwdfjA3Bj+X+bO+KszsCDg==
   dependencies:
+    "@date-io/date-fns" "^2.4.0"
     card-validator "^6.2.0"
     date-fns "^2.6.0"
     glob "^7.1.6"
@@ -3296,7 +3309,7 @@ baseui@^9.67.2:
     react-is "^16.8.6"
     react-movable "^2.4.0"
     react-multi-ref "^1.0.0"
-    react-range "^1.5.1"
+    react-range "^1.6.1"
     react-virtualized "^9.21.1"
     react-virtualized-auto-sizer "^1.0.2"
     react-window "^1.8.5"
@@ -10191,10 +10204,10 @@ react-popper@^1.3.6:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
-react-range@^1.5.1:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.5.3.tgz#8f50fb810771bbeb39051148f29979ef463d3941"
-  integrity sha512-+nTMlbFCb2D5ql3PKCALJG6kiUkP8U36nCpO0Vk9OSeYCHBKAgvxmumyEEANhUW5HT5A3zJUkF063XdQueJkfQ==
+react-range@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.6.1.tgz#cfebc8c41acc9f4f948f8da20204f9c662b8c46c"
+  integrity sha512-b+0LRrrwWyAWCVLlXUu67dC6zTzSetqRN9uR1ocBEjKg6jnaGbLLza3sWXcIPCZHhDpIUkLJinnjCtkuQt5NNg==
 
 react-select@^3.1.0:
   version "3.1.0"
