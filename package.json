@@ -35,7 +35,7 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-flow": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
-    "@babel/runtime": "^7.9.2",
+    "@babel/runtime": "^7.9.6",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-docs": "^5.3.18",
     "@storybook/addon-info": "^5.3.18",
