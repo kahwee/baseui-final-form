@@ -8,14 +8,21 @@ export type onChangeParamsT = {date: ?Date | Array<Date>};
 type AdaptToDatepickerProps = {
   disabled?: boolean,
   meta: FieldRenderPropsMeta,
+  formatString: string,
 } & ReactFinalFormFieldRenderProps;
 export function adaptToSingleDatepicker(props: {}): DatepickerPropsT {
-  const {meta, disabled, input} = ((props: any): AdaptToDatepickerProps);
+  const {
+    meta,
+    disabled,
+    input,
+    formatString,
+  } = ((props: any): AdaptToDatepickerProps);
   return {
     range: false,
     id: input.name,
     disabled,
     value: input.value,
+    formatString,
     onChange: ({date}: onChangeParamsT) => {
       if (input.onChange) {
         input.onChange(date);
@@ -26,11 +33,17 @@ export function adaptToSingleDatepicker(props: {}): DatepickerPropsT {
 }
 
 export function adaptToRangeDatepicker(props: {}): DatepickerPropsT {
-  const {meta, disabled, input} = ((props: any): AdaptToDatepickerProps);
+  const {
+    meta,
+    disabled,
+    input,
+    formatString,
+  } = ((props: any): AdaptToDatepickerProps);
   return {
     range: true,
     id: input.name,
     disabled,
+    formatString,
     value: Array.isArray(input.value) ? input.value : null,
     onChange: ({date}: onChangeParamsT) => {
       if (input.onChange && Array.isArray(date) && date.length > 0) {
