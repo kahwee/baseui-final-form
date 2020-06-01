@@ -3374,10 +3374,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseui@^9.74.0:
-  version "9.74.0"
-  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.74.0.tgz#22427cb7c450af1a18c9329a0a59313526424ef0"
-  integrity sha512-f4mJCEUiJC1i46xBvrGe+YbWZBRZ0E2bN0RYZ3/3HwvC136U9dx7mYe7kVxx2eN9piLYMtl8efvWp3grhjMvCg==
+baseui@^9.81.0:
+  version "9.81.0"
+  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.81.0.tgz#b42a8cb25d201b1815c0bfa116db0b57b86c824b"
+  integrity sha512-EzHv3Ey4ujjO37DVrRqaSlFkugfHkYld/SuJMqrq2nIy/hd9IYne6FrIe0CAFuzLXSYInEnbN+08vfBAIrBOVQ==
   dependencies:
     "@date-io/date-fns" "^2.4.0"
     card-validator "^6.2.0"
@@ -3385,6 +3385,7 @@ baseui@^9.74.0:
     glob "^7.1.6"
     just-extend "^4.0.2"
     memoize-one "^5.1.1"
+    next-transpile-modules "^3.3.0"
     polished "^3.2.0"
     popper.js "^1.16.0"
     react-dropzone "^9.0.0"
@@ -3393,7 +3394,7 @@ baseui@^9.74.0:
     react-is "^16.8.6"
     react-movable "^2.4.0"
     react-multi-ref "^1.0.0"
-    react-range "^1.6.1"
+    react-range "^1.6.3"
     react-virtualized "^9.21.1"
     react-virtualized-auto-sizer "^1.0.2"
     react-window "^1.8.5"
@@ -8827,6 +8828,14 @@ nested-object-assign@^1.0.3:
   resolved "https://registry.yarnpkg.com/nested-object-assign/-/nested-object-assign-1.0.3.tgz#5aca69390d9affe5a612152b5f0843ae399ac597"
   integrity sha512-kgq1CuvLyUcbcIuTiCA93cQ2IJFSlRwXcN+hLcb2qLJwC2qrePHGZZa7IipyWqaWF6tQjdax2pQnVxdq19Zzwg==
 
+next-transpile-modules@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/next-transpile-modules/-/next-transpile-modules-3.3.0.tgz#90f197d1ceda2a2ce7a4f423b262320354456abf"
+  integrity sha512-QIaBunwtC9oNaluQvfJw5hv1uXSAlTzDCc7/FUxZw5Rnm0yo1HJjW6YodFvA+7Xm9k/2fZV2itF99vMBwTOUjQ==
+  dependencies:
+    micromatch "^4.0.2"
+    slash "^3.0.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -10346,10 +10355,10 @@ react-popper@^1.3.6:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
-react-range@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.6.1.tgz#cfebc8c41acc9f4f948f8da20204f9c662b8c46c"
-  integrity sha512-b+0LRrrwWyAWCVLlXUu67dC6zTzSetqRN9uR1ocBEjKg6jnaGbLLza3sWXcIPCZHhDpIUkLJinnjCtkuQt5NNg==
+react-range@^1.6.3:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.6.6.tgz#dd92af04d30f80c79b7572756393896ffc9b7daf"
+  integrity sha512-4hxMwxx/TPYjxdKWrD8PYCvvO3vgbNqTcFI4qMEld1Ddp9gBJEZcS2BM634vUsSwGcrWTP67FxRhpbjI2Sbjfw==
 
 react-select@^3.1.0:
   version "3.1.0"
