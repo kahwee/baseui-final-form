@@ -12,12 +12,25 @@ type AdaptToSingleSelectProps = {
   softDefaultValue?: OptionT,
 } & FieldRenderProps;
 export const adaptToSingleSelect = (
-  props: *
+  props: *,
+  adaptOptions: ?{
+    valueKey?: string,
+    labelKey?: string,
+  }
 ): {
   value: ValueT,
   options: ValueT,
 } => {
-  const idKey = 'id';
+  let valueKey = 'id';
+  let labelKey = 'label';
+  if (adaptOptions) {
+    if (adaptOptions.valueKey) {
+      valueKey = adaptOptions.valueKey;
+    }
+    if (adaptOptions.labelKey) {
+      labelKey = adaptOptions.labelKey;
+    }
+  }
   const {
     meta,
     options,
@@ -36,20 +49,20 @@ export const adaptToSingleSelect = (
     input.value
       ? [
           {
-            [idKey]: input.value,
-            label: input.value,
+            [valueKey]: input.value,
+            [labelKey]: input.value,
           },
         ]
       : [],
-    idKey
+    valueKey
   );
   // $FlowFixMe
   let selectedOption = newOptions.filter<{}>(
-    (option) => input.value === option[idKey]
+    (option) => input.value === option[valueKey]
   );
   const defaultOption =
     softDefaultValue &&
-    newOptions.find((option) => softDefaultValue === option[idKey]);
+    newOptions.find((option) => softDefaultValue === option[valueKey]);
   return {
     ...restProps,
     id: input.name,
@@ -59,7 +72,7 @@ export const adaptToSingleSelect = (
     onChange: ({value, option, type}: OnChangeParamsT) => {
       if (input.onChange) {
         input.onChange(
-          Array.isArray(value) && value[0] ? value[0][idKey] : undefined
+          Array.isArray(value) && value[0] ? value[0][valueKey] : undefined
         );
       }
     },
@@ -87,12 +100,25 @@ type AdaptToMultiSelectProps = {
   disabled?: boolean,
 } & FieldRenderProps;
 export const adaptToMultiSelect = (
-  props: *
+  props: *,
+  adaptOptions: ?{
+    valueKey?: string,
+    labelKey?: string,
+  }
 ): {
   value: ValueT,
   options: ValueT,
 } => {
-  const idKey = 'id';
+  let valueKey = 'id';
+  let labelKey = 'label';
+  if (adaptOptions) {
+    if (adaptOptions.valueKey) {
+      valueKey = adaptOptions.valueKey;
+    }
+    if (adaptOptions.labelKey) {
+      labelKey = adaptOptions.labelKey;
+    }
+  }
   let {
     meta,
     options,
@@ -110,16 +136,16 @@ export const adaptToMultiSelect = (
     options,
     values.map((option) => {
       return {
-        [idKey]: option,
-        label: option,
+        [valueKey]: option,
+        [labelKey]: option,
       };
     }),
-    idKey
+    valueKey
   );
 
   // $FlowFixMe
   let selectedOption = newOptions.filter<{}>((option) =>
-    values.includes(option[idKey])
+    values.includes(option[valueKey])
   );
   return {
     ...restProps,
@@ -127,11 +153,13 @@ export const adaptToMultiSelect = (
     options: newOptions,
     disabled,
     multi: true,
+    valueKey,
+    labelKey,
     onChange: ({value, option, type}: OnChangeParamsT) => {
       if (input.onChange) {
         input.onChange(
           Array.isArray(value)
-            ? value.map((option) => option[idKey])
+            ? value.map((option) => option[valueKey])
             : undefined
         );
         newOptions.concat(value);

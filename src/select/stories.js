@@ -138,7 +138,10 @@ storiesOf('Select', module)
   .add('Createable', () => (
     <Form
       onSubmit={action('submit')}
-      initialValues={{fruits: ['pineapple', 'apple']}}
+      initialValues={{
+        fruits: ['pineapple', 'apple'],
+        multiCreatableCustomValueKey: ['seven'],
+      }}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field
@@ -162,6 +165,37 @@ storiesOf('Select', module)
               </FormControl>
             )}
             options={[]}
+            onChange={action('Multi createable changed')}
+          />
+          <Field
+            name="multiCreatableCustomValueKey"
+            label="Multi createable with custom valueKey"
+            validate={required}
+            render={(props) => (
+              <FormControl {...adaptToFormControl(props)}>
+                <BaseuiSelect
+                  creatable
+                  {...adaptToMultiSelect(props, {
+                    valueKey: 'hello',
+                  })}
+                />
+              </FormControl>
+            )}
+            valueKey="hello"
+            options={[
+              {
+                label: 'One',
+                hello: 'one',
+              },
+              {
+                label: 'Two',
+                hello: 'two',
+              },
+              {
+                label: 'Three',
+                hello: 'three',
+              },
+            ]}
             onChange={action('Multi createable changed')}
           />
           <Field

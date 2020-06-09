@@ -32,7 +32,8 @@ export function adaptToFormControl(props: *) {
     caption,
     help,
     disabled,
-    error: meta.error && meta.touched ? meta.error : undefined,
+    ...(meta.error && meta.touched ? {error: meta.error} : {error: ''}),
+    positive: '',
     label,
     overrides: {
       ...(formControlProps.overrides ? formControlProps.overrides : {}),
