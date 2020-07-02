@@ -37,7 +37,9 @@ export function maxValue(max: number) {
   };
 }
 
-export function required(value: ?string | ?number | ?boolean) {
+export function required(
+  value: ?string | ?number | ?boolean | ?Array<?string>
+) {
   if (Array.isArray(value) && value.length === 0) {
     return 'Required';
   } else if (value === undefined || value === null || value === '') {
@@ -46,7 +48,7 @@ export function required(value: ?string | ?number | ?boolean) {
   return;
 }
 
-export function uuid(value: string) {
+export function uuid(value: ?string) {
   return value &&
     !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(
       value
@@ -55,12 +57,27 @@ export function uuid(value: string) {
     : undefined;
 }
 
-export function email(value: string) {
+export function email(value: ?string) {
   return value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
     ? 'Invalid email address'
     : undefined;
 }
 
-export function numeric(value: ?string | number) {
+export function numeric(value: ?string | ?number) {
   return value && !isNumeric(value) ? 'Must be a number' : undefined;
 }
+
+export function integer(value: ?string | ?number) {
+  if (value) {
+    const number = Number(value);
+    if (isNaN(number)) {
+      return 'Must be a number';
+    } else {
+      return Number.isInteger(number) ? undefined : 'Must be an integer';
+    }
+  }
+}
+
+export type ValueT = ?mixed | ?Array<mixed>;
+export const composeValidators = (...validators: any) => (value: ValueT) =>
+  validators.reduce((error, validator) => error || validator(value), undefined);

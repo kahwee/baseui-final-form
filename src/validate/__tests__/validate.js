@@ -70,6 +70,8 @@ describe('validate', () => {
     expect(v.required(true)).toBeUndefined();
     expect(v.required('hello')).toBeUndefined();
     expect(v.required('-')).toBeUndefined();
+    expect(v.required([])).toBeString();
+    expect(v.required(['String'])).toBeUndefined();
   });
 
   it('should check "email" boundaries', () => {
@@ -89,10 +91,29 @@ describe('validate', () => {
     expect(v.numeric('1.23')).toBeUndefined();
   });
 
+  it('should check "integer" boundaries', () => {
+    expect(v.integer('hello')).toBeString();
+    expect(v.integer('-')).toBeString();
+    expect(v.integer('0')).toBeUndefined();
+    expect(v.integer(0)).toBeUndefined();
+    expect(v.integer('1028801')).toBeUndefined();
+    expect(v.integer(1028801)).toBeUndefined();
+    expect(v.integer(-1)).toBeUndefined();
+    expect(v.integer('-1')).toBeUndefined();
+    expect(v.integer(1.23)).toBeString();
+    expect(v.integer('1.23')).toBeString();
+  });
+
   it('should check "uuid" boundaries', () => {
     expect(v.uuid('83cd3add-8a17-459e-b1cb-0becd3891f3d')).toBeUndefined();
     expect(v.uuid('ecf0bd9f-143f-4cb8-bf5c-0f6b209bb020')).toBeUndefined();
     expect(v.uuid('1.23')).toBeString();
     expect(v.uuid('')).toBeUndefined();
+  });
+
+  it('composeValidators', () => {
+    const validate = v.composeValidators(v.required, v.integer);
+    expect(validate('2222')).toBeUndefined();
+    expect(validate()).toBeString();
   });
 });
