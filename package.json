@@ -128,7 +128,7 @@
   "license": "MIT",
   "dependencies": {},
   "volta": {
-    "node": "10.18.0",
+    "node": "12.18.2",
     "yarn": "1.21.1"
   }
 }
