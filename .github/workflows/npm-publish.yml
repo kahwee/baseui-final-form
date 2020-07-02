@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm install
+      - run: npm install --ignore-scripts
       - run: npm build
       - run: npm test
 
@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: npm install
+      - run: npm install --ignore-scripts
       - run: npm build
       - run: cd dist
       - run: npm publish
@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-      - run: npm install
+      - run: npm install --ignore-scripts
       - run: npm build
       - run: npm publish
         env:
