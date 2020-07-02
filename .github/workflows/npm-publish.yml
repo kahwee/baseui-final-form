@@ -30,8 +30,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm install --ignore-scripts
       - run: npm build
-      - run: cd dist
-      - run: npm publish
+      - name: Publish
+        working-directory: ./dist
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
@@ -46,7 +47,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm install --ignore-scripts
       - run: npm build
-      - run: cd dist
-      - run: npm publish
+      - name: Publish
+        working-directory: ./dist
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
