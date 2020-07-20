@@ -1,5 +1,6 @@
 // @flow
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
+import dateFnsAdapter from 'baseui/datepicker/utils/date-fns-adapter';
 import type {DatepickerPropsT} from 'baseui/datepicker';
 import type {FieldRenderPropsMeta} from '../types';
 
@@ -9,15 +10,18 @@ type AdaptToDatepickerProps = {
   disabled?: boolean,
   meta: FieldRenderPropsMeta,
   formatString: string,
+  adapter: any,
 } & ReactFinalFormFieldRenderProps;
-export function adaptToSingleDatepicker(props: {}): DatepickerPropsT {
+export function adaptToSingleDatepicker(props: {}): DatepickerPropsT<> {
   const {
+    adapter,
     meta,
     disabled,
     input,
     formatString,
   } = ((props: any): AdaptToDatepickerProps);
   return {
+    adapter: adapter || dateFnsAdapter,
     range: false,
     id: input.name,
     disabled,
@@ -32,14 +36,16 @@ export function adaptToSingleDatepicker(props: {}): DatepickerPropsT {
   };
 }
 
-export function adaptToRangeDatepicker(props: {}): DatepickerPropsT {
+export function adaptToRangeDatepicker(props: {}): DatepickerPropsT<> {
   const {
+    adapter,
     meta,
     disabled,
     input,
     formatString,
   } = ((props: any): AdaptToDatepickerProps);
   return {
+    adapter: adapter || dateFnsAdapter,
     range: true,
     id: input.name,
     disabled,
