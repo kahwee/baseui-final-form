@@ -1,5 +1,5 @@
-// flow-typed signature: 7d8a41f0dbd8e1ea5fde340c71bcef01
-// flow-typed version: fd74ae7788/@testing-library/react_v10.x.x/flow_>=v0.104.x
+// flow-typed signature: 2ec4c8cd8f67266b906a8137b83f9fc7
+// flow-typed version: 11a906f160/@testing-library/react_v10.x.x/flow_>=v0.104.x
 
 declare module '@testing-library/react' {
   // This type comes from
