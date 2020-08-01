@@ -67,7 +67,7 @@
     "flow-copy-source": "^2.0.9",
     "global": "^4.4.0",
     "husky": "^4.2.5",
-    "jest": "^26.1.0",
+    "jest": "^26.2.2",
     "jest-extended": "^0.11.5",
     "lodash": "^4.17.19",
     "prettier": "^2.0.5",
