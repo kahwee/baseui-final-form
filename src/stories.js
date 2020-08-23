@@ -228,9 +228,10 @@ storiesOf('Playground', module)
         }}
         subscription={{submitting: true, pristine: true}}
         render={(props) => {
-          const {handleSubmit, pristine, invalid, form} = props;
+          const {handleSubmit, pristine, invalid} = props;
           return (
             <form onSubmit={handleSubmit}>
+              {/* $FlowFixMe */}
               <FieldArray name="customers">
                 {({fields}) => (
                   <div>
