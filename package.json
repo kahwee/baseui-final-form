@@ -62,7 +62,7 @@
     "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
     "final-form": "^4.20.1",
     "final-form-arrays": "^3.0.2",
-    "flow-bin": "0.110.0",
+    "flow-bin": "0.135.0",
     "flow-copy-source": "^2.0.9",
     "global": "^4.4.0",
     "husky": "^4.2.5",
