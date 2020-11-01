@@ -3658,10 +3658,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-baseui@^9.95.2:
-  version "9.95.2"
-  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.95.2.tgz#3600ada557d525e2554eecd38a14b654d04180e5"
-  integrity sha512-IuMf4y+V3Pmm753fhqZ2ml+fWnGLFMC7wEhXK6zDgLHDIONkvKZIgBQpTfy5BKLgrRr1rBPuXlS9fhdvTqIElQ==
+baseui@^9.104.0:
+  version "9.104.0"
+  resolved "https://registry.yarnpkg.com/baseui/-/baseui-9.104.0.tgz#01159844476d89e2a82d7cd52d65cfcf4c76a1d9"
+  integrity sha512-skT59q6IWPlNbSUv07eEPxHYZ0D1XlihbrGtxf1t7JHoc0asYgJhf+wMqmRMVbYiAlWDYnBLd82nHMMLzmrj9w==
   dependencies:
     "@date-io/date-fns" "^2.6.2"
     card-validator "^6.2.0"
@@ -3678,7 +3678,7 @@ baseui@^9.95.2:
     react-is "^16.8.6"
     react-movable "^2.4.0"
     react-multi-ref "^1.0.0"
-    react-range "^1.6.3"
+    react-range "^1.8.0"
     react-uid "^2.3.0"
     react-virtualized "^9.21.1"
     react-virtualized-auto-sizer "^1.0.2"
@@ -10743,10 +10743,10 @@ react-popper@^1.3.6:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
-react-range@^1.6.3:
-  version "1.6.6"
-  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.6.6.tgz#dd92af04d30f80c79b7572756393896ffc9b7daf"
-  integrity sha512-4hxMwxx/TPYjxdKWrD8PYCvvO3vgbNqTcFI4qMEld1Ddp9gBJEZcS2BM634vUsSwGcrWTP67FxRhpbjI2Sbjfw==
+react-range@^1.8.0:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.8.2.tgz#0d22961d65917777ef7f66228147d6752aeccef9"
+  integrity sha512-zegXW7xgWn/4HQ9EqFsxrFamx1rN/CDcG0a7v0dDYb975IG1l7yycQE02CXfWtclM0pUzSZa0iop3zHLPWyyMw==
 
 react-select@^3.1.0:
   version "3.1.0"
