@@ -58,7 +58,7 @@
     "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.5",
-    "eslint-plugin-react-hooks": "^4.0.8",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
     "final-form": "^4.20.1",
     "final-form-arrays": "^3.0.2",
