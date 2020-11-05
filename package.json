@@ -69,7 +69,7 @@
     "husky": "^4.2.5",
     "jest": "^26.4.2",
     "jest-extended": "^0.11.5",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
