@@ -4,3 +4,5 @@ storybook-static
 .cache
 .circleci
 ios
+fonts
+styles

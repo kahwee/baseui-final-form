@@ -1,7 +1,6 @@
 module.exports = {
-  stories: ['../src/**/stories.(js|mdx)'],
+  stories: ['../src/**/stories.@(js|mdx)'],
   addons: [
-    '@storybook/addon-actions/register', 'storybook-readme/register',
     {
       name: '@storybook/addon-docs',
       options: {
@@ -10,5 +9,7 @@ module.exports = {
         sourceLoaderOptions: null,
       },
     },
+    '@storybook/addon-actions/register',
+    '@storybook/addon-controls',
   ]
 }
