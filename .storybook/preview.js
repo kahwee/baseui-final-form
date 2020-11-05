@@ -1,13 +1,5 @@
-import {addDecorator,addParameters} from '@storybook/react';
-import {withInfo} from '@storybook/addon-info';
+import {addDecorator} from '@storybook/react';
 import withBaseui from '../src/with-baseui';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import {themes} from '@storybook/theming';
 
-addDecorator(withInfo);
 addDecorator(withBaseui);
-addParameters({
-  docs: {
-    container: DocsContainer,
-    page: DocsPage,
-  },
-});
