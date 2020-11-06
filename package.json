@@ -6,11 +6,12 @@
   "author": "KahWee Teng <tengkahwee@gmail.com>",
   "scripts": {
     "build:copy-files": "shx cp README.md dist/README.md",
+    "build:copy-npmignore": "shx cp .npmignore dist/.npmignore",
     "build:copy-flow-files": "node ./scripts/flow-copy-src.js",
     "build:es2015": "cross-env NODE_ENV=production babel ./src --out-dir ./dist --ignore **.test.js,**/__tests__/**,**/e2e.js,**/template-component/**,**/test/**",
     "build:es2015modules": "cross-env NODE_ENV=production BABEL_ENV=modules babel ./src --out-dir ./dist/esm --ignore **.test.js,**/__tests__/**,**/e2e.js,**/template-component/**,**/test/**",
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel ./src --out-dir ./dist/es --ignore **.test.js,**/__tests__/**,**/e2e.js,**/template-component/**,**/test/**",
-    "build": "npm run clean && yarn build:es2015 && yarn build:es2015modules && yarn build:es && yarn build:copy-files && yarn build:copy-flow-files && yarn build:package-json",
+    "build": "npm run clean && yarn build:es2015 && yarn build:es2015modules && yarn build:es && yarn build:copy-files && yarn build:copy-npmignore && yarn build:copy-flow-files && yarn build:package-json",
     "build:package-json": "shx cp package.json dist/package.json & node ./scripts/build-package-json.js",
     "clean": "rimraf lib dist es coverage",
     "prepublishOnly": "node -e \"const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('./package.json', {encoding: 'utf8'})); delete pkg.engines; fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\\n'); console.log(pkg)\"",
