@@ -32,9 +32,9 @@ async function buildPackageJsonFiles() {
       fs.writeFileSync(
         path.join(distPath, file, 'package.json'),
         JSON.stringify(data, null, 2),
-        err => {
+        (err) => {
           if (err) throw err;
-        },
+        }
       );
     }
   }
