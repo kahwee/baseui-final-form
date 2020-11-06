@@ -7,9 +7,12 @@ import {Button} from 'baseui/button';
 import {Checkbox} from 'baseui/checkbox';
 import {Field, Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
-import {storiesOf} from '@storybook/react';
 
-storiesOf('Checkbox', module).add('Basic', () => (
+export default {
+  title: 'Checkbox',
+};
+
+export const Basic = () => (
   <Form
     onSubmit={action('submit')}
     render={({handleSubmit, pristine, invalid}) => (
@@ -37,4 +40,4 @@ storiesOf('Checkbox', module).add('Basic', () => (
       </form>
     )}
   />
-));
+);

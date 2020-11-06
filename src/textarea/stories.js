@@ -5,10 +5,13 @@ import * as React from 'react';
 import {Button} from 'baseui/button';
 import {Field, Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
-import {storiesOf} from '@storybook/react';
 import Textarea from './index';
 
-storiesOf('Textarea', module).add('Basic', () => (
+export default {
+  title: 'Textarea',
+};
+
+export const Basic = () => (
   <Form
     validateOnBlur
     onSubmit={action('submit')}
@@ -28,4 +31,4 @@ storiesOf('Textarea', module).add('Basic', () => (
       </form>
     )}
   />
-));
+);

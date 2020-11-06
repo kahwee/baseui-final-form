@@ -6,10 +6,13 @@ import {Block} from 'baseui/block/index';
 import {Button} from 'baseui/button';
 import {Field, Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
-import {storiesOf} from '@storybook/react';
 import Toggle from './index';
 
-storiesOf('Toggle', module).add('Basic', () => (
+export default {
+  title: 'Toggle',
+};
+
+export const Basic = () => (
   <Form
     onSubmit={action('submit')}
     initialValues={{useSavedCreditCard: false}}
@@ -29,4 +32,4 @@ storiesOf('Toggle', module).add('Basic', () => (
       </form>
     )}
   />
-));
+);
