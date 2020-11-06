@@ -2,23 +2,6 @@
 import * as v from '../index';
 
 describe('validate', () => {
-  // $FlowFixMe
-  Object.keys(v).forEach((validateKey) => {
-    it(`should pass "${validateKey}" when value isn't defined`, () => {
-      // $FlowFixMe
-      const results = v[validateKey]();
-      if (typeof results === 'function') {
-        // This is for `minLength` and others which return a function
-        expect(results()).toBeUndefined();
-      } else if (validateKey === 'required') {
-        // Required is a special used case
-        expect(results).toBeString();
-      } else {
-        expect(results).toBeUndefined();
-      }
-    });
-  });
-
   it('should check "minLength" boundaries', () => {
     const minLen2 = v.minLength(2);
     expect(minLen2('')).toBeUndefined();
