@@ -10,8 +10,6 @@ import {action} from '@storybook/addon-actions';
 import {adaptToFormControl} from '../form-control';
 import {adaptToRangeDatepicker, adaptToSingleDatepicker} from './adapters';
 import {storiesOf} from '@storybook/react';
-import {withReadme} from 'storybook-readme';
-import Readme from './README.md';
 
 function formatDateAtIndex(dates: ?Date | ?Array<Date>, index: number) {
   if (!dates || !Array.isArray(dates)) return '';
@@ -21,7 +19,6 @@ function formatDateAtIndex(dates: ?Date | ?Array<Date>, index: number) {
 }
 
 storiesOf('Datepicker', module)
-  .addDecorator(withReadme(Readme))
   .add('Single', () => (
     <Form
       onSubmit={action('submit')}

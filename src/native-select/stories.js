@@ -5,11 +5,14 @@ import * as React from 'react';
 import {Button} from 'baseui/button';
 import {Field, Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
-import {storiesOf} from '@storybook/react';
 import NativeSelect from './index';
 import options from './__tests__/__fixtures__/fruit-options.json';
 
-storiesOf('Native select', module).add('Basic', () => (
+export default {
+  title: 'Native select',
+};
+
+export const Basic = () => (
   <Form
     onSubmit={action('submit')}
     initialValues={{fruit: 'peach'}}
@@ -29,4 +32,4 @@ storiesOf('Native select', module).add('Basic', () => (
       </form>
     )}
   />
-));
+);

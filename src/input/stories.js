@@ -13,8 +13,6 @@ import {adaptToFormControl} from '../form-control';
 import {minLength, required} from '../validate';
 import {storiesOf} from '@storybook/react';
 import {styled} from 'baseui';
-import {withReadme} from 'storybook-readme';
-import Readme from './README.md';
 
 const minLength3 = minLength(3);
 
@@ -55,7 +53,6 @@ export const Address = ({name, label}: AddressProps) => (
 );
 
 storiesOf('AdaptedInput', module)
-  .addDecorator(withReadme(Readme))
   .add('Basic', () => (
     <Form
       onSubmit={action('submit')}

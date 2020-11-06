@@ -5,11 +5,14 @@ import * as React from 'react';
 import {Button} from 'baseui/button';
 import {Field, Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
-import {storiesOf} from '@storybook/react';
 import CheckboxGroup from './index';
 import options from '../native-select/__tests__/__fixtures__/fruit-options.json';
 
-storiesOf('CheckboxGroup', module).add('Basic', () => (
+export default {
+  title: 'CheckboxGroup',
+};
+
+export const Basic = () => (
   <Form
     onSubmit={action('submit')}
     initialValues={{fruits: ['apple', 'pineapple']}}
@@ -29,4 +32,4 @@ storiesOf('CheckboxGroup', module).add('Basic', () => (
       </form>
     )}
   />
-));
+);
