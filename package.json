@@ -26,6 +26,7 @@
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
