@@ -45,7 +45,7 @@
     "@storybook/addons": "^6.1.17",
     "@storybook/react": "^6.1.17",
     "@storybook/theming": "^6.1.17",
-    "@testing-library/react": "^11.1.1",
+    "@testing-library/react": "^11.2.5",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
