@@ -86,8 +86,8 @@
     "baseui": ">= 9.87.0 < 10",
     "final-form": "^4.18.6",
     "final-form-arrays": "^3.0.2",
-    "react": ">= 16.9.0 < 17",
-    "react-dom": ">= 16.9.0 < 17",
+    "react": ">= 16.9.0 < 18",
+    "react-dom": ">= 16.9.0 < 18",
     "react-final-form": ">= 6.3.2 < 7",
     "react-final-form-arrays": ">= 3.1.1"
   },
@@ -127,7 +127,8 @@
   "license": "MIT",
   "dependencies": {},
   "volta": {
-    "node": "12.18.2",
-    "yarn": "1.21.1"
+    "node": "12.20.1",
+    "npm": "6.4.1",
+    "yarn": "1.19.1"
   }
 }
