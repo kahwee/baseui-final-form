@@ -6,9 +6,14 @@ import {Button} from 'baseui/button';
 import {Datepicker, formatDate} from 'baseui/datepicker';
 import {Field, Form} from 'react-final-form';
 import {FormControl} from 'baseui/form-control';
+import {TimePicker} from 'baseui/timepicker';
 import {action} from '@storybook/addon-actions';
 import {adaptToFormControl} from '../form-control';
-import {adaptToRangeDatepicker, adaptToSingleDatepicker} from './adapters';
+import {
+  adaptToRangeDatepicker,
+  adaptToSingleDatepicker,
+  adaptToTimePicker,
+} from './adapters';
 import {storiesOf} from '@storybook/react';
 
 function formatDateAtIndex(dates: ?Date | ?Array<Date>, index: number) {
@@ -92,6 +97,31 @@ storiesOf('Datepicker', module)
                   formatDisplayValue={(date) => formatDateAtIndex(date, 0)}
                   timeSelectStart
                 />
+              </FormControl>
+            )}
+            onChange={action('vacation changed')}
+          />
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
+  .add('Time Picker', () => (
+    <Form
+      onSubmit={action('submit')}
+      initialValues={{appointment: '2021-04-01T00:16:22.599Z'}}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="appointment"
+            label="Appointment"
+            format={(value) => (value ? new Date(value) : new Date())}
+            parse={(value) => value.toISOString()}
+            render={(props) => (
+              <FormControl {...adaptToFormControl(props)}>
+                <TimePicker {...adaptToTimePicker(props)} />
               </FormControl>
             )}
             onChange={action('vacation changed')}
