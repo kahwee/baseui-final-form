@@ -33,9 +33,9 @@ storiesOf('Datepicker', module)
           <Field
             name="birthday"
             label="Birthday"
-            format={val => (val ? new Date(val) : new Date())}
-            parse={val => val.toISOString()}
-            render={props => (
+            format={(val) => (val ? new Date(val) : new Date())}
+            parse={(val) => val.toISOString()}
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <Datepicker {...adaptToSingleDatepicker(props)} />
               </FormControl>
@@ -58,11 +58,11 @@ storiesOf('Datepicker', module)
           <Field
             name="vacation"
             label="Vacation"
-            format={value =>
-              (value || []).map(val => (val ? new Date(val) : new Date()))
+            format={(value) =>
+              (value || []).map((val) => (val ? new Date(val) : new Date()))
             }
-            parse={value => (value || []).map(val => val.toISOString())}
-            render={props => (
+            parse={(value) => (value || []).map((val) => val.toISOString())}
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <Datepicker {...adaptToRangeDatepicker(props)} />
               </FormControl>
@@ -86,15 +86,15 @@ storiesOf('Datepicker', module)
             name="vacation"
             label="Start Date"
             caption="YYYY/MM/DD"
-            format={value =>
-              (value || []).map(val => (val ? new Date(val) : new Date()))
+            format={(value) =>
+              (value || []).map((val) => (val ? new Date(val) : new Date()))
             }
-            parse={value => (value || []).map(val => val.toISOString())}
-            render={props => (
+            parse={(value) => (value || []).map((val) => val.toISOString())}
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <Datepicker
                   {...adaptToRangeDatepicker(props)}
-                  formatDisplayValue={date => formatDateAtIndex(date, 0)}
+                  formatDisplayValue={(date) => formatDateAtIndex(date, 0)}
                   timeSelectStart
                 />
               </FormControl>
@@ -117,9 +117,9 @@ storiesOf('Datepicker', module)
           <Field
             name="appointment"
             label="Appointment"
-            format={value => (value ? new Date(value) : new Date())}
-            parse={avlue => avlue.toISOString()}
-            render={props => (
+            format={(value) => (value ? new Date(value) : new Date())}
+            parse={(avlue) => avlue.toISOString()}
+            render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
                 <TimePicker {...adaptToTimePicker(props)} />
               </FormControl>
