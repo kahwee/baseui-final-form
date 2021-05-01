@@ -41,7 +41,7 @@
     "@storybook/addon-actions": "^6.2.8",
     "@storybook/addon-controls": "^6.2.8",
     "@storybook/addon-docs": "^6.2.8",
-    "@storybook/addons": "^6.2.8",
+    "@storybook/addons": "^6.2.9",
     "@storybook/react": "^6.2.8",
     "@storybook/theming": "^6.2.8",
     "@testing-library/react": "^11.2.6",
