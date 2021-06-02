@@ -40,7 +40,7 @@ aliases:
 defaults: &defaults
   docker:
     # specify the version you desire here
-    - image: circleci/node:10.16
+    - image: circleci/node:12.20
 
     # Specify service dependencies here if necessary
     # CircleCI maintains a library of pre-built images

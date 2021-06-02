@@ -1,11 +1,8 @@
 //@flow
 import * as React from 'react';
-import type {
-  FieldRenderProps,
-  FieldRenderPropsMeta,
-  OptionT,
-} from '../types.js';
+import type {FieldRenderProps, FieldRenderPropsMeta} from '../types.js';
 import type {FieldValidator} from 'final-form';
+import type {ValueT} from 'baseui/select';
 
 type GenericInputProps = {
   id: string,
@@ -24,7 +21,7 @@ type AssignedProps = {
   onFocus: (?SyntheticFocusEvent<*>) => void,
   value: any,
   checked?: boolean,
-  options?: OptionT[],
+  options?: ValueT,
 };
 export default function assignProps({
   meta,

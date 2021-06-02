@@ -1,13 +1,10 @@
 // @flow
 import * as React from 'react';
 import {type FieldRenderProps as ReactFinalFormFieldRenderProps} from 'react-final-form';
+import type {OptionT as BaseOptionT, ValueT} from 'baseui/select';
 import type {FieldValidator} from 'final-form';
 
-export type OptionT = {
-  label: string,
-  id: string,
-  disabled?: boolean,
-};
+export type OptionT = BaseOptionT;
 
 export type ReactSelectOption = {
   label: string,
@@ -44,6 +41,6 @@ export type FieldRenderProps = {
   label: ?(React.Node | ((props: {}) => React.Node)),
   disabled?: boolean,
   help?: string,
-  options?: OptionT[],
+  options?: ValueT,
   validate?: FieldValidator,
 } & ReactFinalFormFieldRenderProps;
