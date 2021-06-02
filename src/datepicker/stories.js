@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import {Button} from 'baseui/button';
-import {Datepicker, formatDate} from 'baseui/datepicker';
+import {DatePicker, TimePicker, formatDate} from 'baseui/datepicker';
 import {Field, Form} from 'react-final-form';
 import {FormControl} from 'baseui/form-control';
 import {action} from '@storybook/addon-actions';
@@ -18,22 +18,82 @@ function formatDateAtIndex(dates: ?Date | ?Array<Date>, index: number) {
   return formatDate(date, 'yyyy/MM/dd');
 }
 
-storiesOf('Datepicker', module)
+storiesOf('DatePicker', module)
   .add('Single', () => (
     <Form
       onSubmit={action('submit')}
-      initialValues={{birthday: '2018-02-20'}}
+      initialValues={{birthday: new Date('2018-02-20')}}
       render={({handleSubmit, pristine, invalid}) => (
         <form onSubmit={handleSubmit}>
           <Field
             name="birthday"
             label="Birthday"
-            format={(val) => (val ? new Date(val) : new Date())}
-            parse={(val) => val.toISOString()}
             render={(props) => (
-              <FormControl {...adaptToFormControl(props)}>
-                <Datepicker {...adaptToSingleDatepicker(props)} />
-              </FormControl>
+              <div>
+                <FormControl {...adaptToFormControl(props)}>
+                  <DatePicker {...adaptToSingleDatepicker(props)} />
+                </FormControl>
+              </div>
+            )}
+            onChange={action('birthday changed')}
+          />
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
+  .add('Single with TimePicker', () => (
+    <Form
+      onSubmit={action('submit')}
+      initialValues={{birthday: new Date('2018-02-20')}}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="birthday"
+            render={(props) => (
+              <div>
+                <FormControl {...adaptToFormControl(props)} label="Date">
+                  <DatePicker
+                    {...adaptToSingleDatepicker(props)}
+                    timeSelectStart
+                  />
+                </FormControl>
+                <FormControl {...adaptToFormControl(props)} label="Time">
+                  <TimePicker {...adaptToSingleDatepicker(props)} />
+                </FormControl>
+              </div>
+            )}
+            onChange={action('birthday changed')}
+          />
+          <Button type="submit" disabled={pristine || invalid}>
+            Submit
+          </Button>
+        </form>
+      )}
+    />
+  ))
+  .add('Single with TimePicker (empty)', () => (
+    <Form
+      onSubmit={action('submit')}
+      initialValues={{birthday: null}}
+      render={({handleSubmit, pristine, invalid}) => (
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="birthday"
+            render={(props) => (
+              <div>
+                <FormControl {...adaptToFormControl(props)} label="Date">
+                  <DatePicker
+                    {...adaptToSingleDatepicker(props)}
+                    timeSelectStart
+                  />
+                </FormControl>
+                <FormControl {...adaptToFormControl(props)} label="Time">
+                  <TimePicker {...adaptToSingleDatepicker(props)} />
+                </FormControl>
+              </div>
             )}
             onChange={action('birthday changed')}
           />
@@ -59,7 +119,7 @@ storiesOf('Datepicker', module)
             parse={(value) => (value || []).map((val) => val.toISOString())}
             render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
-                <Datepicker {...adaptToRangeDatepicker(props)} />
+                <DatePicker {...adaptToRangeDatepicker(props)} />
               </FormControl>
             )}
             onChange={action('vacation changed')}
@@ -87,7 +147,7 @@ storiesOf('Datepicker', module)
             parse={(value) => (value || []).map((val) => val.toISOString())}
             render={(props) => (
               <FormControl {...adaptToFormControl(props)}>
-                <Datepicker
+                <DatePicker
                   {...adaptToRangeDatepicker(props)}
                   formatDisplayValue={(date) => formatDateAtIndex(date, 0)}
                   timeSelectStart

@@ -15,6 +15,7 @@ type AdaptToDatepickerProps = {
 export function adaptToSingleDatepicker(props: {}): DatepickerPropsT<> {
   const {adapter, meta, disabled, input, formatString} =
     ((props: any): AdaptToDatepickerProps);
+  console.log(input.value, 2222);
   return {
     adapter: adapter || dateFnsAdapter,
     range: false,
@@ -22,9 +23,35 @@ export function adaptToSingleDatepicker(props: {}): DatepickerPropsT<> {
     disabled,
     value: input.value,
     formatString,
-    onChange: ({date}: onChangeParamsT) => {
+    onChange: (props: onChangeParamsT) => {
       if (input.onChange) {
-        input.onChange(date);
+        console.log(props, 222);
+        // This is how we detect the TimePicker
+        if (props instanceof Date) {
+          const hours = props.getHours();
+          const minutes = props.getMinutes();
+          const seconds = props.getSeconds();
+          const newDate = new Date(
+            input.value instanceof Date ? input.value : new Date()
+          );
+          console.log(newDate, 9999);
+          newDate.setHours(hours);
+          newDate.setMinutes(minutes);
+          newDate.setSeconds(seconds);
+          input.onChange(newDate);
+        } else if (props.date instanceof Date) {
+          // This is how we detect the DatePicker
+          const date = props.date.getDate();
+          const fullYear = props.date.getFullYear();
+          const month = props.date.getMonth();
+          const newDate = new Date(
+            input.value instanceof Date ? input.value : new Date()
+          );
+          newDate.setDate(date);
+          newDate.setFullYear(fullYear);
+          newDate.setMonth(month);
+          input.onChange(newDate);
+        }
       }
     },
     error: meta.error && meta.touched,
