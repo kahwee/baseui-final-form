@@ -1,6 +1,6 @@
 {
   "name": "baseui-final-form",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "main": "index.js",
   "module": "index.es.js",
   "author": "KahWee Teng <tengkahwee@gmail.com>",
