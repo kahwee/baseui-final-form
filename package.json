@@ -126,10 +126,5 @@
     "url": "https://github.com/kahwee/baseui-final-form.git"
   },
   "license": "MIT",
-  "dependencies": {},
-  "volta": {
-    "node": "12.20.1",
-    "npm": "6.4.1",
-    "yarn": "1.19.1"
-  }
+  "dependencies": {}
 }

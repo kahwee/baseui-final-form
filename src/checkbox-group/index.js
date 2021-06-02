@@ -19,7 +19,7 @@ export default function render(props: FieldRenderProps) {
           return (
             <Checkbox
               checked={value.includes(option.id)}
-              name={`${name}.${option.id}`}
+              name={`${name}.${String(option.id)}`}
               {...option}
               key={index}
               onChange={(ev) => {

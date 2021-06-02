@@ -53,7 +53,7 @@ export default function render(props: ButtonGroupProps) {
           return (
             <Button
               $size={$size}
-              name={`${name}.${option.id}`}
+              name={`${name}.${String(option.id)}`}
               {...option}
               key={index}
             >
