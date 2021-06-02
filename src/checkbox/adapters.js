@@ -10,13 +10,8 @@ type AdaptToCheckboxProps = {
   onChange: (SyntheticInputEvent<*> | any) => void,
 } & ReactFinalFormFieldRenderProps;
 export function adaptToCheckbox(props: ReactFinalFormFieldRenderProps): PropsT {
-  const {
-    meta,
-    label,
-    onChange,
-    input,
-    ...restProps
-  } = ((props: any): AdaptToCheckboxProps);
+  const {meta, label, onChange, input, ...restProps} =
+    ((props: any): AdaptToCheckboxProps);
   return {
     ...input,
     ...restProps,

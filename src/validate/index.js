@@ -79,5 +79,10 @@ export function integer(value: ?string | ?number) {
 }
 
 export type ValueT = ?mixed | ?Array<mixed>;
-export const composeValidators = (...validators: any) => (value: ValueT) =>
-  validators.reduce((error, validator) => error || validator(value), undefined);
+export const composeValidators =
+  (...validators: any) =>
+  (value: ValueT) =>
+    validators.reduce(
+      (error, validator) => error || validator(value),
+      undefined
+    );

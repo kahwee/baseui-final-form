@@ -35,9 +35,8 @@ describe('select', () => {
     );
     const baseuiSelect = container.querySelector('[data-baseweb=select]');
     expect(baseuiSelect).toBeDefined();
-    const [tagApple, tagPineapple] = container.querySelectorAll(
-      '[data-baseweb=tag]'
-    );
+    const [tagApple, tagPineapple] =
+      container.querySelectorAll('[data-baseweb=tag]');
     expect(getByText('Pineapple')).toBeDefined();
     expect(onChange).toHaveBeenCalledTimes(1);
     expect(onChange).toHaveBeenNthCalledWith(1, {

@@ -199,9 +199,8 @@ describe('select/adapters', () => {
     fireEvent.blur(input);
     fireEvent.focus(input);
     expect(baseuiSelect).toBeDefined();
-    const [tagApple, tagPineapple] = container.querySelectorAll(
-      '[data-baseweb=tag]'
-    );
+    const [tagApple, tagPineapple] =
+      container.querySelectorAll('[data-baseweb=tag]');
     expect(getByText('Pineapple')).toBeDefined();
     expect(onChange).toHaveBeenCalledTimes(1);
     expect(onChange).toHaveBeenNthCalledWith(1, {
