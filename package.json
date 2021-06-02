@@ -83,7 +83,7 @@
     "styletron-react": "^6.0.1"
   },
   "peerDependencies": {
-    "baseui": ">= 9.87.0 < 10",
+    "baseui": ">= 9.110.0 < 10",
     "final-form": "^4.18.6",
     "final-form-arrays": "^3.0.2",
     "react": ">= 16.9.0 < 18",
