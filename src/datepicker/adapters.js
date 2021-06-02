@@ -13,13 +13,8 @@ type AdaptToDatepickerProps = {
   adapter: any,
 } & ReactFinalFormFieldRenderProps;
 export function adaptToSingleDatepicker(props: {}): DatepickerPropsT<> {
-  const {
-    adapter,
-    meta,
-    disabled,
-    input,
-    formatString,
-  } = ((props: any): AdaptToDatepickerProps);
+  const {adapter, meta, disabled, input, formatString} =
+    ((props: any): AdaptToDatepickerProps);
   return {
     adapter: adapter || dateFnsAdapter,
     range: false,
@@ -37,13 +32,8 @@ export function adaptToSingleDatepicker(props: {}): DatepickerPropsT<> {
 }
 
 export function adaptToRangeDatepicker(props: {}): DatepickerPropsT<> {
-  const {
-    adapter,
-    meta,
-    disabled,
-    input,
-    formatString,
-  } = ((props: any): AdaptToDatepickerProps);
+  const {adapter, meta, disabled, input, formatString} =
+    ((props: any): AdaptToDatepickerProps);
   return {
     adapter: adapter || dateFnsAdapter,
     range: true,

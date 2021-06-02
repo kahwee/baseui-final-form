@@ -119,13 +119,8 @@ export const adaptToMultiSelect = (
       labelKey = adaptOptions.labelKey;
     }
   }
-  let {
-    meta,
-    options,
-    input,
-    disabled,
-    ...restProps
-  } = ((props: any): AdaptToMultiSelectProps);
+  let {meta, options, input, disabled, ...restProps} =
+    ((props: any): AdaptToMultiSelectProps);
   if (!options || !Array.isArray(options)) {
     throw new Error(
       `Invalid options in "${input.name}", expects options to be Array<OptionT>.`
