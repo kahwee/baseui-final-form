@@ -8,10 +8,10 @@ Adapter between `react-final-form` and `baseui`.
 
 ## Prerequisites
 
-- `baseui` >= 9.71.0 (peer dependency)
+- `baseui` >= 9.115.3 (peer dependency)
 - `react` and `react-dom` >= 16.12.0 (peer dependency)
-- `node` >= 10.16.0 (for development)
-- `yarn` >= 1.17.3 (for development)
+- `node` >= 12.20.0 (for development)
+- `yarn` >= 1.19.0 (for development)
 
 ## Usage
 
