@@ -1,3 +1,7 @@
 // @flow
 
-export {adaptToSingleDatepicker, adaptToRangeDatepicker} from './adapters';
+export {
+  adaptToSingleDatepicker,
+  adaptToRangeDatepicker,
+  adaptToTimePicker,
+} from './adapters';
