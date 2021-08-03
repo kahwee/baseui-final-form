@@ -2760,7 +2760,7 @@
     prettier "~2.2.1"
     regenerator-runtime "^0.13.7"
 
-"@storybook/theming@6.2.9", "@storybook/theming@^6.2.9":
+"@storybook/theming@6.2.9":
   version "6.2.9"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-6.2.9.tgz#16bf40180861f222c7ed1d80abd5d1e3cb315660"
   integrity sha512-183oJW7AD7Fhqg5NT4ct3GJntwteAb9jZnQ6yhf9JSdY+fk8OhxRbPf7ov0au2gYACcGrWDd9K5pYQsvWlP5gA==
@@ -2778,7 +2778,7 @@
     resolve-from "^5.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/theming@6.3.6":
+"@storybook/theming@6.3.6", "@storybook/theming@^6.3.6":
   version "6.3.6"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-6.3.6.tgz#75624f6d4e01530b87afca3eab9996a16c0370ab"
   integrity sha512-mPrQrMUREajNEWxzgR8t0YIZsI9avPv25VNA08fANnwVsc887p4OL5eCTL2dFIlD34YDzAwiyRKYoLj2vDW4nw==
