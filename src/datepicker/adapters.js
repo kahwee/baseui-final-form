@@ -41,12 +41,18 @@ export function adaptToSingleDatepicker(props: {}): DatepickerPropsT<> {
           const date = props.date.getDate();
           const fullYear = props.date.getFullYear();
           const month = props.date.getMonth();
+          const hours = props.getHours();
+          const minutes = props.getMinutes();
+          const seconds = props.getSeconds();
           const newDate = new Date(
             input.value instanceof Date ? input.value : new Date()
           );
           newDate.setDate(date);
           newDate.setFullYear(fullYear);
           newDate.setMonth(month);
+          newDate.setHours(hours);
+          newDate.setMinutes(minutes);
+          newDate.setSeconds(seconds);
           input.onChange(newDate);
         }
       }
